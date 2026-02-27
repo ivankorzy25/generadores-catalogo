@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARADO | KOR Generadores</title>
+<meta name="description" content="ARADO - Implementos Agricolas. Catálogo KOR Generadores. Consultar precio y disponibilidad.">
+<meta property="og:title" content="ARADO | KOR Generadores">
+<meta property="og:type" content="product">
+<meta property="og:url" content="https://generadores.ar/arado">
+<meta property='og:image' content='https://generadores.ar/img/RASTRA_DE_DISCO.jpg'>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="../css/kor.css">
+</head>
+<body class="product-page">
+<header class="kor-header">
+  <div class="kor-header-top">
+    <div class="kor-wrap">
+      <span><i class="fas fa-phone"></i> +54 11 3956-3099</span>
+      <div>
+        <a href="mailto:info@generadores.ar">info@generadores.ar</a>
+        <span style="margin:0 8px;opacity:0.3">|</span>
+        <a href="https://wa.me/5491139563099" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+  </div>
+  <div class="kor-header-main">
+    <div class="kor-wrap">
+      <a href="../" class="kor-logo">KOR <span>GENERADORES</span></a>
+      <nav class="kor-nav">
+        <a href="../">Catálogo</a>
+        <a href="https://wa.me/5491139563099?text=Hola!%20Me%20interesa%20conocer%20más%20sobre%20los%20productos%20KOR" target="_blank" class="kor-nav-wa">
+          <i class="fab fa-whatsapp"></i> Consultar
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="kor-fallback-product kor-wrap">
+  <div class="kor-fallback-card kor-reveal">
+    <img src='../img/RASTRA_DE_DISCO.jpg' alt='ARADO' class='kor-fallback-img'>
+    <h1>ARADO</h1>
+    <span class="kor-fallback-group">Implementos Agricolas</span>
+    <p>Para más información sobre este producto, contactanos por WhatsApp.</p>
+  </div>
+</div>
+
+<div class="kor-pricing-section kor-reveal">
+  <div class="kor-pricing-inner kor-wrap">
+    <div class="kor-pricing-left">
+      <h2>PRECIO DE LISTA</h2>
+      <h3>ARADO</h3>
+      <div class="kor-price-card">
+        <div class="kor-price-label">ARS</div>
+        <div class="kor-price-row">
+          <span class="kor-price-amount kor-price-main" id="price-display">$ 585.200</span>
+        </div>
+        <div class="kor-price-label" style="margin-top:8px">+ IVA | Precio sujeto a cambio</div>
+        <hr class="kor-price-divider">
+        <div id="dolar-info"></div>
+      </div>
+    </div>
+    <div class="kor-pricing-right">
+      <div class="kor-pricing-note">
+        <strong>Medios de pago:</strong> Transferencia bancaria, cheques, efectivo. Consultar financiación.
+      </div>
+      <a href="https://wa.me/5491139563099?text=Hola!%20Quiero%20consultar%20por%20el%20ARADO" target="_blank" class="kor-cta-btn">
+        <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+      </a>
+      <a href="../" class="kor-cta-btn kor-cta-btn-outline">
+        <i class="fas fa-arrow-left"></i> Volver al catálogo
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer class="kor-footer">
+  <div class="kor-wrap">
+    <div class="kor-footer-grid">
+      <div>
+        <div class="kor-logo" style="margin-bottom:16px">KOR <span>GENERADORES</span></div>
+        <p style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.7">
+          Distribuidor oficial de generadores y maquinaria.<br>
+          Buenos Aires, Argentina.
+        </p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p><i class="fas fa-phone"></i> +54 11 3956-3099</p>
+        <p><i class="fas fa-envelope"></i> info@generadores.ar</p>
+        <p><i class="fab fa-whatsapp"></i> WhatsApp</p>
+      </div>
+      <div>
+        <h4>Enlaces</h4>
+        <p><a href="../">Catálogo</a></p>
+        <p><a href="https://generadores.ar">generadores.ar</a></p>
+      </div>
+    </div>
+    <div class="kor-footer-bottom">
+      <span>&copy; 2026 KOR Generadores. Todos los derechos reservados.</span>
+      <span>Precios sujetos a cambio sin previo aviso. IVA no incluido.</span>
+    </div>
+  </div>
+</footer>
+
+<div id="kor-lb" class="kor-lb">
+  <div class="kor-lb-overlay" onclick="korCloseLB()"></div>
+  <button class="kor-lb-close" onclick="korCloseLB()">&times;</button>
+  <button class="kor-lb-prev" onclick="korNavLB(-1)">&#10094;</button>
+  <img class="kor-lb-img" src="" alt="">
+  <button class="kor-lb-next" onclick="korNavLB(1)">&#10095;</button>
+  <div class="kor-lb-counter"></div>
+</div>
+
+<script src="../js/product.js"></script>
+<script>
+  var KOR_PRICE = {"price": 585200, "currency": "ARS"};
+  var KOR_ERP = "http://192.168.100.100:8082";
+  var KOR_ITEM_CODE = "24108";
+  initProductPage();
+</script>
+</body>
+</html>
