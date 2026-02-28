@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGUS SE-5TN - KOR Compresores - Ficha Tecnica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #FF6B00; --primary-dark: #E55A00; --primary-light: #FFF3E8; --secondary: #1a1a2e; --dark: #0f0f1a; --light: #ffffff; --gray: #f5f5f7; --gray-border: #e8e8ea; --text: #2d2d2d; --text-light: #5a5a5a; --text-muted: #888; }
+        body { font-family: 'Roboto', sans-serif; background: #d0d0d0; color: var(--text); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+        .page { width: 210mm; height: 297mm; background: white; margin: 15px auto; position: relative; overflow: hidden; box-shadow: 0 5px 30px rgba(0,0,0,0.2); page-break-after: always; }
+        @media print { body { background: white; } .page { margin: 0; box-shadow: none; } @page { size: A4 portrait; margin: 0; } }
+        .cover { background: linear-gradient(160deg, var(--secondary) 0%, #12122a 40%, var(--dark) 100%); color: white; display: flex; flex-direction: column; padding: 0; }
+        .cover-header { display: flex; justify-content: space-between; align-items: center; padding: 30px 40px 20px; }
+        .cover-logo { display: flex; align-items: center; gap: 12px; }
+        .cover-logo img { height: 42px; }
+        .cover-logo span { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 3px; color: rgba(255,255,255,0.9); }
+        .cover-badge-top { background: var(--primary); color: white; padding: 6px 18px; font-size: 9px; font-weight: 700; letter-spacing: 1.5px; border-radius: 4px; text-transform: uppercase; }
+        .cover-hero { flex: 1; display: flex; align-items: center; padding: 0 40px; gap: 30px; }
+        .cover-info { flex: 1; }
+        .cover-brand { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: var(--primary); letter-spacing: 4px; margin-bottom: 8px; text-transform: uppercase; }
+        .cover-model { font-family: 'Montserrat', sans-serif; font-size: 48px; font-weight: 900; line-height: 1; margin-bottom: 5px; }
+        .cover-model span { color: var(--primary); }
+        .cover-model-sub { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700; color: rgba(255,255,255,0.5); margin-bottom: 5px; }
+        .cover-model-sub2 { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: var(--primary); letter-spacing: 3px; margin-bottom: 12px; }
+        .cover-tagline { font-size: 17px; color: rgba(255,255,255,0.7); font-weight: 300; margin-bottom: 35px; letter-spacing: 0.5px; }
+        .cover-specs-row { display: flex; gap: 28px; }
+        .cover-spec { text-align: left; border-left: 3px solid var(--primary); padding-left: 14px; }
+        .cover-spec .value { font-family: 'Montserrat', sans-serif; font-size: 34px; font-weight: 900; color: var(--primary); display: block; line-height: 1; }
+        .cover-spec .unit { font-size: 14px; font-weight: 600; color: white; margin-left: 2px; }
+        .cover-spec .label { font-size: 11px; color: rgba(255,255,255,0.5); display: block; margin-top: 2px; text-transform: uppercase; letter-spacing: 1px; }
+        .cover-image { flex: 1; display: flex; align-items: center; justify-content: center; }
+        .cover-image img { max-width: 100%; max-height: 380px; object-fit: contain; filter: drop-shadow(0 20px 50px rgba(0,0,0,0.6)); }
+        .cover-bottom { background: rgba(0,0,0,0.35); padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; }
+        .cover-highlights-row { display: flex; gap: 30px; }
+        .highlight { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.9); font-size: 12px; font-weight: 500; }
+        .highlight i { color: var(--primary); font-size: 14px; }
+        .cover-web { font-size: 12px; color: rgba(255,255,255,0.5); font-weight: 400; }
+        .cover-web strong { color: var(--primary); }
+        .page-header { background: linear-gradient(90deg, var(--secondary) 0%, var(--dark) 100%); padding: 18px 40px; display: flex; align-items: center; justify-content: space-between; }
+        .page-header.orange { background: linear-gradient(90deg, var(--primary) 0%, var(--primary-dark) 100%); }
+        .page-header-left { display: flex; align-items: center; gap: 15px; }
+        .page-header img { height: 28px; }
+        .page-header h2 { font-family: 'Montserrat', sans-serif; font-size: 20px; color: white; font-weight: 700; letter-spacing: 0.5px; }
+        .page-header h2 span { color: var(--primary); }
+        .page-header.orange h2 span { color: white; }
+        .page-header .page-num { font-family: 'Montserrat', sans-serif; font-size: 12px; color: rgba(255,255,255,0.4); font-weight: 600; }
+        .page-content { padding: 32px 42px 24px; height: calc(297mm - 62px); overflow: hidden; }
+        .page-footer { position: absolute; bottom: 0; left: 0; right: 0; padding: 8px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 8px; color: var(--text-muted); border-top: 1px solid var(--gray-border); }
+        .page-footer .brand { color: var(--primary); font-weight: 600; }
+        .intro-title { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 800; color: var(--secondary); margin-bottom: 8px; }
+        .intro-subtitle { font-size: 15px; color: var(--text-light); margin-bottom: 28px; line-height: 1.7; max-width: 90%; }
+        .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 28px; }
+        .intro-features { display: flex; flex-direction: column; gap: 16px; }
+        .intro-feat { display: flex; align-items: center; gap: 16px; background: var(--gray); padding: 16px 20px; border-radius: 10px; border-left: 4px solid var(--primary); }
+        .intro-feat-icon { width: 48px; height: 48px; background: var(--primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .intro-feat-icon i { color: white; font-size: 20px; }
+        .intro-feat-text strong { font-size: 14px; display: block; color: var(--secondary); margin-bottom: 3px; }
+        .intro-feat-text span { font-size: 12px; color: var(--text-light); line-height: 1.4; }
+        .intro-image-container { border-radius: 12px; overflow: hidden; position: relative; }
+        .intro-image-container img { width: 100%; height: 100%; object-fit: cover; }
+        .intro-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+        .intro-stat { background: var(--secondary); color: white; padding: 22px 14px; border-radius: 10px; text-align: center; }
+        .intro-stat .value { font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 800; color: var(--primary); display: block; line-height: 1; margin-bottom: 6px; }
+        .intro-stat .label { font-size: 11px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; }
+        .section-title { font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 800; color: var(--secondary); margin-bottom: 28px; }
+        .timeline-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-bottom: 28px; }
+        .timeline-item { background: var(--gray); border-radius: 12px; padding: 24px 22px; display: flex; align-items: flex-start; gap: 16px; }
+        .timeline-num { background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 17px; flex-shrink: 0; }
+        .timeline-text h4 { font-family: 'Montserrat', sans-serif; font-size: 15px; color: var(--secondary); margin-bottom: 6px; font-weight: 700; }
+        .timeline-text p { font-size: 13px; color: var(--text-light); line-height: 1.55; }
+        .how-bottom { display: grid; grid-template-columns: 1fr 1.8fr; gap: 24px; }
+        .how-note { background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%); color: white; padding: 28px; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+        .how-note-icon { width: 52px; height: 52px; background: var(--primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+        .how-note-icon i { font-size: 24px; color: white; }
+        .how-note h4 { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 700; }
+        .how-note p { font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.65; }
+        .how-image { border-radius: 12px; overflow: hidden; }
+        .how-image img { width: 100%; height: 100%; object-fit: cover; }
+        .engine-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 30px; height: 100%; }
+        .engine-left img { width: 100%; height: 195px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; }
+        .engine-card { background: var(--gray); padding: 22px; border-radius: 12px; }
+        .engine-card h4 { font-family: 'Montserrat', sans-serif; font-size: 14px; color: var(--secondary); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+        .engine-card h4 i { color: var(--primary); }
+        .engine-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .engine-spec { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--text); }
+        .engine-spec i { color: var(--primary); width: 16px; font-size: 12px; }
+        .engine-right h3 { font-family: 'Montserrat', sans-serif; font-size: 22px; color: var(--secondary); margin-bottom: 6px; font-weight: 800; }
+        .engine-right .subtitle { font-size: 13px; color: var(--text-light); margin-bottom: 22px; }
+        .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 22px; }
+        .tech-item { background: var(--gray); padding: 18px; border-radius: 10px; display: flex; align-items: flex-start; gap: 14px; }
+        .tech-item i { color: var(--primary); font-size: 20px; margin-top: 2px; }
+        .tech-item strong { font-size: 13px; display: block; color: var(--secondary); margin-bottom: 4px; }
+        .tech-item span { font-size: 11px; color: var(--text-light); line-height: 1.5; }
+        .alternator-box { background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%); color: white; padding: 24px; border-radius: 12px; }
+        .alternator-box h4 { font-family: 'Montserrat', sans-serif; font-size: 15px; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+        .alternator-box h4 i { color: var(--primary); }
+        .alt-specs { display: flex; justify-content: space-around; }
+        .alt-spec { text-align: center; }
+        .alt-spec .value { font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 800; color: var(--primary); display: block; }
+        .alt-spec .label { font-size: 11px; color: rgba(255,255,255,0.6); }
+        .power-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 35px; }
+        .power-circle-box { display: flex; flex-direction: column; align-items: center; justify-content: center; padding-top: 30px; }
+        .power-circle { width: 220px; height: 220px; border-radius: 50%; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; margin-bottom: 30px; box-shadow: 0 12px 45px rgba(255,107,0,0.3); }
+        .power-circle .number { font-family: 'Montserrat', sans-serif; font-size: 58px; font-weight: 900; line-height: 1; }
+        .power-circle .unit { font-size: 24px; font-weight: 600; }
+        .power-circle .label { font-size: 13px; margin-top: 5px; opacity: 0.85; }
+        .power-secondary { display: flex; gap: 16px; width: 100%; }
+        .power-sec-item { background: var(--gray); padding: 18px; border-radius: 10px; text-align: center; flex: 1; }
+        .power-sec-item .value { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700; color: var(--secondary); display: block; }
+        .power-sec-item .label { font-size: 11px; color: var(--text-light); }
+        .power-right h4 { font-family: 'Montserrat', sans-serif; font-size: 16px; color: var(--secondary); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; font-weight: 700; }
+        .power-right h4 i { color: var(--primary); }
+        .elec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 28px; }
+        .elec-item { background: var(--gray); padding: 16px; border-radius: 10px; }
+        .elec-item .label { font-size: 11px; color: var(--text-muted); display: block; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .elec-item .value { font-size: 16px; font-weight: 600; color: var(--secondary); }
+        .powers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        .power-example { background: var(--secondary); color: white; padding: 20px 12px; border-radius: 10px; text-align: center; }
+        .power-example i { font-size: 26px; color: var(--primary); margin-bottom: 8px; display: block; }
+        .power-example span { font-size: 12px; }
+        .fuel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 28px; }
+        .fuel-card { background: var(--gray); padding: 24px; border-radius: 12px; border: 2px solid transparent; }
+        .fuel-card.primary { border-color: var(--primary); background: var(--primary-light); }
+        .fuel-card h4 { display: flex; align-items: center; gap: 10px; font-family: 'Montserrat', sans-serif; font-size: 15px; color: var(--secondary); margin-bottom: 10px; font-weight: 700; }
+        .fuel-card h4 i { color: var(--primary); font-size: 20px; }
+        .fuel-card > p { font-size: 12px; color: var(--text-light); margin-bottom: 14px; line-height: 1.55; }
+        .fuel-specs { display: flex; flex-direction: column; gap: 6px; }
+        .fuel-spec { display: flex; justify-content: space-between; font-size: 12px; padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
+        .fuel-spec .value { font-weight: 700; color: var(--primary); }
+        .eco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .eco-card { background: var(--secondary); color: white; padding: 28px 20px; border-radius: 12px; text-align: center; }
+        .eco-card i { font-size: 32px; color: var(--primary); margin-bottom: 12px; display: block; }
+        .eco-card h5 { font-family: 'Montserrat', sans-serif; font-size: 14px; margin-bottom: 8px; font-weight: 700; }
+        .eco-card p { font-size: 12px; color: rgba(255,255,255,0.7); line-height: 1.55; }
+        .control-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .control-left img { width: 100%; height: 210px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; }
+        .panel-card { background: var(--gray); padding: 22px; border-radius: 12px; }
+        .panel-card h4 { font-family: 'Montserrat', sans-serif; font-size: 15px; color: var(--secondary); margin-bottom: 14px; font-weight: 700; }
+        .panel-features { display: flex; flex-direction: column; gap: 10px; }
+        .panel-features li { list-style: none; font-size: 13px; display: flex; align-items: center; gap: 10px; color: var(--text); }
+        .panel-features li i { color: var(--primary); font-size: 11px; width: 14px; }
+        .avr-card { background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%); color: white; padding: 24px; border-radius: 12px; margin-bottom: 22px; }
+        .avr-card h5 { display: flex; align-items: center; gap: 10px; font-family: 'Montserrat', sans-serif; font-size: 15px; margin-bottom: 8px; font-weight: 700; }
+        .avr-card h5 i { color: var(--primary); font-size: 20px; }
+        .avr-card > p { font-size: 13px; color: rgba(255,255,255,0.75); margin-bottom: 16px; line-height: 1.55; }
+        .avr-features { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .avr-feat { display: flex; align-items: center; gap: 10px; font-size: 12px; }
+        .avr-feat i { color: var(--primary); font-size: 14px; }
+        .control-right > h4 { font-family: 'Montserrat', sans-serif; font-size: 16px; color: var(--secondary); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; font-weight: 700; }
+        .control-right > h4 i { color: var(--primary); }
+        .prot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .prot-item { background: var(--gray); padding: 14px 16px; border-radius: 8px; font-size: 12px; display: flex; align-items: center; gap: 10px; color: var(--text); font-weight: 500; }
+        .prot-item i { color: var(--primary); font-size: 14px; }
+        .app-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 28px; }
+        .app-card { background: var(--gray); padding: 28px 22px; border-radius: 12px; text-align: center; }
+        .app-card i { font-size: 36px; color: var(--primary); margin-bottom: 14px; display: block; }
+        .app-card h5 { font-family: 'Montserrat', sans-serif; font-size: 15px; color: var(--secondary); margin-bottom: 8px; font-weight: 700; }
+        .app-card p { font-size: 12px; color: var(--text-light); line-height: 1.55; }
+        .advantages-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+        .advantage-item { background: var(--secondary); color: white; padding: 24px 16px; border-radius: 12px; text-align: center; }
+        .advantage-item i { font-size: 28px; color: var(--primary); margin-bottom: 10px; display: block; }
+        .advantage-item h5 { font-family: 'Montserrat', sans-serif; font-size: 13px; margin-bottom: 6px; font-weight: 700; }
+        .advantage-item p { font-size: 11px; color: rgba(255,255,255,0.65); line-height: 1.5; }
+        .dim-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; }
+        .dim-visual { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; }
+        .dim-box { background: var(--gray); padding: 30px; border-radius: 14px; text-align: center; width: 100%; }
+        .weight-box { background: var(--primary); color: white; padding: 22px 30px; border-radius: 12px; display: flex; align-items: center; gap: 20px; width: 100%; }
+        .weight-box i { font-size: 32px; }
+        .weight-box .value { font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 800; }
+        .weight-box .label { font-size: 13px; opacity: 0.85; }
+        .dim-right h4 { font-family: 'Montserrat', sans-serif; font-size: 16px; color: var(--secondary); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; font-weight: 700; }
+        .dim-right h4 i { color: var(--primary); }
+        .conditions-grid { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
+        .condition { background: var(--gray); padding: 18px 22px; border-radius: 10px; display: flex; align-items: center; gap: 18px; }
+        .condition i { color: var(--primary); font-size: 22px; width: 26px; text-align: center; }
+        .condition div { display: flex; flex-direction: column; }
+        .condition .label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .condition .value { font-size: 15px; font-weight: 600; color: var(--secondary); }
+        .sound-card { background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%); color: white; padding: 26px; border-radius: 12px; display: flex; align-items: center; gap: 20px; }
+        .sound-card i { font-size: 38px; color: var(--primary); }
+        .sound-info h5 { font-family: 'Montserrat', sans-serif; font-size: 14px; margin-bottom: 5px; font-weight: 700; }
+        .sound-info .db { font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 800; color: var(--primary); }
+        .sound-info p { font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 5px; }
+        .specs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+        .spec-section { background: var(--gray); padding: 20px; border-radius: 12px; }
+        .spec-section h4 { font-family: 'Montserrat', sans-serif; font-size: 14px; color: var(--secondary); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); font-weight: 700; }
+        .spec-section h4 i { color: var(--primary); }
+        .spec-table { width: 100%; border-collapse: collapse; }
+        .spec-table tr { border-bottom: 1px solid rgba(0,0,0,0.06); }
+        .spec-table tr:last-child { border-bottom: none; }
+        .spec-table td { padding: 8px 0; font-size: 13px; }
+        .spec-table td:first-child { color: var(--text-light); }
+        .spec-table td:last-child { text-align: right; font-weight: 600; color: var(--secondary); }
+        .back-cover { background: linear-gradient(160deg, var(--secondary) 0%, #12122a 40%, var(--dark) 100%); color: white; display: flex; align-items: center; justify-content: center; }
+        .back-content { text-align: center; padding: 50px; }
+        .back-content img { height: 75px; margin-bottom: 25px; }
+        .back-content h1 { font-family: 'Montserrat', sans-serif; font-size: 40px; font-weight: 900; margin-bottom: 8px; letter-spacing: 1px; }
+        .back-content h1 span { color: var(--primary); }
+        .back-tagline { font-size: 16px; color: rgba(255,255,255,0.6); margin-bottom: 45px; letter-spacing: 0.5px; }
+        .back-product { background: rgba(255,255,255,0.08); padding: 25px 50px; border-radius: 14px; display: inline-block; margin-bottom: 40px; border: 1px solid rgba(255,255,255,0.1); }
+        .back-product .model { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 800; color: var(--primary); display: block; margin-bottom: 6px; }
+        .back-product .desc { font-size: 14px; color: rgba(255,255,255,0.7); }
+        .back-contact { display: flex; justify-content: center; gap: 35px; margin-bottom: 30px; }
+        .back-contact a { color: white; text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 10px; font-weight: 500; }
+        .back-contact a i { color: var(--primary); font-size: 19px; }
+        .back-social { display: flex; justify-content: center; gap: 16px; margin-bottom: 30px; }
+        .back-social a { width: 44px; height: 44px; background: rgba(255,255,255,0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 18px; border: 1px solid rgba(255,255,255,0.1); }
+        .back-footer { font-size: 10px; color: rgba(255,255,255,0.35); line-height: 1.8; }
+    </style>
+</head>
+<body>
+
+    <!-- PAGINA 1: PORTADA -->
+    <div class="page cover">
+        <div class="cover-header">
+            <div class="cover-logo">
+                <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png" alt="KOR">
+                <span>COMPRESORES</span>
+            </div>
+            <div class="cover-badge-top">Compresor de Tornillo Compacto 4 kW - 220V</div>
+        </div>
+        <div class="cover-hero">
+            <div class="cover-info">
+                <div class="cover-brand">LOGUS</div>
+                <h1 class="cover-model">SE-<span>5TN</span></h1>
+                <div class="cover-model-sub">TORNILLO</div>
+                <div class="cover-model-sub2">IMAN PERMANENTE</div>
+                <p class="cover-tagline">Compresor de Tornillo Compacto Monofasico 220V</p>
+                <div class="cover-specs-row">
+                    <div class="cover-spec">
+                        <span class="value">4 <span class="unit">kW</span></span>
+                        <span class="label">Potencia Motor</span>
+                    </div>
+                    <div class="cover-spec">
+                        <span class="value">10 <span class="unit">Bar</span></span>
+                        <span class="label">Presion Max</span>
+                    </div>
+                    <div class="cover-spec">
+                        <span class="value">0.5 <span class="unit">m³/min</span></span>
+                        <span class="label">Caudal Aire</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cover-image">
+                <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/SE5TN_hero_nobg.png" alt="LOGUS SE-5TN">
+            </div>
+        </div>
+        <div class="cover-bottom">
+            <div class="cover-highlights-row">
+                <div class="highlight"><i class="fas fa-microchip"></i><span>Motor 4 kW Iman Permanente</span></div>
+                <div class="highlight"><i class="fas fa-tachometer-alt"></i><span>10 Bar</span></div>
+                <div class="highlight"><i class="fas fa-wind"></i><span>0.5 m³/min</span></div>
+                <div class="highlight"><i class="fas fa-volume-low"></i><span>65 dB</span></div>
+            </div>
+            <div class="cover-web"><strong>www.compresores.ar</strong></div>
+        </div>
+    </div>
+
+    <!-- PAGINA 2 -->
+    <div class="page">
+        <div class="page-header"><div class="page-header-left"><img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png" alt="KOR"><h2>LOGUS <span>SE-5TN</span></h2></div><span class="page-num">02 / 11</span></div>
+        <div class="page-content">
+            <h3 class="intro-title">Compresor de Tornillo Compacto LOGUS</h3>
+            <p class="intro-subtitle">El <strong>LOGUS SE-5TN</strong> es un compresor de tornillo compacto de 4 kW / 5 HP con motor de iman permanente, alimentacion monofasica 220V/50Hz, nivel de ruido de solo 65 dB, tanque doble de 26L x 2, acople directo y refrigeracion por aire. Diseñado para pequeños talleres y aplicaciones que requieren aire comprimido confiable sin necesidad de instalacion trifasica.</p>
+            <div class="intro-grid">
+                <div class="intro-features">
+                    <div class="intro-feat"><div class="intro-feat-icon"><i class="fas fa-microchip"></i></div><div class="intro-feat-text"><strong>Motor 4 kW Iman Permanente</strong><span>Motor electrico de 4 kW / 5 HP con iman permanente a 4000 RPM para maxima eficiencia y rendimiento compacto</span></div></div>
+                    <div class="intro-feat"><div class="intro-feat-icon"><i class="fas fa-plug"></i></div><div class="intro-feat-text"><strong>Monofasico 220V - Sin Trifasica</strong><span>Alimentacion monofasica 220V/50Hz, se conecta a cualquier toma domiciliaria sin necesidad de instalacion trifasica</span></div></div>
+                    <div class="intro-feat"><div class="intro-feat-icon"><i class="fas fa-volume-low"></i></div><div class="intro-feat-text"><strong>Ultra Silencioso 65 dB</strong><span>El compresor de tornillo mas silencioso de la linea, ideal para operar en talleres pequeños y espacios cerrados</span></div></div>
+                    <div class="intro-feat"><div class="intro-feat-icon"><i class="fas fa-wind"></i></div><div class="intro-feat-text"><strong>0.5 m³/min a 10 Bar</strong><span>Caudal de aire de 0.5 m³/min a presion maxima de 10 Bar con ajuste automatico de aspiracion</span></div></div>
+                </div>
+                <div class="intro-image-container"><img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/SE5TN_features.webp" alt="SE-5TN Features"></div>
+            </div>
+            <div class="intro-stats">
+                <div class="intro-stat"><span class="value">4</span><span class="label">kW Potencia</span></div>
+                <div class="intro-stat"><span class="value">10</span><span class="label">Bar Presion</span></div>
+                <div class="intro-stat"><span class="value">0.5</span><span class="label">m³/min Caudal</span></div>
+                <div class="intro-stat"><span class="value">80</span><span class="label">kg Peso</span></div>
+            </div>
+        </div>
+        <div class="page-footer"><span><span class="brand">KOR Compresores</span> &mdash; Soluciones en Aire Comprimido Industrial</span><span>www.compresores.ar</span></div>
+    </div>
+
+    <!-- PAGINA 3 -->
+    <div class="page">
+        <div class="page-header orange"><div class="page-header-left"><img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png" alt="KOR"><h2>Como <span>Funciona?</span></h2></div><span class="page-num">03 / 11</span></div>
+        <div class="page-content">
+            <h3 class="section-title">Operacion Compacta y Eficiente</h3>
+            <div class="timeline-grid">
+                <div class="timeline-item"><div class="timeline-num">1</div><div class="timeline-text"><h4><i class="fas fa-plug" style="color:var(--primary);margin-right:6px;"></i> Conexion Electrica 220V</h4><p>Conecte el equipo a cualquier toma monofasica 220V/50Hz. No requiere instalacion trifasica ni conexion especial, simplemente enchufar y usar.</p></div></div>
+                <div class="timeline-item"><div class="timeline-num">2</div><div class="timeline-text"><h4><i class="fas fa-display" style="color:var(--primary);margin-right:6px;"></i> Panel de Control</h4><p>El panel de control permite configurar presion de trabajo, modo de operacion y monitorear todos los parametros en tiempo real.</p></div></div>
+                <div class="timeline-item"><div class="timeline-num">3</div><div class="timeline-text"><h4><i class="fas fa-gear" style="color:var(--primary);margin-right:6px;"></i> Compresion por Tornillo</h4><p>El elemento de tornillo comprime el aire de forma continua y libre de pulsaciones. El aceite lubrica, sella y refrigera el proceso de compresion.</p></div></div>
+                <div class="timeline-item"><div class="timeline-num">4</div><div class="timeline-text"><h4><i class="fas fa-wind" style="color:var(--primary);margin-right:6px;"></i> Aire Comprimido Listo</h4><p>El aire comprimido se almacena en los dos tanques de 26L (52L total) a 10 Bar y 0.5 m³/min, listo para alimentar herramientas neumaticas y equipos.</p></div></div>
+            </div>
+            <div class="how-bottom">
+                <div class="how-note"><div class="how-note-icon"><i class="fas fa-plug"></i></div><h4>Compresor 220V Monofasico</h4><p>Con motor de 4 kW, iman permanente, solo 65 dB de ruido, tanque doble de 52L y acople directo, el SE-5TN es el compresor de tornillo ideal para talleres que solo cuentan con alimentacion monofasica 220V.</p></div>
+                <div class="how-image"><img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/SE5TN_features.webp" alt="Features SE-5TN"></div>
+            </div>
+        </div>
+        <div class="page-footer"><span><span class="brand">KOR Compresores</span> &mdash; Soluciones en Aire Comprimido Industrial</span><span>www.compresores.ar</span></div>
+    </div>
+
+    <!-- PAGINA 4: MOTOR Y COMPRESOR -->
+    <div class="page">
+        <div class="page-header"><div class="page-header-left"><img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png" alt="KOR"><h2>Motor <span>4 kW Iman Permanente</span></h2></div><span class="page-num">04 / 11</span></div>
+        <div class="page-content">
+            <div class="engine-grid">
+                <div class="engine-left">
+                    <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/SE5TN_features.webp" alt="Motor SE-5TN">
+                    <div class="engine-card"><h4><i class="fas fa-gear"></i> Especificaciones del Motor</h4><div class="engine-specs"><div class="engine-spec"><i class="fas fa-bolt"></i> Electrico 220V/50Hz</div><div class="engine-spec"><i class="fas fa-magnet"></i> Iman Permanente</div><div class="engine-spec"><i class="fas fa-bolt"></i> 4 kW / 5 HP</div><div class="engine-spec"><i class="fas fa-tachometer-alt"></i> 4000 RPM</div><div class="engine-spec"><i class="fas fa-plug"></i> Monofasico</div><div class="engine-spec"><i class="fas fa-oil-can"></i> 2 Lts Aceite</div></div></div>
+                </div>
+                <div class="engine-right">
+                    <h3>Motor Electrico 4 kW Iman Permanente</h3>
+                    <p class="subtitle">Motor electrico de iman permanente monofasico 220V/50Hz, proteccion IP23/F, acople directo al elemento de tornillo para maxima eficiencia de transmision</p>
+                    <div class="tech-grid">
+                        <div class="tech-item"><i class="fas fa-magnet"></i><div><strong>Iman Permanente</strong><span>Motor de iman permanente de alta eficiencia para rendimiento constante y bajo consumo</span></div></div>
+                        <div class="tech-item"><i class="fas fa-tachometer-alt"></i><div><strong>4000 RPM</strong><span>Velocidad fija optimizada para maximo rendimiento del elemento de tornillo</span></div></div>
+                        <div class="tech-item"><i class="fas fa-link"></i><div><strong>Acople Directo</strong><span>Transmision directa sin correas para mayor eficiencia y menor mantenimiento</span></div></div>
+                        <div class="tech-item"><i class="fas fa-bolt"></i><div><strong>4 kW / 5 HP</strong><span>Potencia optimizada para caudal de 0.5 m³/min a 10 Bar</span></div></div>
+                    </div>
+                    <div class="alternator-box"><h4><i class="fas fa-wind"></i> Elemento Compresor de Tornillo</h4><div class="alt-specs"><div class="alt-spec"><span class="value">10</span><span class="label">Bar Max</span></div><div class="alt-spec"><span class="value">0.5</span><span class="label">m³/min</span></div><div class="alt-spec"><span class="value">65</span><span class="label">dB(A)</span></div></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer"><span><span class="brand">KOR Compresores</span> &mdash; Soluciones en Aire Comprimido Industrial</span><span>www.compresores.ar</span></div>
+    </div>
+
+    <!-- PAGINA 5: RENDIMIENTO -->
+    <div class="page">
+        <div class="page-header orange"><div class="page-header-left"><img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png" alt="KOR"><h2>Rendimiento <span>de Aire</span></h2></div><span class="page-num">05 / 11</span></div>
+        <div class="page-content">
+            <div class="power-grid">
+                <div class="power-circle-box"><div class="power-circle"><span class="number">0.5</span><span class="unit">m³/min</span><span class="label">Caudal de Aire</span></div><div class="power-secondary"><div class="power-sec-item"><span class="value">10 Bar</span><span class="label">Presion Max</span></div><div class="power-sec-item"><span class="value">220V</span><span class="label">Monofasico</span></div></div></div>
+                <div class="power-right">
+                    <h4><i class="fas fa-wind"></i> Especificaciones Neumaticas</h4>
+                    <div class="elec-grid"><div class="elec-item"><span class="label">Presion</span><span class="value">10 Bar</span></div><div class="elec-item"><span class="label">Caudal</span><span class="value">0.5 m³/min</span></div><div class="elec-item"><span class="label">Motor</span><span class="value">4 kW Iman Permanente</span></div><div class="elec-item"><span class="label">Tension</span><span class="value">220V / 50Hz Monofasico</span></div><div class="elec-item"><span class="label">Refrigeracion</span><span class="value">Por Aire</span></div><div class="elec-item"><span class="label">Estructura</span><span class="value">Abierto con Tanque y Ruedas</span></div></div>
+                    <h4><i class="fas fa-bolt"></i> Aplicaciones de Aire</h4>
+                    <div class="powers-grid"><div class="power-example"><i class="fas fa-wrench"></i><span>Herramientas</span></div><div class="power-example"><i class="fas fa-industry"></i><span>Taller</span></div><div class="power-example"><i class="fas fa-spray-can"></i><span>Pintura</span></div><div class="power-example"><i class="fas fa-car"></i><span>Automotriz</span></div><div class="power-example"><i class="fas fa-tooth"></i><span>Dental</span></div><div class="power-example"><i class="fas fa-box"></i><span>Packaging</span></div><div class="power-example"><i class="fas fa-hammer"></i><span>Carpinteria</span></div><div class="power-example"><i class="fas fa-cogs"></i><span>Neumatica</span></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer"><span><span class="brand">KOR Compresores</span> &mdash; Soluciones en Aire Comprimido Industrial</span><span>www.compresores.ar</span></div>
+    </div>
+
+    <!-- PAGINA 6: SISTEMA DE COMPRESION -->
+    <div class="page">
+        <div class="page-header"><div class="page-header-left"><img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png" alt="KOR"><h2>Sistema de <span>Compresion</span></h2></div><span class="page-num">06 / 11</span></div>
+        <div class="page-content">
+            <h3 class="section-title">Tecnologia de Tornillo Compacta</h3>
+            <div class="fuel-grid">
+                <div class="fuel-card primary"><h4><i class="fas fa-wind"></i> Elemento de Tornillo</h4><p>Compresor de tornillo rotativo con inyeccion de aceite para lubricacion, sellado y refrigeracion. Acople directo al motor para maxima eficiencia de transmision sin perdidas por correas.</p><div class="fuel-specs"><div class="fuel-spec"><span>Presion Maxima</span><span class="value">10 Bar</span></div><div class="fuel-spec"><span>Caudal de Aire</span><span class="value">0.5 m³/min</span></div><div class="fuel-spec"><span>Aceite Lubricante</span><span class="value">2 Litros (Shell)</span></div><div class="fuel-spec"><span>Temp. Descarga</span><span class="value">&le; Ambiente +15°C</span></div></div></div>
+                <div class="fuel-card"><h4><i class="fas fa-magnet"></i> Motor Iman Permanente</h4><p>Motor electrico de iman permanente monofasico 220V. Alta eficiencia con velocidad fija de 4000 RPM, ideal para alimentacion monofasica sin necesidad de instalacion trifasica.</p><div class="fuel-specs"><div class="fuel-spec"><span>Potencia</span><span class="value">4 kW / 5 HP</span></div><div class="fuel-spec"><span>Velocidad</span><span class="value">4000 RPM</span></div><div class="fuel-spec"><span>Tension</span><span class="value">220V / 50Hz Monofasico</span></div><div class="fuel-spec"><span>Proteccion</span><span class="value">IP23 / Clase F</span></div></div></div>
+            </div>
+            <div class="eco-grid"><div class="eco-card"><i class="fas fa-plug"></i><h5>220V Monofasico</h5><p>Se conecta a cualquier toma monofasica 220V sin necesidad de instalacion trifasica. Perfecto para talleres pequeños y lugares sin red trifasica.</p></div><div class="eco-card"><i class="fas fa-shield-alt"></i><h5>Confiabilidad LOGUS</h5><p>Elemento de tornillo de alta durabilidad con aceite Shell premium. Diseño robusto y compacto para operacion continua y portatil.</p></div><div class="eco-card"><i class="fas fa-volume-low"></i><h5>Ultra Silencioso 65 dB</h5><p>Nivel de ruido de solo 65 dB(A), el mas silencioso de la linea. Ideal para operar en espacios cerrados y cerca del area de trabajo.</p></div></div>
+        </div>
+        <div class="page-footer"><span><span class="brand">KOR Compresores</span> &mdash; Soluciones en Aire Comprimido Industrial</span><span>www.compresores.ar</span></div>
+    </div>
+
+    <!-- PAGINA 7: CONTROL -->
+    <div class="page">
+        <div class="page-header"><div class="page-header-left"><img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png" alt="KOR"><h2>Panel de <span>Control</span></h2></div><span class="page-num">07 / 11</span></div>
+        <div class="page-content">
+            <div class="control-grid">
+                <div class="control-left">
+                    <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/SE5TN_specs.webp" alt="Panel SE-5TN">
+                    <div class="panel-card"><h4>Panel de Control Digital</h4><ul class="panel-features"><li><i class="fas fa-check"></i> Display digital de presion</li><li><i class="fas fa-check"></i> Monitoreo de presion en tiempo real</li><li><i class="fas fa-check"></i> Control de temperatura</li><li><i class="fas fa-check"></i> Contador de horas de operacion</li><li><i class="fas fa-check"></i> Diagnostico de fallas</li><li><i class="fas fa-check"></i> Ajuste automatico de carga</li></ul></div>
+                </div>
+                <div class="control-right">
+                    <div class="avr-card"><h5><i class="fas fa-magnet"></i> Motor Iman Permanente</h5><p>El motor de iman permanente proporciona alta eficiencia constante a 4000 RPM. El ajuste automatico de aspiracion regula la carga segun la demanda de aire, minimizando el consumo electrico en la red monofasica 220V.</p><div class="avr-features"><div class="avr-feat"><i class="fas fa-check-circle"></i><span>Arranque automatico</span></div><div class="avr-feat"><i class="fas fa-check-circle"></i><span>Velocidad fija 4000 RPM</span></div><div class="avr-feat"><i class="fas fa-check-circle"></i><span>Ajuste automatico de carga</span></div><div class="avr-feat"><i class="fas fa-check-circle"></i><span>Proteccion IP23/F</span></div></div></div>
+                    <h4><i class="fas fa-shield-alt"></i> Sistema de Protecciones</h4>
+                    <div class="prot-grid"><div class="prot-item"><i class="fas fa-temperature-high"></i> Sensor temperatura</div><div class="prot-item"><i class="fas fa-gauge-high"></i> Sobrepresion</div><div class="prot-item"><i class="fas fa-hand-paper"></i> Parada emergencia</div><div class="prot-item"><i class="fas fa-oil-can"></i> Nivel de aceite</div><div class="prot-item"><i class="fas fa-bolt"></i> Sobrecarga electrica</div><div class="prot-item"><i class="fas fa-key"></i> Llave de seguridad</div></div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer"><span><span class="brand">KOR Compresores</span> &mdash; Soluciones en Aire Comprimido Industrial</span><span>www.compresores.ar</span></div>
+    </div>
+
+    <!-- PAGINA 8: APLICACIONES -->
+    <div class="page">
+        <div class="page-header orange"><div class="page-header-left"><img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png" alt="KOR"><h2>Aplicaciones <span>Ideales</span></h2></div><span class="page-num">08 / 11</span></div>
+        <div class="page-content">
+            <h3 class="section-title">Aire Comprimido para Talleres y Oficios</h3>
+            <div class="app-grid">
+                <div class="app-card"><i class="fas fa-tools"></i><h5>Taller y Herramientas</h5><p>Alimentacion de herramientas neumaticas, amoladoras, taladros, llaves de impacto, remachadoras y sopletes de aire.</p></div>
+                <div class="app-card"><i class="fas fa-car"></i><h5>Automotriz</h5><p>Talleres mecanicos, cambio de neumaticos, inflado, herramientas de impacto y limpieza con aire comprimido.</p></div>
+                <div class="app-card"><i class="fas fa-spray-can"></i><h5>Pintura y Acabado</h5><p>Pistolas de pintura, sopleteo, lijado neumatico y aplicacion de recubrimientos en talleres pequeños.</p></div>
+                <div class="app-card"><i class="fas fa-tooth"></i><h5>Dental y Medico</h5><p>Equipamiento odontologico, sillones dentales, turbinas de alta velocidad y equipos de laboratorio dental.</p></div>
+                <div class="app-card"><i class="fas fa-hammer"></i><h5>Carpinteria</h5><p>Clavadoras neumaticas, grapadoras, pistolas de acabado, lijadoras y herramientas de carpinteria.</p></div>
+                <div class="app-card"><i class="fas fa-store"></i><h5>Comercios y Oficinas</h5><p>Inflado de neumaticos, limpieza general, pequeñas aplicaciones neumaticas en comercios y servicios.</p></div>
+            </div>
+            <div class="advantages-grid">
+                <div class="advantage-item"><i class="fas fa-plug"></i><h5>220V Monofasico</h5><p>Se conecta a cualquier toma 220V sin trifasica.</p></div>
+                <div class="advantage-item"><i class="fas fa-volume-low"></i><h5>65 dB Silencioso</h5><p>El mas silencioso de la linea para espacios cerrados.</p></div>
+                <div class="advantage-item"><i class="fas fa-dolly"></i><h5>Portatil con Ruedas</h5><p>Compacto y liviano, facil de transportar.</p></div>
+                <div class="advantage-item"><i class="fas fa-feather-alt"></i><h5>Solo 80 kg</h5><p>El mas liviano de toda la linea de tornillo.</p></div>
+            </div>
+        </div>
+        <div class="page-footer"><span><span class="brand">KOR Compresores</span> &mdash; Soluciones en Aire Comprimido Industrial</span><span>www.compresores.ar</span></div>
+    </div>
+
+    <!-- PAGINA 9: DIMENSIONES -->
+    <div class="page">
+        <div class="page-header"><div class="page-header-left"><img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png" alt="KOR"><h2>Dimensiones y <span>Peso</span></h2></div><span class="page-num">09 / 11</span></div>
+        <div class="page-content">
+            <div class="dim-grid">
+                <div class="dim-visual">
+                    <div class="dim-box" style="padding:20px; background: white; border: 1px solid var(--gray-border);"><img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/SE5TN_features.webp" alt="Dimensiones SE-5TN" style="width:100%;max-width:380px;object-fit:contain;"></div>
+                    <div class="weight-box"><i class="fas fa-weight-hanging"></i><div><span class="value">80 kg</span><span class="label">Peso operativo con tanque doble y ruedas</span></div></div>
+                </div>
+                <div class="dim-right">
+                    <h4><i class="fas fa-ruler-combined"></i> Medidas del Equipo</h4>
+                    <div class="conditions-grid"><div class="condition"><i class="fas fa-arrows-left-right"></i><div><span class="label">Largo</span><span class="value">740 mm</span></div></div><div class="condition"><i class="fas fa-arrows-left-right" style="transform:rotate(90deg);"></i><div><span class="label">Ancho</span><span class="value">530 mm</span></div></div><div class="condition"><i class="fas fa-arrows-up-down"></i><div><span class="label">Alto</span><span class="value">731 mm</span></div></div><div class="condition"><i class="fas fa-compress-arrows-alt"></i><div><span class="label">Salida de Aire</span><span class="value">1/2"</span></div></div></div>
+                    <div class="sound-card"><i class="fas fa-volume-low"></i><div class="sound-info"><h5>Ultra Silencioso</h5><span class="db">65 dB(A)</span><p>El compresor de tornillo mas silencioso de la linea. Estructura abierta con tanque horizontal y ruedas para facil transporte.</p></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer"><span><span class="brand">KOR Compresores</span> &mdash; Soluciones en Aire Comprimido Industrial</span><span>www.compresores.ar</span></div>
+    </div>
+
+    <!-- PAGINA 10: FICHA TECNICA -->
+    <div class="page">
+        <div class="page-header"><div class="page-header-left"><img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png" alt="KOR"><h2>Ficha <span>Tecnica</span></h2></div><span class="page-num">10 / 11</span></div>
+        <div class="page-content">
+            <h3 class="section-title">Especificaciones Tecnicas Completas</h3>
+            <div class="specs-grid">
+                <div class="spec-section"><h4><i class="fas fa-wind"></i> Rendimiento Neumatico</h4><table class="spec-table"><tr><td>Presion Maxima</td><td>10 Bar</td></tr><tr><td>Caudal de Aire</td><td>0.5 m³/min</td></tr><tr><td>Temp. Ambiente</td><td>-5°C ~ +45°C</td></tr><tr><td>Temp. Descarga</td><td>&le; Ambiente +15°C</td></tr><tr><td>Salida de Aire</td><td>1/2"</td></tr><tr><td>Tipo Compresion</td><td>Tornillo con inyeccion aceite</td></tr></table></div>
+                <div class="spec-section"><h4><i class="fas fa-bolt"></i> Motor Electrico</h4><table class="spec-table"><tr><td>Potencia</td><td>4 kW / 5 HP</td></tr><tr><td>Velocidad</td><td>4000 RPM</td></tr><tr><td>Tension / Frecuencia</td><td>220V / 50Hz Monofasico</td></tr><tr><td>Arranque</td><td>Automatico</td></tr><tr><td>Motor Tipo</td><td>Iman Permanente</td></tr><tr><td>Proteccion</td><td>IP23 / Clase F</td></tr></table></div>
+                <div class="spec-section"><h4><i class="fas fa-oil-can"></i> Lubricacion y Refrigeracion</h4><table class="spec-table"><tr><td>Aceite Lubricante</td><td>2 Litros</td></tr><tr><td>Aceite Recomendado</td><td>Shell Brand</td></tr><tr><td>Refrigeracion</td><td>Por Aire</td></tr><tr><td>Ventilador</td><td>0.092 kW / 13.2 m³/H</td></tr><tr><td>Acople</td><td>Directo</td></tr><tr><td>Ajuste Aire</td><td>Automatico</td></tr></table></div>
+                <div class="spec-section"><h4><i class="fas fa-ruler-combined"></i> Dimensiones y Peso</h4><table class="spec-table"><tr><td>Largo</td><td>740 mm</td></tr><tr><td>Ancho</td><td>530 mm</td></tr><tr><td>Alto</td><td>731 mm</td></tr><tr><td>Peso</td><td>80 kg</td></tr><tr><td>Nivel de Ruido</td><td>65 &plusmn; 2 dB(A)</td></tr><tr><td>Estructura</td><td>Abierto / Tanque con Ruedas</td></tr></table></div>
+                <div class="spec-section"><h4><i class="fas fa-shield-alt"></i> Seguridad</h4><table class="spec-table"><tr><td>Valvula Seguridad</td><td>Nominal +20%</td></tr><tr><td>Parada Emergencia</td><td>Si</td></tr><tr><td>Sensor Temperatura</td><td>Si</td></tr><tr><td>Llave Seguridad</td><td>Si</td></tr><tr><td>Proteccion Sobrecarga</td><td>Si</td></tr><tr><td>Tanque</td><td>26L x 2 (52L total)</td></tr></table></div>
+                <div class="spec-section"><h4><i class="fas fa-fan"></i> Electroventilador</h4><table class="spec-table"><tr><td>Potencia</td><td>0.092 kW</td></tr><tr><td>Tension</td><td>220V / 50Hz</td></tr><tr><td>Velocidad</td><td>2616 RPM</td></tr><tr><td>Volumen Aire</td><td>13.2 m³/H</td></tr><tr><td>Tipo</td><td>Ventilador axial</td></tr><tr><td>Refrigeracion</td><td>Aire forzado</td></tr></table></div>
+            </div>
+        </div>
+        <div class="page-footer"><span><span class="brand">KOR Compresores</span> &mdash; Soluciones en Aire Comprimido Industrial</span><span>www.compresores.ar</span></div>
+    </div>
+
+    <!-- PAGINA 11: CONTRAPORTADA -->
+    <div class="page back-cover">
+        <div class="back-content">
+            <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png" alt="KOR">
+            <h1>KOR <span>COMPRESORES</span></h1>
+            <p class="back-tagline">Soluciones en Aire Comprimido Industrial</p>
+            <div class="back-product"><span class="model">LOGUS SE-5TN</span><span class="desc">Compresor de Tornillo Compacto &mdash; 4 kW &mdash; 220V Monofasico</span></div>
+            <div class="back-contact"><a href="#"><i class="fab fa-whatsapp"></i> +54 11 3956-3099</a><a href="#"><i class="fas fa-globe"></i> www.compresores.ar</a><a href="#"><i class="fas fa-envelope"></i> info@compresores.ar</a></div>
+            <div class="back-social"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook"></i></a></div>
+            <div class="back-footer"><p>&copy; 2026 KOR Compresores &mdash; Todos los derechos reservados</p><p>Las especificaciones tecnicas pueden variar sin previo aviso. Imagenes con fines ilustrativos.</p></div>
+        </div>
+    </div>
+
+</body>
+</html>
