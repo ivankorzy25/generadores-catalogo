@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemapindex.org/schemas/sitemap/0.9">
   <url><loc>https://generadores.ar/</loc><priority>1.0</priority></url>
-  <url><loc>https://generadores.ar/about</loc><priority>0.7</priority></url>
-  <url><loc>https://generadores.ar/contacto</loc><priority>0.7</priority></url>
-  <url><loc>https://generadores.ar/blog</loc><priority>0.7</priority></url>
   <url><loc>https://generadores.ar/pramac-ga8000</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/pramac-ga10000</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/pramac-ga13000</loc><priority>0.8</priority></url>
@@ -190,4 +187,11 @@
   <url><loc>https://generadores.ar/m-dulo-de-bater-a-5-12-kwh-alto-voltaje</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/bater-a-sk-51-2v-200ah-li-sun</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/bater-a-sk-51-2v-100ah-li-sun</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/branik-15000e</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/branik-12000e</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/branik-85gf9</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/branik-6gf4</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/branik-6800ie</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/branik-4800ie</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/branik-3800i</loc><priority>0.8</priority></url>
 </urlset>
