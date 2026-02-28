@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemapindex.org/schemas/sitemap/0.9">
   <url><loc>https://generadores.ar/</loc><priority>1.0</priority></url>
+  <url><loc>https://generadores.ar/about</loc><priority>0.7</priority></url>
+  <url><loc>https://generadores.ar/contacto</loc><priority>0.7</priority></url>
+  <url><loc>https://generadores.ar/blog</loc><priority>0.7</priority></url>
   <url><loc>https://generadores.ar/pramac-ga8000</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/pramac-ga10000</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/pramac-ga13000</loc><priority>0.8</priority></url>
@@ -87,49 +90,6 @@
   <url><loc>https://generadores.ar/logus-gi2500dc</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/logus-gi2000-silent</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/logus-gi1000-silent</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/lttat63</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/lttam63</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/logus-165-kva</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/logus-125-kva</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/logus-69-kva</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/logus-41-kva</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/logus-21-kva</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/kge12-trifasico</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/kge12-monofasico</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/kde19-staf-3</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/kde19-mono</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/kde12-trifasico</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/kde12-monofasico</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/kde-6500-trifasico</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/kde-6500-monofasico</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/generica-con-plc-160A TRIFASICA</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/generica-con-plc-95A TRIFASICA</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/generica-con-plc-65A TRIFASICA</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/generica-con-plc</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/generica-con-plc-32A MONOFASICA</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/cummins-yns-350-kva</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/cummins-yns-275-kva</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/cummins-yns-200-kva</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/cummins-yns-170-kva</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/cummins-yns-110-kva</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/cummins-yns-88-kva</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/cummins-yns-65-kva</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/cummins-yns-42-kva</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/v7-row</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/v5-neo-row</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/caja-de-control-de-alta-tensi-n</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/rack-de-9-niveles</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/alpha-i-ess-3k-25-6v-200ah</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/alpha-i-ess-1000w</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/inversor-h-brido-trif-sico-30-kw</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/inversor-h-brido-trif-sico-20-kw</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/inversor-h-brido-trif-sico-15-kw</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/inversor-solar-sunin-12km2-l1p3-eu</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/inversor-solar-sunin-8km2-l1p1-eu</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/inversor-solar-sunpolo-11kva</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/panel-solar-psl-630w</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/panel-solar-psl-550w</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/panel-solar-psl-340w</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/km376ag-daihatsu</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/km2v80</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/km186fe</loc><priority>0.8</priority></url>
@@ -162,6 +122,41 @@
   <url><loc>https://generadores.ar/zanjadora-dr-tr15</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/cortadora-troncos-dr-gl-34t</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/chipeadora-dr-g65h</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/v7-row</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/v5-neo-row</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/lttat63</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/lttam63</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/logus-69-kva</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/logus-41-kva</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/logus-21-kva</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/logus-165-kva</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/logus-125-kva</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/kge12-trifasico</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/kge12-monofasico</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/kde19-staf-3</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/kde19-mono</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/kde12-trifasico</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/kde12-monofasico</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/kde-6500-trifasico</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/kde-6500-monofasico</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/generica-con-plc-32A MONOFASICA</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/generica-con-plc-160A TRIFASICA</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/generica-con-plc-95A TRIFASICA</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/generica-con-plc-65A TRIFASICA</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/generica-con-plc</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/cummins-yns-88-kva</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/cummins-yns-65-kva</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/cummins-yns-42-kva</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/cummins-yns-350-kva</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/cummins-yns-275-kva</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/cummins-yns-200-kva</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/cummins-yns-170-kva</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/cummins-yns-110-kva</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/alpha-i-ess-1000w</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/alpha-i-ess-3k-25-6v-200ah</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/panel-solar-psl-630w</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/panel-solar-psl-550w</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/panel-solar-psl-340w</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/188-f</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/177-f</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/168-fd</loc><priority>0.8</priority></url>
@@ -171,6 +166,12 @@
   <url><loc>https://generadores.ar/lt500</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/df15l</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/df15klm</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/inversor-solar-sunpolo-11kva</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/inversor-solar-sunin-8km2-l1p1-eu</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/inversor-solar-sunin-12km2-l1p3-eu</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/inversor-h-brido-trif-sico-30-kw</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/inversor-h-brido-trif-sico-20-kw</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/inversor-h-brido-trif-sico-15-kw</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/rastra-de-disco</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/arado</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/3wf-3</loc><priority>0.8</priority></url>
@@ -187,4 +188,6 @@
   <url><loc>https://generadores.ar/m-dulo-de-bater-a-5-12-kwh-alto-voltaje</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/bater-a-sk-51-2v-200ah-li-sun</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/bater-a-sk-51-2v-100ah-li-sun</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/rack-de-9-niveles</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/caja-de-control-de-alta-tensi-n</loc><priority>0.8</priority></url>
 </urlset>
