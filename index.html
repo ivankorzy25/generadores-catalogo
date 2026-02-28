@@ -1829,607 +1829,192 @@ body { background: var(--kor-light-bg); margin: 0; padding: 0; font-family: -app
 
 
 
-/* ===== CALCULADORA DE POTENCIA v3 ===== */
-#kor-calc-section {
-  background: linear-gradient(180deg, #f8f9fa 0%, #fff 100%);
-  padding: 60px 0;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  box-sizing: border-box;
-}
-#kor-calc-section *, #kor-calc-section *::before, #kor-calc-section *::after {
-  box-sizing: border-box;
-}
-#kor-calc-section .kc-wrap {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-#kor-calc-section .kc-header {
-  text-align: center;
-  margin-bottom: 36px;
-}
-#kor-calc-section .kc-header h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 32px;
-  font-weight: 900;
-  color: #1a1a2e;
-  margin: 0 0 8px 0;
-  line-height: 1.2;
-}
-#kor-calc-section .kc-header h2 span {
-  color: var(--kor-accent, #e67e22);
-}
-#kor-calc-section .kc-header p {
-  color: #666;
-  font-size: 15px;
-  max-width: 620px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-#kor-calc-section .kc-badge {
-  display: inline-block;
-  background: rgba(230,126,34,0.1);
-  color: var(--kor-accent, #e67e22);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  padding: 6px 16px;
-  border-radius: 20px;
-  margin-bottom: 12px;
-  font-family: 'Montserrat', sans-serif;
-}
-#kor-calc-section .kc-body {
-  display: grid;
-  grid-template-columns: 1fr 360px;
-  gap: 24px;
-  align-items: start;
-}
-/* LEFT PANEL - Appliance selector */
-#kor-calc-section .kc-left {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-  border: 1px solid #eee;
-  overflow: hidden;
-}
-#kor-calc-section .kc-tabs {
-  display: flex;
-  border-bottom: 2px solid #f0f0f0;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-#kor-calc-section .kc-tabs::-webkit-scrollbar { display: none; }
-#kor-calc-section .kc-tab {
-  flex: 0 0 auto;
-  padding: 12px 14px;
-  font-size: 12px;
-  font-weight: 700;
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
-  cursor: pointer;
-  color: #888;
-  border: none;
-  background: none;
-  border-bottom: 3px solid transparent;
-  transition: all 0.2s;
-  white-space: nowrap;
-}
-#kor-calc-section .kc-tab:hover { color: #1a1a2e; }
-#kor-calc-section .kc-tab.active {
-  color: var(--kor-accent, #e67e22);
-  border-bottom-color: var(--kor-accent, #e67e22);
-  background: rgba(230,126,34,0.03);
-}
-#kor-calc-section .kc-grid {
-  padding: 14px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  max-height: 460px;
-  overflow-y: auto;
-}
-#kor-calc-section .kc-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #f0f0f0;
-  cursor: pointer;
-  transition: all 0.15s;
-  user-select: none;
-  background: white;
-}
-#kor-calc-section .kc-item:hover {
-  border-color: var(--kor-accent, #e67e22);
-  background: rgba(230,126,34,0.02);
-}
-#kor-calc-section .kc-item.sel {
-  border-color: var(--kor-accent, #e67e22);
-  background: rgba(230,126,34,0.06);
-}
-#kor-calc-section .kc-item-icon {
-  font-size: 20px;
-  width: 30px;
-  text-align: center;
-  flex-shrink: 0;
-  line-height: 1;
-}
-#kor-calc-section .kc-item-info { flex: 1; min-width: 0; }
-#kor-calc-section .kc-item-name {
-  font-size: 12px;
-  font-weight: 600;
-  color: #1a1a2e;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  line-height: 1.3;
-}
-#kor-calc-section .kc-item-watts {
-  font-size: 10px;
-  color: #999;
-  margin-top: 2px;
-}
-#kor-calc-section .kc-phase {
-  display: inline-block;
-  font-size: 9px;
-  font-weight: 700;
-  padding: 1px 5px;
-  border-radius: 3px;
-  margin-left: 4px;
-  vertical-align: middle;
-}
-#kor-calc-section .kc-phase.tri {
-  background: rgba(155,89,182,0.12);
-  color: #8e44ad;
-}
-#kor-calc-section .kc-phase.mono {
-  background: rgba(41,128,185,0.1);
-  color: #2980b9;
-}
-#kor-calc-section .kc-qty {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  flex-shrink: 0;
-}
-#kor-calc-section .kc-qty-btn {
-  width: 26px;
-  height: 26px;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  background: white;
-  font-size: 14px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  color: #555;
-  transition: all 0.15s;
-  line-height: 1;
-  padding: 0;
-}
-#kor-calc-section .kc-qty-btn:hover {
-  border-color: var(--kor-accent, #e67e22);
-  color: var(--kor-accent, #e67e22);
-}
-#kor-calc-section .kc-qty-val {
-  font-size: 14px;
-  font-weight: 700;
-  color: #1a1a2e;
-  min-width: 20px;
-  text-align: center;
-}
-/* RIGHT PANEL - Summary */
-#kor-calc-section .kc-right {
-  position: sticky;
-  top: 80px;
-}
-#kor-calc-section .kc-summary {
-  background: #1a1a2e;
-  border-radius: 14px;
-  padding: 22px 18px;
-  color: white;
-}
-#kor-calc-section .kc-stitle {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  color: rgba(255,255,255,0.45);
-  margin-bottom: 14px;
-  text-transform: uppercase;
-}
-#kor-calc-section .kc-total {
-  text-align: center;
-  margin-bottom: 14px;
-}
-#kor-calc-section .kc-total-num {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 48px;
-  font-weight: 900;
-  color: var(--kor-accent, #e67e22);
-  line-height: 1;
-}
-#kor-calc-section .kc-total-unit {
-  font-size: 16px;
-  color: rgba(255,255,255,0.5);
-  font-weight: 500;
-  margin-left: 4px;
-}
-#kor-calc-section .kc-total-label {
-  font-size: 12px;
-  color: rgba(255,255,255,0.4);
-  margin-top: 6px;
-}
+/* ===== CALCULADORA DE POTENCIA v4 ===== */
+#kor-calc-section{background:linear-gradient(180deg,#f8f9fa 0%,#fff 100%);padding:60px 0;border-top:1px solid #eee;border-bottom:1px solid #eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;box-sizing:border-box}
+#kor-calc-section *,#kor-calc-section *::before,#kor-calc-section *::after{box-sizing:border-box}
+#kor-calc-section .kc-wrap{max-width:1280px;margin:0 auto;padding:0 20px}
+#kor-calc-section .kc-header{text-align:center;margin-bottom:32px}
+#kor-calc-section .kc-header h2{font-family:'Montserrat',sans-serif;font-size:32px;font-weight:900;color:#1a1a2e;margin:0 0 8px 0;line-height:1.2}
+#kor-calc-section .kc-header h2 span{color:var(--kor-accent,#e67e22)}
+#kor-calc-section .kc-header p{color:#666;font-size:15px;max-width:620px;margin:0 auto;line-height:1.6}
+#kor-calc-section .kc-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(230,126,34,0.1);color:var(--kor-accent,#e67e22);font-size:11px;font-weight:800;letter-spacing:2px;padding:6px 16px;border-radius:20px;margin-bottom:12px;font-family:'Montserrat',sans-serif}
+#kor-calc-section .kc-badge svg{width:14px;height:14px}
+/* Steps */
+#kor-calc-section .kc-steps{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:28px;padding:0 20px}
+#kor-calc-section .kc-step{display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:8px;transition:all 0.3s}
+#kor-calc-section .kc-step-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;background:#e8e8e8;color:#999;transition:all 0.3s;flex-shrink:0}
+#kor-calc-section .kc-step-text{font-size:12px;font-weight:600;color:#999;transition:all 0.3s;white-space:nowrap}
+#kor-calc-section .kc-step.active .kc-step-num{background:var(--kor-accent,#e67e22);color:white}
+#kor-calc-section .kc-step.active .kc-step-text{color:#1a1a2e}
+#kor-calc-section .kc-step.done .kc-step-num{background:#27ae60;color:white}
+#kor-calc-section .kc-step.done .kc-step-text{color:#27ae60}
+#kor-calc-section .kc-step-div{width:40px;height:2px;background:#e0e0e0;flex-shrink:0;transition:background 0.3s}
+#kor-calc-section .kc-step-div.done{background:#27ae60}
+/* Quick presets */
+#kor-calc-section .kc-quick{margin-bottom:28px}
+#kor-calc-section .kc-quick-title{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;text-align:center}
+#kor-calc-section .kc-quick-grid{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;padding:2px 0;perspective:800px}
+#kor-calc-section .kc-qcard{flex:0 0 auto;width:190px;padding:0;border-radius:14px;border:none;background:linear-gradient(145deg,#ffffff,#f0f0f5);cursor:pointer;transition:all 0.35s cubic-bezier(0.4,0,0.2,1);position:relative;transform-style:preserve-3d;box-shadow:0 4px 15px rgba(0,0,0,0.08),0 1px 3px rgba(0,0,0,0.05);overflow:visible}
+#kor-calc-section .kc-qcard::before{content:'';position:absolute;inset:-1px;border-radius:15px;background:linear-gradient(135deg,rgba(230,126,34,0),rgba(230,126,34,0));transition:all 0.35s;z-index:0;pointer-events:none}
+#kor-calc-section .kc-qcard:hover{transform:translateY(-6px) rotateX(2deg);box-shadow:0 12px 30px rgba(230,126,34,0.18),0 4px 10px rgba(0,0,0,0.08)}
+#kor-calc-section .kc-qcard:hover::before{background:linear-gradient(135deg,rgba(230,126,34,0.3),rgba(211,84,0,0.3))}
+#kor-calc-section .kc-qcard-inner{position:relative;z-index:1;padding:16px 14px 14px}
+#kor-calc-section .kc-qcard-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,rgba(230,126,34,0.1),rgba(230,126,34,0.18));display:flex;align-items:center;justify-content:center;margin-bottom:10px;color:var(--kor-accent,#e67e22);transition:all 0.3s}
+#kor-calc-section .kc-qcard-icon svg{width:20px;height:20px}
+#kor-calc-section .kc-qcard:hover .kc-qcard-icon{background:linear-gradient(135deg,#e67e22,#d35400);color:white;transform:scale(1.08)}
+#kor-calc-section .kc-qcard-name{font-size:13px;font-weight:800;color:#1a1a2e;margin-bottom:4px;font-family:'Montserrat',sans-serif}
+#kor-calc-section .kc-qcard-desc{font-size:10px;color:#888;line-height:1.4}
+#kor-calc-section .kc-qcard-kw{display:inline-block;margin-top:8px;font-size:10px;font-weight:700;color:var(--kor-accent,#e67e22);background:rgba(230,126,34,0.08);padding:2px 8px;border-radius:4px}
+#kor-calc-section .kc-qcard-tip{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(6px);background:#1a1a2e;color:white;padding:10px 14px;border-radius:10px;font-size:11px;line-height:1.5;width:220px;pointer-events:none;opacity:0;transition:all 0.25s cubic-bezier(0.4,0,0.2,1);z-index:100;box-shadow:0 8px 24px rgba(0,0,0,0.2);text-align:left}
+#kor-calc-section .kc-qcard-tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#1a1a2e}
+#kor-calc-section .kc-qcard:hover .kc-qcard-tip{opacity:1;transform:translateX(-50%) translateY(0)}
+#kor-calc-section .kc-reset-btn{display:none;align-items:center;gap:5px;padding:7px 14px;border-radius:7px;border:1.5px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.5);font-size:10px;font-weight:700;font-family:'Montserrat',sans-serif;cursor:pointer;transition:all 0.2s;margin-bottom:10px}
+#kor-calc-section .kc-reset-btn svg{width:14px;height:14px}
+#kor-calc-section .kc-reset-btn:hover{border-color:rgba(231,76,60,0.5);color:#e74c3c;background:rgba(231,76,60,0.08)}
+#kor-calc-section .kc-reset-btn.vis{display:inline-flex}
+/* Body layout */
+#kor-calc-section .kc-body{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:start}
+/* LEFT PANEL */
+#kor-calc-section .kc-left{background:white;border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,0.06);border:1px solid #eee;overflow:hidden}
+/* Search */
+#kor-calc-section .kc-search-bar{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #f0f0f0;background:#fafafa}
+#kor-calc-section .kc-search-bar svg{width:16px;height:16px;color:#aaa;flex-shrink:0}
+#kor-calc-section .kc-search-bar input{border:none;background:none;outline:none;font-size:13px;color:#333;width:100%;font-family:inherit}
+#kor-calc-section .kc-search-bar input::placeholder{color:#bbb}
+/* Tabs */
+#kor-calc-section .kc-tabs{display:flex;border-bottom:2px solid #f0f0f0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+#kor-calc-section .kc-tabs::-webkit-scrollbar{display:none}
+#kor-calc-section .kc-tab{flex:0 0 auto;padding:10px 14px;font-size:11px;font-weight:700;font-family:'Montserrat',sans-serif;text-align:center;cursor:pointer;color:#888;border:none;background:none;border-bottom:3px solid transparent;transition:all 0.2s;white-space:nowrap;display:flex;align-items:center;gap:6px}
+#kor-calc-section .kc-tab:hover{color:#1a1a2e}
+#kor-calc-section .kc-tab.active{color:var(--kor-accent,#e67e22);border-bottom-color:var(--kor-accent,#e67e22);background:rgba(230,126,34,0.03)}
+#kor-calc-section .kc-tab svg{width:16px;height:16px}
+#kor-calc-section .kc-tab-badge{font-size:9px;font-weight:800;background:var(--kor-accent,#e67e22);color:white;border-radius:8px;padding:1px 5px;min-width:16px;text-align:center;line-height:14px}
+/* Grid */
+#kor-calc-section .kc-grid{padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:8px;max-height:480px;overflow-y:auto}
+@keyframes kcFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+#kor-calc-section .kc-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;border:1.5px solid #f0f0f0;cursor:pointer;transition:all 0.2s cubic-bezier(0.4,0,0.2,1);user-select:none;background:white;animation:kcFadeIn 0.25s ease forwards;opacity:0}
+#kor-calc-section .kc-item:hover{border-color:rgba(230,126,34,0.3);background:rgba(230,126,34,0.02);transform:translateY(-1px);box-shadow:0 2px 8px rgba(230,126,34,0.08)}
+#kor-calc-section .kc-item.sel{border-color:var(--kor-accent,#e67e22);border-left:3px solid var(--kor-accent,#e67e22);background:linear-gradient(135deg,rgba(230,126,34,0.04),rgba(230,126,34,0.08));box-shadow:0 2px 12px rgba(230,126,34,0.1)}
+#kor-calc-section .kc-item-icon{width:36px;height:36px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:#f5f6f8;border-radius:8px;color:#666;transition:all 0.2s}
+#kor-calc-section .kc-item-icon svg{width:20px;height:20px}
+#kor-calc-section .kc-item.sel .kc-item-icon{background:rgba(230,126,34,0.12);color:var(--kor-accent,#e67e22)}
+#kor-calc-section .kc-item-info{flex:1;min-width:0}
+#kor-calc-section .kc-item-name{font-size:12px;font-weight:600;color:#1a1a2e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.3}
+#kor-calc-section .kc-item-watts{font-size:10px;color:#999;margin-top:2px}
+#kor-calc-section .kc-phase{display:inline-block;font-size:9px;font-weight:700;padding:1px 5px;border-radius:3px;margin-left:4px;vertical-align:middle}
+#kor-calc-section .kc-phase.tri{background:rgba(155,89,182,0.12);color:#8e44ad}
+#kor-calc-section .kc-phase.mono{background:rgba(41,128,185,0.1);color:#2980b9}
+#kor-calc-section .kc-qty{display:flex;align-items:center;gap:4px;flex-shrink:0}
+#kor-calc-section .kc-qty-btn{width:28px;height:28px;border-radius:7px;border:1.5px solid #ddd;background:white;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:700;color:#555;transition:all 0.15s;line-height:1;padding:0}
+#kor-calc-section .kc-qty-btn:hover{border-color:var(--kor-accent,#e67e22);color:var(--kor-accent,#e67e22);background:rgba(230,126,34,0.05)}
+#kor-calc-section .kc-qty-val{font-size:14px;font-weight:700;color:#1a1a2e;min-width:22px;text-align:center}
+/* RIGHT PANEL */
+#kor-calc-section .kc-right{position:sticky;top:80px}
+#kor-calc-section .kc-summary{background:linear-gradient(145deg,rgba(26,26,46,0.98),rgba(22,33,62,0.98));backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:24px 20px;color:white;box-shadow:0 8px 32px rgba(0,0,0,0.2)}
+#kor-calc-section .kc-stitle{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;color:rgba(255,255,255,0.45);margin-bottom:14px;text-transform:uppercase}
+#kor-calc-section .kc-total{text-align:center;margin-bottom:14px}
+@keyframes kcPulse{0%{transform:scale(1)}50%{transform:scale(1.06)}100%{transform:scale(1)}}
+#kor-calc-section .kc-total-num{font-family:'Montserrat',sans-serif;font-size:52px;font-weight:900;background:linear-gradient(135deg,#e67e22,#f39c12);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;display:inline-block}
+#kor-calc-section .kc-total-num.pulse{animation:kcPulse 0.3s ease}
+#kor-calc-section .kc-total-unit{font-size:16px;color:rgba(255,255,255,0.5);font-weight:500;margin-left:4px}
+#kor-calc-section .kc-total-label{font-size:12px;color:rgba(255,255,255,0.4);margin-top:6px}
 /* Meter */
-#kor-calc-section .kc-meter { margin-bottom: 14px; }
-#kor-calc-section .kc-meter-bar {
-  height: 6px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 5px;
-}
-#kor-calc-section .kc-meter-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #27ae60, #e67e22, #e74c3c);
-  border-radius: 10px;
-  transition: width 0.4s ease;
-  width: 0%;
-}
-#kor-calc-section .kc-meter-labels {
-  display: flex;
-  justify-content: space-between;
-  font-size: 9px;
-  color: rgba(255,255,255,0.3);
-}
+#kor-calc-section .kc-meter{margin-bottom:14px}
+#kor-calc-section .kc-meter-bar{height:8px;background:rgba(255,255,255,0.08);border-radius:10px;overflow:visible;margin-bottom:5px;position:relative}
+#kor-calc-section .kc-meter-fill{height:100%;background:linear-gradient(90deg,#27ae60,#e67e22,#e74c3c);border-radius:10px;transition:width 0.5s cubic-bezier(0.4,0,0.2,1);width:0%;position:relative}
+#kor-calc-section .kc-meter-fill::after{content:'';position:absolute;right:-5px;top:-3px;width:14px;height:14px;border-radius:50%;background:white;box-shadow:0 0 8px rgba(230,126,34,0.6);transition:opacity 0.3s}
+#kor-calc-section .kc-meter-labels{display:flex;justify-content:space-between;font-size:9px;color:rgba(255,255,255,0.3)}
 /* Stats */
-#kor-calc-section .kc-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-bottom: 14px;
-}
-#kor-calc-section .kc-stat {
-  background: rgba(255,255,255,0.05);
-  border-radius: 8px;
-  padding: 10px;
-  text-align: center;
-}
-#kor-calc-section .kc-stat-num {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 15px;
-  font-weight: 800;
-  color: white;
-}
-#kor-calc-section .kc-stat-label {
-  font-size: 9px;
-  color: rgba(255,255,255,0.35);
-  margin-top: 2px;
-}
+#kor-calc-section .kc-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+#kor-calc-section .kc-stat{background:rgba(255,255,255,0.05);border-radius:8px;padding:10px;text-align:center;border:1px solid rgba(255,255,255,0.04)}
+#kor-calc-section .kc-stat-num{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:white}
+#kor-calc-section .kc-stat-label{font-size:9px;color:rgba(255,255,255,0.35);margin-top:2px}
 /* Simultaneity */
-#kor-calc-section .kc-simult {
-  margin-bottom: 14px;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  padding-top: 14px;
-}
-#kor-calc-section .kc-simult-hdr {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-}
-#kor-calc-section .kc-simult-label {
-  font-size: 11px;
-  font-weight: 600;
-  color: rgba(255,255,255,0.6);
-}
-#kor-calc-section .kc-simult-val {
-  font-size: 14px;
-  font-weight: 800;
-  color: var(--kor-accent, #e67e22);
-  font-family: 'Montserrat', sans-serif;
-}
-#kor-calc-section .kc-simult input[type="range"] {
-  width: 100%;
-  height: 4px;
-  -webkit-appearance: none;
-  appearance: none;
-  background: rgba(255,255,255,0.12);
-  border-radius: 4px;
-  outline: none;
-  margin: 4px 0 8px 0;
-}
-#kor-calc-section .kc-simult input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: var(--kor-accent, #e67e22);
-  cursor: pointer;
-  border: 3px solid #1a1a2e;
-}
-#kor-calc-section .kc-simult input[type="range"]::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: var(--kor-accent, #e67e22);
-  cursor: pointer;
-  border: 3px solid #1a1a2e;
-}
-#kor-calc-section .kc-presets {
-  display: flex;
-  gap: 4px;
-  flex-wrap: wrap;
-}
-#kor-calc-section .kc-preset {
-  font-size: 10px;
-  padding: 4px 9px;
-  border-radius: 5px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: none;
-  color: rgba(255,255,255,0.45);
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.15s;
-}
-#kor-calc-section .kc-preset:hover {
-  border-color: rgba(230,126,34,0.5);
-  color: white;
-}
-#kor-calc-section .kc-preset.act {
-  border-color: var(--kor-accent, #e67e22);
-  color: var(--kor-accent, #e67e22);
-  background: rgba(230,126,34,0.15);
-}
-#kor-calc-section .kc-fs-tip {
-  font-size: 10px;
-  color: rgba(255,255,255,0.3);
-  margin-top: 6px;
-  font-style: italic;
-}
-/* Selected items list */
-#kor-calc-section .kc-sel-list {
-  max-height: 110px;
-  overflow-y: auto;
-  margin-bottom: 14px;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  padding-top: 10px;
-}
-#kor-calc-section .kc-sel-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 11px;
-  padding: 3px 0;
-  color: rgba(255,255,255,0.5);
-}
-#kor-calc-section .kc-sel-row .w {
-  color: var(--kor-accent, #e67e22);
-  font-weight: 600;
-}
+#kor-calc-section .kc-simult{margin-bottom:14px;border-top:1px solid rgba(255,255,255,0.08);padding-top:14px}
+#kor-calc-section .kc-simult-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+#kor-calc-section .kc-simult-label{font-size:11px;font-weight:600;color:rgba(255,255,255,0.6)}
+#kor-calc-section .kc-simult-val{font-size:14px;font-weight:800;color:var(--kor-accent,#e67e22);font-family:'Montserrat',sans-serif}
+#kor-calc-section .kc-simult input[type="range"]{width:100%;height:4px;-webkit-appearance:none;appearance:none;background:rgba(255,255,255,0.12);border-radius:4px;outline:none;margin:4px 0 8px 0}
+#kor-calc-section .kc-simult input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--kor-accent,#e67e22);cursor:pointer;border:3px solid #1a1a2e}
+#kor-calc-section .kc-simult input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--kor-accent,#e67e22);cursor:pointer;border:3px solid #1a1a2e}
+#kor-calc-section .kc-presets{display:flex;gap:4px;flex-wrap:wrap}
+#kor-calc-section .kc-preset{font-size:10px;padding:4px 9px;border-radius:5px;border:1px solid rgba(255,255,255,0.12);background:none;color:rgba(255,255,255,0.45);cursor:pointer;font-weight:600;transition:all 0.15s}
+#kor-calc-section .kc-preset:hover{border-color:rgba(230,126,34,0.5);color:white}
+#kor-calc-section .kc-preset.act{border-color:var(--kor-accent,#e67e22);color:var(--kor-accent,#e67e22);background:rgba(230,126,34,0.15)}
+#kor-calc-section .kc-fs-tip{font-size:10px;color:rgba(255,255,255,0.3);margin-top:6px;font-style:italic}
+/* Selected items */
+#kor-calc-section .kc-sel-list{max-height:110px;overflow-y:auto;margin-bottom:14px;border-top:1px solid rgba(255,255,255,0.06);padding-top:10px}
+#kor-calc-section .kc-sel-row{display:flex;justify-content:space-between;align-items:center;font-size:11px;padding:3px 0;color:rgba(255,255,255,0.5)}
+#kor-calc-section .kc-sel-row .w{color:var(--kor-accent,#e67e22);font-weight:600}
 /* Fuel filters */
-#kor-calc-section .kc-filters {
-  display: flex;
-  gap: 6px;
-  margin-bottom: 14px;
-  flex-wrap: wrap;
-}
-#kor-calc-section .kc-fbtn {
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 10px;
-  font-weight: 700;
-  font-family: 'Montserrat', sans-serif;
-  cursor: pointer;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.04);
-  color: rgba(255,255,255,0.5);
-  transition: all 0.2s;
-}
-#kor-calc-section .kc-fbtn:hover {
-  border-color: rgba(230,126,34,0.4);
-  color: white;
-}
-#kor-calc-section .kc-fbtn.act {
-  background: rgba(230,126,34,0.2);
-  border-color: var(--kor-accent, #e67e22);
-  color: var(--kor-accent, #e67e22);
-}
-#kor-calc-section .kc-go-btn {
-  width: 100%;
-  padding: 14px;
-  border-radius: 10px;
-  background: var(--kor-accent, #e67e22);
-  color: white;
-  border: none;
-  font-size: 14px;
-  font-weight: 700;
-  font-family: 'Montserrat', sans-serif;
-  cursor: pointer;
-  transition: all 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-#kor-calc-section .kc-go-btn:hover {
-  background: var(--kor-accent-hover, #d35400);
-  transform: translateY(-1px);
-}
+#kor-calc-section .kc-filters{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+#kor-calc-section .kc-fbtn{padding:6px 12px;border-radius:6px;font-size:10px;font-weight:700;font-family:'Montserrat',sans-serif;cursor:pointer;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.5);transition:all 0.2s;display:flex;align-items:center;gap:4px}
+#kor-calc-section .kc-fbtn svg{width:12px;height:12px}
+#kor-calc-section .kc-fbtn:hover{border-color:rgba(230,126,34,0.4);color:white}
+#kor-calc-section .kc-fbtn.act{background:rgba(230,126,34,0.2);border-color:var(--kor-accent,#e67e22);color:var(--kor-accent,#e67e22)}
+#kor-calc-section .kc-go-btn{width:100%;padding:14px;border-radius:10px;background:linear-gradient(135deg,#e67e22,#d35400);color:white;border:none;font-size:14px;font-weight:700;font-family:'Montserrat',sans-serif;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 16px rgba(230,126,34,0.3)}
+#kor-calc-section .kc-go-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(230,126,34,0.4)}
+#kor-calc-section .kc-go-btn svg{width:18px;height:18px}
 /* RESULTS */
-#kor-calc-section .kc-results {
-  background: white;
-  border-radius: 14px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  border: 1px solid #eee;
-  margin-top: 28px;
-  overflow: hidden;
-  display: none;
-}
-#kor-calc-section .kc-results.show { display: block; }
-#kor-calc-section .kc-res-header {
-  background: #1a1a2e;
-  color: white;
-  padding: 16px 22px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-#kor-calc-section .kc-res-header h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  font-weight: 800;
-  margin: 0;
-  flex: 1;
-}
-#kor-calc-section .kc-res-header .ai-b {
-  background: linear-gradient(135deg, #e67e22, #e74c3c);
-  font-size: 10px;
-  font-weight: 800;
-  padding: 3px 10px;
-  border-radius: 12px;
-  letter-spacing: 1px;
-}
-#kor-calc-section .kc-res-note {
-  padding: 14px 22px;
-  background: rgba(230,126,34,0.04);
-  border-bottom: 1px solid #f0f0f0;
-  font-size: 12px;
-  color: #555;
-  line-height: 1.6;
-}
-#kor-calc-section .kc-res-note strong { color: var(--kor-accent, #e67e22); }
-#kor-calc-section .kc-recs {
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-#kor-calc-section .kc-rec {
-  display: grid;
-  grid-template-columns: 40px 1fr auto;
-  gap: 14px;
-  align-items: center;
-  padding: 14px;
-  border-radius: 12px;
-  border: 1px solid #f0f0f0;
-  transition: all 0.2s;
-}
-#kor-calc-section .kc-rec:hover {
-  border-color: var(--kor-accent, #e67e22);
-  box-shadow: 0 4px 16px rgba(230,126,34,0.1);
-}
-#kor-calc-section .kc-rec.best {
-  border-color: var(--kor-accent, #e67e22);
-  background: rgba(230,126,34,0.03);
-  position: relative;
-}
-#kor-calc-section .kc-rec.best::before {
-  content: 'MEJOR OPCION';
-  position: absolute;
-  top: -9px;
-  left: 16px;
-  background: var(--kor-accent, #e67e22);
-  color: white;
-  font-size: 9px;
-  font-weight: 800;
-  padding: 2px 10px;
-  border-radius: 4px;
-  letter-spacing: 1px;
-  font-family: 'Montserrat', sans-serif;
-}
-#kor-calc-section .kc-rec-rank {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  background: #f5f5f7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
-  font-size: 14px;
-  color: #1a1a2e;
-}
-#kor-calc-section .kc-rec.best .kc-rec-rank {
-  background: var(--kor-accent, #e67e22);
-  color: white;
-}
-#kor-calc-section .kc-rec-info h4 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  font-weight: 800;
-  color: #1a1a2e;
-  margin: 0 0 4px 0;
-}
-#kor-calc-section .kc-rec-tags {
-  display: flex;
-  gap: 4px;
-  flex-wrap: wrap;
-}
-#kor-calc-section .kc-tag {
-  font-size: 9px;
-  font-weight: 600;
-  padding: 2px 7px;
-  border-radius: 4px;
-  background: #f0f0f0;
-  color: #666;
-}
-#kor-calc-section .kc-tag.fuel { background: rgba(39,174,96,0.1); color: #27ae60; }
-#kor-calc-section .kc-tag.kva { background: rgba(230,126,34,0.1); color: #e67e22; }
-#kor-calc-section .kc-tag.tri { background: rgba(155,89,182,0.1); color: #8e44ad; }
-#kor-calc-section .kc-rec-right { text-align: right; flex-shrink: 0; }
-#kor-calc-section .kc-rec-price {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 15px;
-  font-weight: 800;
-  color: #1a1a2e;
-}
-#kor-calc-section .kc-rec-link {
-  display: inline-block;
-  font-size: 11px;
-  color: var(--kor-accent, #e67e22);
-  font-weight: 700;
-  text-decoration: none;
-  margin-top: 3px;
-}
-#kor-calc-section .kc-rec-link:hover { text-decoration: underline; }
-/* Empty state */
-#kor-calc-section .kc-empty {
-  text-align: center;
-  padding: 40px 20px;
-  color: #bbb;
-}
-#kor-calc-section .kc-empty-icon { font-size: 40px; margin-bottom: 8px; }
-#kor-calc-section .kc-empty-text { font-size: 13px; }
+#kor-calc-section .kc-results{background:white;border-radius:14px;box-shadow:0 4px 24px rgba(0,0,0,0.08);border:1px solid #eee;margin-top:28px;overflow:hidden;display:none}
+#kor-calc-section .kc-results.show{display:block;animation:kcFadeIn 0.4s ease}
+#kor-calc-section .kc-res-header{background:linear-gradient(135deg,#1a1a2e,#16213e);color:white;padding:16px 22px;display:flex;align-items:center;gap:12px}
+#kor-calc-section .kc-res-header h3{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;margin:0;flex:1;display:flex;align-items:center;gap:8px}
+#kor-calc-section .kc-res-header h3 svg{width:18px;height:18px;color:var(--kor-accent,#e67e22)}
+#kor-calc-section .kc-res-header .ai-b{background:linear-gradient(135deg,#e67e22,#e74c3c);font-size:10px;font-weight:800;padding:3px 10px;border-radius:12px;letter-spacing:1px;display:flex;align-items:center;gap:4px}
+#kor-calc-section .kc-res-header .ai-b svg{width:12px;height:12px}
+#kor-calc-section .kc-res-note{padding:14px 22px;background:rgba(230,126,34,0.04);border-bottom:1px solid #f0f0f0;font-size:12px;color:#555;line-height:1.6}
+#kor-calc-section .kc-res-note strong{color:var(--kor-accent,#e67e22)}
+#kor-calc-section .kc-recs{padding:16px;display:flex;flex-direction:column;gap:12px}
+#kor-calc-section .kc-rec{display:grid;grid-template-columns:40px 1fr auto;gap:14px;align-items:center;padding:14px;border-radius:12px;border:1px solid #f0f0f0;transition:all 0.2s}
+#kor-calc-section .kc-rec:hover{border-color:var(--kor-accent,#e67e22);box-shadow:0 4px 16px rgba(230,126,34,0.1)}
+#kor-calc-section .kc-rec.best{border:2px solid var(--kor-accent,#e67e22);background:linear-gradient(135deg,rgba(230,126,34,0.03),rgba(230,126,34,0.06));position:relative;transform:scale(1.01)}
+#kor-calc-section .kc-rec.best::before{content:'MEJOR OPCION';position:absolute;top:-10px;left:16px;background:linear-gradient(135deg,#e67e22,#f39c12);color:white;font-size:9px;font-weight:800;padding:3px 12px;border-radius:4px;letter-spacing:1.5px;font-family:'Montserrat',sans-serif;box-shadow:0 2px 8px rgba(230,126,34,0.3)}
+#kor-calc-section .kc-rec-rank{width:36px;height:36px;border-radius:8px;background:#f5f5f7;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;color:#1a1a2e}
+#kor-calc-section .kc-rec.best .kc-rec-rank{background:var(--kor-accent,#e67e22);color:white}
+#kor-calc-section .kc-rec-info h4{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:#1a1a2e;margin:0 0 4px 0}
+#kor-calc-section .kc-rec-tags{display:flex;gap:4px;flex-wrap:wrap}
+#kor-calc-section .kc-tag{font-size:9px;font-weight:600;padding:2px 7px;border-radius:4px;background:#f0f0f0;color:#666}
+#kor-calc-section .kc-tag.fuel{background:rgba(39,174,96,0.1);color:#27ae60}
+#kor-calc-section .kc-tag.kva{background:rgba(230,126,34,0.1);color:#e67e22}
+#kor-calc-section .kc-tag.tri{background:rgba(155,89,182,0.1);color:#8e44ad}
+#kor-calc-section .kc-rec-right{text-align:right;flex-shrink:0}
+#kor-calc-section .kc-rec-price{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:#1a1a2e}
+#kor-calc-section .kc-rec-link{display:inline-block;font-size:11px;color:var(--kor-accent,#e67e22);font-weight:700;text-decoration:none;margin-top:3px}
+#kor-calc-section .kc-rec-link:hover{text-decoration:underline}
+/* Empty */
+#kor-calc-section .kc-empty{text-align:center;padding:40px 20px;color:#bbb}
+#kor-calc-section .kc-empty svg{width:40px;height:40px;margin-bottom:8px;opacity:0.4}
+#kor-calc-section .kc-empty-text{font-size:13px}
 /* Responsive */
-@media (max-width: 992px) {
-  #kor-calc-section .kc-body { grid-template-columns: 1fr; }
-  #kor-calc-section .kc-right { position: static; }
+@media(max-width:992px){
+  #kor-calc-section .kc-body{grid-template-columns:1fr}
+  #kor-calc-section .kc-right{position:static}
 }
-@media (max-width: 768px) {
-  #kor-calc-section { padding: 40px 0; }
-  #kor-calc-section .kc-header h2 { font-size: 24px; }
-  #kor-calc-section .kc-grid { grid-template-columns: 1fr; max-height: 320px; }
-  #kor-calc-section .kc-total-num { font-size: 36px; }
-  #kor-calc-section .kc-rec { grid-template-columns: 36px 1fr; }
-  #kor-calc-section .kc-rec-right { grid-column: 2; }
+@media(max-width:768px){
+  #kor-calc-section{padding:40px 0}
+  #kor-calc-section .kc-header h2{font-size:24px}
+  #kor-calc-section .kc-grid{grid-template-columns:1fr;max-height:340px}
+  #kor-calc-section .kc-total-num{font-size:38px}
+  #kor-calc-section .kc-rec{grid-template-columns:36px 1fr}
+  #kor-calc-section .kc-rec-right{grid-column:2}
+  #kor-calc-section .kc-step-text{font-size:10px}
+  #kor-calc-section .kc-quick-grid{gap:10px}
+  #kor-calc-section .kc-qcard{width:160px}
+  #kor-calc-section .kc-qcard-tip{display:none}
 }
-@media (max-width: 480px) {
-  #kor-calc-section .kc-header h2 { font-size: 20px; }
-  #kor-calc-section .kc-grid { grid-template-columns: 1fr; padding: 10px; max-height: 280px; }
-  #kor-calc-section .kc-item { padding: 8px; }
-  #kor-calc-section .kc-item-name { font-size: 11px; }
-  #kor-calc-section .kc-summary { padding: 16px 12px; }
-  #kor-calc-section .kc-total-num { font-size: 32px; }
-  #kor-calc-section .kc-tabs { gap: 0; }
-  #kor-calc-section .kc-tab { padding: 8px 6px; font-size: 9px; }
+@media(max-width:480px){
+  #kor-calc-section .kc-header h2{font-size:20px}
+  #kor-calc-section .kc-grid{grid-template-columns:1fr;padding:10px;max-height:280px}
+  #kor-calc-section .kc-item{padding:8px 10px}
+  #kor-calc-section .kc-item-name{font-size:11px}
+  #kor-calc-section .kc-summary{padding:16px 12px}
+  #kor-calc-section .kc-total-num{font-size:32px}
+  #kor-calc-section .kc-tabs{gap:0}
+  #kor-calc-section .kc-tab{padding:8px 10px;font-size:10px}
+  #kor-calc-section .kc-tab-label{display:none}
+  #kor-calc-section .kc-step-text{display:none}
+  #kor-calc-section .kc-step-div{width:20px}
 }
 
 /* ===== PROBLEMA 5: Footer 1 columna en mobile ===== */
@@ -2656,17 +2241,27 @@ body { background: var(--kor-light-bg); margin: 0; padding: 0; font-family: -app
 
 
 
-<!-- ===== CALCULADORA DE POTENCIA ===== -->
+<!-- ===== CALCULADORA DE POTENCIA v4 ===== -->
 <div id="kor-calc-section">
   <div class="kc-wrap">
     <div class="kc-header">
-      <div class="kc-badge">&#x1F9E0; HERRAMIENTA INTELIGENTE</div>
+      <div class="kc-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> HERRAMIENTA INTELIGENTE</div>
       <h2>Calculadora de <span>Potencia</span></h2>
       <p>Seleccion&aacute; los equipos que necesit&aacute;s alimentar y te recomendamos el generador ideal. Incluye factor de simultaneidad y picos de arranque.</p>
     </div>
 
+    <div class="kc-steps" id="kc-steps"></div>
+    <div class="kc-quick" id="kc-quick">
+      <div class="kc-quick-title">Configuraciones r&aacute;pidas</div>
+      <div class="kc-quick-grid" id="kc-quick-grid"></div>
+    </div>
+
     <div class="kc-body">
       <div class="kc-left">
+        <div class="kc-search-bar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="kc-search" placeholder="Buscar equipo... (ej: bomba, split, motor)">
+        </div>
         <div class="kc-tabs" id="kc-tabs"></div>
         <div class="kc-grid" id="kc-grid"></div>
       </div>
@@ -2683,8 +2278,8 @@ body { background: var(--kor-light-bg); margin: 0; padding: 0; font-family: -app
             <div class="kc-meter-labels"><span>0</span><span>Residencial</span><span>Comercial</span><span>Industrial</span></div>
           </div>
           <div class="kc-stats">
-            <div class="kc-stat"><div class="kc-stat-num" id="kc-w">0 kW</div><div class="kc-stat-label">Watts simult&aacute;neos</div></div>
-            <div class="kc-stat"><div class="kc-stat-num" id="kc-ws">0 kW</div><div class="kc-stat-label">Pico arranque</div></div>
+            <div class="kc-stat"><div class="kc-stat-num" id="kc-w">0.0 kW</div><div class="kc-stat-label">Watts simult&aacute;neos</div></div>
+            <div class="kc-stat"><div class="kc-stat-num" id="kc-ws">0.0 kW</div><div class="kc-stat-label">Pico arranque</div></div>
           </div>
           <div class="kc-simult">
             <div class="kc-simult-hdr">
@@ -2696,36 +2291,70 @@ body { background: var(--kor-light-bg); margin: 0; padding: 0; font-family: -app
             <div class="kc-fs-tip" id="kc-fs-tip">Casa media &mdash; Factor: 0.50</div>
           </div>
           <div class="kc-sel-list" id="kc-sel-list"></div>
+          <button class="kc-reset-btn" id="kc-reset-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 109-9"/><polyline points="3 3 3 7 7 7"/></svg> Limpiar selecci&oacute;n</button>
           <div class="kc-filters" id="kc-filters"></div>
-          <button class="kc-go-btn" id="kc-go-btn">&#9889; Ver generadores recomendados</button>
+          <button class="kc-go-btn" id="kc-go-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10"/></svg> Ver generadores recomendados</button>
         </div>
       </div>
     </div>
 
     <div class="kc-results" id="kc-results">
       <div class="kc-res-header">
-        <h3>&#9889; Generadores Recomendados</h3>
-        <span class="ai-b">&#x1F916; IA</span>
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10"/></svg> Generadores Recomendados</h3>
+        <span class="ai-b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="12" rx="2"/><circle cx="9" cy="15" r="1.5" fill="currentColor"/><circle cx="15" cy="15" r="1.5" fill="currentColor"/><path d="M8 4h2l1 4M14 4h2l1 4"/></svg> IA</span>
       </div>
       <div class="kc-res-note" id="kc-res-note"></div>
       <div class="kc-recs" id="kc-recs"></div>
     </div>
   </div>
 </div>
-<!-- ===== FIN CALCULADORA ===== -->
+<!-- ===== FIN CALCULADORA v4 ===== -->
 
 <script>
 (function() {
   "use strict";
 
+  // ===== SVG ICONS =====
+  var IC = {
+    fridge:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="5" y1="10" x2="19" y2="10"/><line x1="10" y1="6" x2="10" y2="8"/><line x1="10" y1="14" x2="10" y2="16"/></svg>',
+    freezer:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><line x1="4" y1="12" x2="20" y2="12"/><path d="M12 6v4M10 8h4"/><circle cx="12" cy="17" r="1"/></svg>',
+    ac:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="10" rx="2"/><path d="M6 18c0-1 1-2 3-2s3 2 6 2 3-1 3-2"/><line x1="6" y1="11" x2="18" y2="11"/></svg>',
+    flame:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c0 4-6 6-6 11a6 6 0 0012 0c0-5-6-7-6-11z"/></svg>',
+    droplet:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L5.5 13a6.5 6.5 0 1013 0L12 2z"/></svg>',
+    lightbulb:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/></svg>',
+    tv:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><line x1="8" y1="22" x2="16" y2="22"/><line x1="12" y1="18" x2="12" y2="22"/></svg>',
+    pc:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="12" rx="2"/><line x1="8" y1="19" x2="16" y2="19"/><line x1="12" y1="15" x2="12" y2="19"/></svg>',
+    server:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="6" rx="1"/><rect x="4" y="10" width="16" height="6" rx="1"/><circle cx="8" cy="5" r="1"/><circle cx="8" cy="13" r="1"/></svg>',
+    wifi:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.5A12.5 12.5 0 0112 4a12.5 12.5 0 0110 4.5"/><path d="M6 12.5A8 8 0 0112 8a8 8 0 016 4.5"/><path d="M10 16.5A4 4 0 0112 12a4 4 0 012 4.5"/><circle cx="12" cy="20" r="1" fill="currentColor"/></svg>',
+    camera:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><circle cx="17" cy="8" r="1" fill="currentColor"/></svg>',
+    gear:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>',
+    zap:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10"/></svg>',
+    hardhat:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 18h20"/><path d="M4 18v-4a8 8 0 0116 0v4"/><path d="M12 6v4"/></svg>',
+    washing:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="2" width="18" height="20" rx="2"/><circle cx="12" cy="14" r="4"/><circle cx="8" cy="6" r="1"/><circle cx="11" cy="6" r="1"/></svg>',
+    elevator:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="2" width="18" height="20" rx="2"/><line x1="12" y1="6" x2="12" y2="18"/><polyline points="8 10 12 6 16 10"/><polyline points="8 14 12 18 16 14"/></svg>',
+    gate:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="1"/><line x1="12" y1="4" x2="12" y2="20"/><line x1="3" y1="12" x2="21" y2="12"/></svg>',
+    bell:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M14 21a2 2 0 01-4 0"/></svg>',
+    coffee:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a3 3 0 010 6h-1"/><rect x="3" y="8" width="15" height="10" rx="2"/><line x1="6" y1="2" x2="6" y2="5"/><line x1="10" y1="2" x2="10" y2="5"/><line x1="14" y1="2" x2="14" y2="5"/></svg>',
+    plug:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22v-5"/><path d="M9 17h6"/><path d="M8 2v5"/><path d="M16 2v5"/><rect x="6" y="7" width="12" height="5" rx="1"/></svg>',
+    car:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14V9l-3-5H8L5 9v8z"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="17.5" r="2.5"/><line x1="5" y1="9" x2="19" y2="9"/></svg>',
+    house:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+    store:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l1-4h16l1 4"/><path d="M3 9v11a1 1 0 001 1h16a1 1 0 001-1V9"/><path d="M9 21V13h6v8"/></svg>',
+    snowflake:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M20 16l-4-4 4-4"/><path d="M4 8l4 4-4 4"/><path d="M16 4l-4 4-4-4"/><path d="M8 20l4-4 4 4"/></svg>',
+    wheat:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22V8"/><path d="M8 6c2 2 4 2 4 2s2 0 4-2"/><path d="M6 10c2 2 6 2 6 2s4 0 6-2"/><path d="M8 14c2 1 4 0 4 0s2 1 4 0"/></svg>',
+    bath:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16a0 0 0 010 0v3a4 4 0 01-4 4H8a4 4 0 01-4-4v-3z"/><path d="M6 12V5a2 2 0 012-2h1"/></svg>',
+    film:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>'
+  };
+
+  function icon(k){return IC[k]||IC.plug;}
+
+  // ===== TABS (6 categories) =====
   var TABS = [
-    {id:'hogar', label:'🏠 Hogar'},
-    {id:'country', label:'🏘 Country'},
-    {id:'pileta', label:'🏊 Pileta'},
-    {id:'comercio', label:'🏪 Comercio'},
-    {id:'industria', label:'⚙ Industria'},
-    {id:'campo', label:'🌾 Campo'},
-    {id:'obra', label:'🚧 Obra'}
+    {id:'residencial',label:'Residencial',ic:'house'},
+    {id:'clima',label:'Climatizaci\u00f3n',ic:'snowflake'},
+    {id:'agua',label:'Agua y Bombas',ic:'droplet'},
+    {id:'comercio',label:'Comercio',ic:'store'},
+    {id:'industria',label:'Industria',ic:'gear'},
+    {id:'obra',label:'Obra y Campo',ic:'hardhat'}
   ];
 
   var FS_PRESETS = [
@@ -2738,121 +2367,130 @@ body { background: var(--kor-light-bg); margin: 0; padding: 0; font-family: -app
   ];
 
   var FUEL_OPTS = [
-    {id:'todos',label:'Todos'},
-    {id:'gas',label:'🔥 Gas'},
-    {id:'diesel',label:'⛽ Diesel'},
-    {id:'nafta',label:'⛽ Nafta'}
+    {id:'todos',label:'Todos',ic:''},
+    {id:'gas',label:'Gas',ic:'flame'},
+    {id:'diesel',label:'Diesel',ic:'droplet'},
+    {id:'nafta',label:'Nafta',ic:'zap'}
   ];
 
+  // ===== QUICK PRESETS =====
+  var QPRESETS = [
+    {label:'Casa 2 ambientes',desc:'Heladera + Split + TV + Ilum + Router',ic:'house',kw:'2.0 kW',tip:'Configuraci\u00f3n t\u00edpica para un depto o casa chica de 2 ambientes. Cubre lo esencial del hogar.',items:{heladera:1,aire_3500:1,ilum_casa:1,tv_led:1,router:1},fs:60},
+    {label:'Casa con pileta',desc:'Casa + Bomba filtrado + Ilum exterior',ic:'droplet',kw:'3.5 kW',tip:'Incluye todo lo de una casa t\u00edpica m\u00e1s bomba de filtrado para la pileta e iluminaci\u00f3n exterior.',items:{heladera:1,aire_4500:1,ilum_casa:1,tv_led:1,router:1,bomba_fil_1hp:1},fs:50},
+    {label:'Country completo',desc:'A/C central + Seguridad + Bombas + Ilum',ic:'ac',kw:'17.8 kW',tip:'Para casas grandes con A/C central, c\u00e1maras de seguridad, port\u00f3n el\u00e9ctrico y dom\u00f3tica. Requiere trif\u00e1sico.',items:{ac_central_10:1,heladera_ss:1,bomba_2hp:1,ilum_country:1,cctv_16:1,porton_x2:1,domotica:1},fs:45},
+    {label:'Comercio b\u00e1sico',desc:'Vitrina + A/C + Ilum + POS + C\u00e1maras',ic:'store',kw:'7.4 kW',tip:'Setup est\u00e1ndar para un local comercial: refrigeraci\u00f3n, climatizaci\u00f3n, iluminaci\u00f3n y seguridad b\u00e1sica.',items:{vitrina_fria:1,aire_central_com:1,ilum_comercio:1,caja_reg:1,camaras_seg:1},fs:35},
+    {label:'Obra est\u00e1ndar',desc:'Hormigonera + Amoladora + Ilum + Compresor',ic:'hardhat',kw:'10.7 kW',tip:'Equipamiento b\u00e1sico de obra: hormigonera, herramientas el\u00e9ctricas, iluminaci\u00f3n y compresor de aire.',items:{hormigonera:1,amoladora:1,ilum_obra:1,compresor_obra:1},fs:60}
+  ];
+
+  // ===== APPLIANCES (89 items, 6 categories, NO overlap) =====
   var APP = {
-    hogar: [
-      {id:'heladera',n:'Heladera c/ Freezer',ic:'❄️',w:250,ws:800,t:0},
-      {id:'freezer',n:'Freezer',ic:'❄️',w:200,ws:600,t:0},
-      {id:'aire_3500',n:'Split 3500 fg (dormitorio)',ic:'☁️',w:1300,ws:3900,t:0},
-      {id:'aire_4500',n:'Split 4500 fg (living med.)',ic:'☁️',w:1800,ws:5400,t:0},
-      {id:'aire_6000',n:'Split 6000 fg (living grande)',ic:'☁️',w:2400,ws:7200,t:0},
-      {id:'microondas',n:'Microondas',ic:'⚡',w:1200,ws:1500,t:0},
-      {id:'horno_elec',n:'Horno Eléctrico',ic:'⚡',w:3000,ws:3000,t:0},
-      {id:'anafe_vitro',n:'Anafe Vitrocerámica 4h',ic:'⚡',w:7000,ws:7000,t:0},
-      {id:'lavarropas',n:'Lavarropas Automático',ic:'⚡',w:500,ws:1500,t:0},
-      {id:'secarropas',n:'Secarropas',ic:'⚡',w:2500,ws:3000,t:0},
-      {id:'lavavajillas',n:'Lavavajillas',ic:'⚡',w:1800,ws:2200,t:0},
-      {id:'termotanque80',n:'Termotanque Eléctrico 80L',ic:'⚡',w:1500,ws:1500,t:0},
-      {id:'bomba_1hp',n:'Bomba Presurizadora 1HP',ic:'💧',w:750,ws:2250,t:0},
-      {id:'ilum_casa',n:'Iluminación LED (casa)',ic:'💡',w:300,ws:300,t:0},
-      {id:'tv_led',n:'TV LED 55"',ic:'📺',w:120,ws:120,t:0},
-      {id:'pc',n:'PC + Monitor',ic:'💻',w:350,ws:400,t:0},
-      {id:'calefactor',n:'Calefactor Eléctrico',ic:'☀️',w:2000,ws:2000,t:0},
-      {id:'router',n:'Router WiFi + Mesh',ic:'🌐',w:30,ws:30,t:0}
+    residencial: [
+      {id:'heladera',n:'Heladera c/ Freezer',ic:'fridge',w:250,ws:800,t:0},
+      {id:'freezer',n:'Freezer',ic:'freezer',w:200,ws:600,t:0},
+      {id:'heladera_ss',n:'Heladera Side-by-Side',ic:'fridge',w:350,ws:1200,t:0},
+      {id:'microondas',n:'Microondas',ic:'zap',w:1200,ws:1500,t:0},
+      {id:'horno_elec',n:'Horno El\u00e9ctrico',ic:'zap',w:3000,ws:3000,t:0},
+      {id:'horno_emp',n:'Horno Empotrado Premium',ic:'zap',w:4000,ws:4000,t:0},
+      {id:'anafe_vitro',n:'Anafe Vitrocer\u00e1mica 4h',ic:'zap',w:7000,ws:7000,t:0},
+      {id:'anafe_induc',n:'Anafe Inducci\u00f3n 4 zonas',ic:'zap',w:7400,ws:7400,t:1},
+      {id:'lavarropas',n:'Lavarropas Autom\u00e1tico',ic:'washing',w:500,ws:1500,t:0},
+      {id:'secarropas',n:'Secarropas',ic:'washing',w:2500,ws:3000,t:0},
+      {id:'lavavajillas',n:'Lavavajillas',ic:'washing',w:1800,ws:2200,t:0},
+      {id:'termotanque80',n:'Termotanque El\u00e9ctrico 80L',ic:'flame',w:1500,ws:1500,t:0},
+      {id:'termotanque200',n:'Termotanque 200L',ic:'flame',w:4000,ws:4000,t:0},
+      {id:'calefon_inst',n:'Calef\u00f3n Instant\u00e1neo',ic:'flame',w:10000,ws:10000,t:1},
+      {id:'ilum_casa',n:'Iluminaci\u00f3n LED (casa)',ic:'lightbulb',w:300,ws:300,t:0},
+      {id:'tv_led',n:'TV LED 55"',ic:'tv',w:120,ws:120,t:0},
+      {id:'pc',n:'PC + Monitor',ic:'pc',w:350,ws:400,t:0},
+      {id:'router',n:'Router WiFi + Mesh',ic:'wifi',w:30,ws:30,t:0}
     ],
-    country: [
-      {id:'ac_central_10',n:'A/C Central 10 TR',ic:'❄️',w:12000,ws:36000,t:1},
-      {id:'ac_central_15',n:'A/C Central 15 TR',ic:'❄️',w:18000,ws:54000,t:1},
-      {id:'split_9000',n:'Split 9000 fg (salón)',ic:'☁️',w:3500,ws:10500,t:0},
-      {id:'piso_radiante',n:'Piso Radiante (bomba)',ic:'☀️',w:2000,ws:6000,t:0},
-      {id:'ascensor',n:'Ascensor Residencial',ic:'⬆️',w:5000,ws:15000,t:1},
-      {id:'jacuzzi',n:'Jacuzzi / Hidromasaje',ic:'🛁',w:4000,ws:12000,t:0},
-      {id:'sauna',n:'Sauna Eléctrico',ic:'♨️',w:6000,ws:6000,t:1},
-      {id:'sala_vapor',n:'Sala de Vapor',ic:'♨️',w:6000,ws:6000,t:1},
-      {id:'bodega',n:'Bodega Climatizada',ic:'🍷',w:1000,ws:3000,t:0},
-      {id:'porton_x2',n:'Portón Eléctrico (x2)',ic:'🚪',w:800,ws:2400,t:0},
-      {id:'home_theater',n:'Home Theater Completo',ic:'🎬',w:1000,ws:1000,t:0},
-      {id:'cctv_16',n:'CCTV 16 Cámaras + NVR',ic:'📷',w:300,ws:300,t:0},
-      {id:'alarma',n:'Alarma Perimetral',ic:'🔔',w:150,ws:150,t:0},
-      {id:'domotica',n:'Domótica / Automatización',ic:'🏠',w:200,ws:200,t:0},
-      {id:'ups',n:'UPS Sistemas Críticos',ic:'⚡',w:1000,ws:1000,t:0},
-      {id:'ilum_country',n:'Iluminación Total (400m²)',ic:'💡',w:2500,ws:2500,t:0},
-      {id:'ilum_jardin',n:'Iluminación Jardín/Exterior',ic:'💡',w:1000,ws:1000,t:0},
-      {id:'bomba_2hp',n:'Bomba Presurizadora 2HP',ic:'💧',w:1500,ws:4500,t:0},
-      {id:'bomba_3hp',n:'Bomba Presurizadora 3HP',ic:'💧',w:2200,ws:6600,t:1},
-      {id:'bomba_pozo_3hp',n:'Bomba Sumergible Pozo 3HP',ic:'💧',w:2200,ws:6600,t:1},
-      {id:'riego_auto',n:'Riego Automático Jardín',ic:'🌿',w:1000,ws:3000,t:0},
-      {id:'termotanque200',n:'Termotanque 200L',ic:'⚡',w:4000,ws:4000,t:0},
-      {id:'calefon_inst',n:'Calefón Instantáneo',ic:'⚡',w:10000,ws:10000,t:1},
-      {id:'cargador_ev2',n:'Cargador EV Nivel 2',ic:'🔌',w:7400,ws:7400,t:1},
-      {id:'horno_emp',n:'Horno Empotrado Premium',ic:'⚡',w:4000,ws:4000,t:0},
-      {id:'anafe_induc',n:'Anafe Inducción 4 zonas',ic:'⚡',w:7400,ws:7400,t:1},
-      {id:'heladera_ss',n:'Heladera Side-by-Side',ic:'❄️',w:350,ws:1200,t:0},
-      {id:'quincho_full',n:'Quincho (heladera+extractor)',ic:'🍖',w:500,ws:1200,t:0}
+    clima: [
+      {id:'aire_3500',n:'Split 3500 fg (dormitorio)',ic:'ac',w:1300,ws:3900,t:0},
+      {id:'aire_4500',n:'Split 4500 fg (living med.)',ic:'ac',w:1800,ws:5400,t:0},
+      {id:'aire_6000',n:'Split 6000 fg (living grande)',ic:'ac',w:2400,ws:7200,t:0},
+      {id:'split_9000',n:'Split 9000 fg (sal\u00f3n)',ic:'ac',w:3500,ws:10500,t:0},
+      {id:'ac_central_10',n:'A/C Central 10 TR',ic:'ac',w:12000,ws:36000,t:1},
+      {id:'ac_central_15',n:'A/C Central 15 TR',ic:'ac',w:18000,ws:54000,t:1},
+      {id:'aire_central_com',n:'A/C Central Comercial',ic:'ac',w:5000,ws:15000,t:1},
+      {id:'calefactor',n:'Calefactor El\u00e9ctrico',ic:'flame',w:2000,ws:2000,t:0},
+      {id:'piso_radiante',n:'Piso Radiante (bomba)',ic:'flame',w:2000,ws:6000,t:0},
+      {id:'heat_pump_30',n:'Bomba Calor 30.000 BTU',ic:'flame',w:2500,ws:7500,t:0},
+      {id:'heat_pump_60',n:'Bomba Calor 60.000 BTU',ic:'flame',w:4500,ws:13500,t:1},
+      {id:'heat_pump_100',n:'Bomba Calor 100.000 BTU',ic:'flame',w:7500,ws:22500,t:1}
     ],
-    pileta: [
-      {id:'bomba_fil_1hp',n:'Bomba Filtrado 1HP',ic:'💧',w:750,ws:2250,t:0},
-      {id:'bomba_fil_2hp',n:'Bomba Filtrado 2HP',ic:'💧',w:1500,ws:4500,t:0},
-      {id:'bomba_fil_3hp',n:'Bomba Filtrado 3HP',ic:'💧',w:2200,ws:6600,t:1},
-      {id:'heat_pump_30',n:'Bomba Calor 30.000 BTU',ic:'☀️',w:2500,ws:7500,t:0},
-      {id:'heat_pump_60',n:'Bomba Calor 60.000 BTU',ic:'☀️',w:4500,ws:13500,t:1},
-      {id:'heat_pump_100',n:'Bomba Calor 100.000 BTU',ic:'☀️',w:7500,ws:22500,t:1},
-      {id:'calentador_pil',n:'Calentador Eléctrico Pileta',ic:'☀️',w:12000,ws:12000,t:1},
-      {id:'bomba_cascada',n:'Bomba Cascada / Jets',ic:'💧',w:2000,ws:6000,t:0},
-      {id:'clorinador',n:'Clorinador Salino',ic:'⚡',w:200,ws:200,t:0},
-      {id:'ilum_pileta',n:'Iluminación Subacuática',ic:'💡',w:200,ws:200,t:0}
+    agua: [
+      {id:'bomba_1hp',n:'Bomba Presurizadora 1HP',ic:'droplet',w:750,ws:2250,t:0},
+      {id:'bomba_2hp',n:'Bomba Presurizadora 2HP',ic:'droplet',w:1500,ws:4500,t:0},
+      {id:'bomba_3hp',n:'Bomba Presurizadora 3HP',ic:'droplet',w:2200,ws:6600,t:1},
+      {id:'bomba_pozo_3hp',n:'Bomba Sumergible Pozo 3HP',ic:'droplet',w:2200,ws:6600,t:1},
+      {id:'bomba_fil_1hp',n:'Bomba Filtrado 1HP',ic:'droplet',w:750,ws:2250,t:0},
+      {id:'bomba_fil_2hp',n:'Bomba Filtrado 2HP',ic:'droplet',w:1500,ws:4500,t:0},
+      {id:'bomba_fil_3hp',n:'Bomba Filtrado 3HP',ic:'droplet',w:2200,ws:6600,t:1},
+      {id:'bomba_cascada',n:'Bomba Cascada / Jets',ic:'droplet',w:2000,ws:6000,t:0},
+      {id:'calentador_pil',n:'Calentador El\u00e9ctrico Pileta',ic:'flame',w:12000,ws:12000,t:1},
+      {id:'clorinador',n:'Clorinador Salino',ic:'zap',w:200,ws:200,t:0},
+      {id:'ilum_pileta',n:'Iluminaci\u00f3n Subacu\u00e1tica',ic:'lightbulb',w:200,ws:200,t:0},
+      {id:'riego_auto',n:'Riego Autom\u00e1tico Jard\u00edn',ic:'droplet',w:1000,ws:3000,t:0}
     ],
     comercio: [
-      {id:'vitrina_fria',n:'Vitrina Refrigerada',ic:'❄️',w:500,ws:1500,t:0},
-      {id:'camara_frio',n:'Cámara Frigorífica',ic:'❄️',w:2000,ws:6000,t:0},
-      {id:'aire_central_com',n:'A/C Central Comercial',ic:'☁️',w:5000,ws:15000,t:1},
-      {id:'ilum_comercio',n:'Iluminación Comercio',ic:'💡',w:1500,ws:1500,t:0},
-      {id:'caja_reg',n:'Caja Registradora/POS',ic:'💻',w:150,ws:200,t:0},
-      {id:'servidor',n:'Servidor + UPS',ic:'💻',w:800,ws:1000,t:0},
-      {id:'camaras_seg',n:'CCTV 8 Cámaras',ic:'📷',w:200,ws:200,t:0},
-      {id:'porton_com',n:'Portón Eléctrico',ic:'🚪',w:500,ws:1500,t:0},
-      {id:'bomba_com',n:'Bomba 2HP',ic:'💧',w:1500,ws:4500,t:0},
-      {id:'cafe_ind',n:'Cafetera Industrial',ic:'☕',w:3000,ws:3500,t:0}
+      {id:'vitrina_fria',n:'Vitrina Refrigerada',ic:'fridge',w:500,ws:1500,t:0},
+      {id:'camara_frio',n:'C\u00e1mara Frigor\u00edfica',ic:'freezer',w:2000,ws:6000,t:0},
+      {id:'bodega',n:'Bodega Climatizada',ic:'fridge',w:1000,ws:3000,t:0},
+      {id:'ilum_comercio',n:'Iluminaci\u00f3n Comercio',ic:'lightbulb',w:1500,ws:1500,t:0},
+      {id:'ilum_country',n:'Iluminaci\u00f3n Total (400m\u00b2)',ic:'lightbulb',w:2500,ws:2500,t:0},
+      {id:'ilum_jardin',n:'Iluminaci\u00f3n Jard\u00edn/Exterior',ic:'lightbulb',w:1000,ws:1000,t:0},
+      {id:'caja_reg',n:'Caja Registradora/POS',ic:'pc',w:150,ws:200,t:0},
+      {id:'servidor',n:'Servidor + UPS',ic:'server',w:800,ws:1000,t:0},
+      {id:'ups',n:'UPS Sistemas Cr\u00edticos',ic:'server',w:1000,ws:1000,t:0},
+      {id:'camaras_seg',n:'CCTV 8 C\u00e1maras',ic:'camera',w:200,ws:200,t:0},
+      {id:'cctv_16',n:'CCTV 16 C\u00e1maras + NVR',ic:'camera',w:300,ws:300,t:0},
+      {id:'alarma',n:'Alarma Perimetral',ic:'bell',w:150,ws:150,t:0},
+      {id:'porton_x2',n:'Port\u00f3n El\u00e9ctrico (x2)',ic:'gate',w:800,ws:2400,t:0},
+      {id:'porton_com',n:'Port\u00f3n El\u00e9ctrico',ic:'gate',w:500,ws:1500,t:0},
+      {id:'cafe_ind',n:'Cafetera Industrial',ic:'coffee',w:3000,ws:3500,t:0},
+      {id:'domotica',n:'Dom\u00f3tica / Automatizaci\u00f3n',ic:'wifi',w:200,ws:200,t:0},
+      {id:'home_theater',n:'Home Theater Completo',ic:'film',w:1000,ws:1000,t:0},
+      {id:'quincho_full',n:'Quincho (heladera+extractor)',ic:'coffee',w:500,ws:1200,t:0}
     ],
     industria: [
-      {id:'motor_5hp',n:'Motor Eléctrico 5HP',ic:'⚙️',w:3700,ws:11100,t:1},
-      {id:'motor_10hp',n:'Motor Eléctrico 10HP',ic:'⚙️',w:7500,ws:22500,t:1},
-      {id:'motor_25hp',n:'Motor Eléctrico 25HP',ic:'⚙️',w:18500,ws:55500,t:1},
-      {id:'compresor_ind',n:'Compresor Industrial',ic:'⚙️',w:5500,ws:16500,t:1},
-      {id:'soldadora',n:'Soldadora Eléctrica',ic:'⚡',w:8000,ws:10000,t:0},
-      {id:'torno',n:'Torno CNC',ic:'⚙️',w:5000,ws:8000,t:1},
-      {id:'ilum_nave',n:'Iluminación Nave',ic:'💡',w:3000,ws:3000,t:0},
-      {id:'grua',n:'Puente Grúa 5T',ic:'⚙️',w:15000,ws:45000,t:1},
-      {id:'bomba_ind',n:'Bomba Industrial 5HP',ic:'💧',w:3700,ws:11100,t:1},
-      {id:'sierra_ind',n:'Sierra Circular Industrial',ic:'⚙️',w:3000,ws:6000,t:1}
-    ],
-    campo: [
-      {id:'bomba_riego',n:'Bomba Riego 3HP',ic:'💧',w:2200,ws:6600,t:1},
-      {id:'ordenadora',n:'Ordeñadora',ic:'⚙️',w:1500,ws:3000,t:0},
-      {id:'tanque_frio',n:'Tanque Frío (leche)',ic:'❄️',w:3000,ws:8000,t:1},
-      {id:'ilum_galpon',n:'Iluminación Galpón',ic:'💡',w:1500,ws:1500,t:0},
-      {id:'electrificador',n:'Electrificador Cercos',ic:'⚡',w:50,ws:50,t:0},
-      {id:'molino',n:'Molino / Trituradora',ic:'⚙️',w:5000,ws:15000,t:1},
-      {id:'casa_campo',n:'Casa de Campo (básico)',ic:'⚡',w:2000,ws:3000,t:0},
-      {id:'bomba_sum',n:'Bomba Sumergible Pozo',ic:'💧',w:1500,ws:4500,t:0}
+      {id:'motor_5hp',n:'Motor El\u00e9ctrico 5HP',ic:'gear',w:3700,ws:11100,t:1},
+      {id:'motor_10hp',n:'Motor El\u00e9ctrico 10HP',ic:'gear',w:7500,ws:22500,t:1},
+      {id:'motor_25hp',n:'Motor El\u00e9ctrico 25HP',ic:'gear',w:18500,ws:55500,t:1},
+      {id:'compresor_ind',n:'Compresor Industrial',ic:'gear',w:5500,ws:16500,t:1},
+      {id:'soldadora',n:'Soldadora El\u00e9ctrica',ic:'zap',w:8000,ws:10000,t:0},
+      {id:'torno',n:'Torno CNC',ic:'gear',w:5000,ws:8000,t:1},
+      {id:'ilum_nave',n:'Iluminaci\u00f3n Nave',ic:'lightbulb',w:3000,ws:3000,t:0},
+      {id:'grua',n:'Puente Gr\u00faa 5T',ic:'gear',w:15000,ws:45000,t:1},
+      {id:'bomba_ind',n:'Bomba Industrial 5HP',ic:'droplet',w:3700,ws:11100,t:1},
+      {id:'sierra_ind',n:'Sierra Circular Industrial',ic:'gear',w:3000,ws:6000,t:1},
+      {id:'ascensor',n:'Ascensor Residencial',ic:'elevator',w:5000,ws:15000,t:1},
+      {id:'jacuzzi',n:'Jacuzzi / Hidromasaje',ic:'bath',w:4000,ws:12000,t:0},
+      {id:'sauna',n:'Sauna El\u00e9ctrico',ic:'flame',w:6000,ws:6000,t:1},
+      {id:'sala_vapor',n:'Sala de Vapor',ic:'flame',w:6000,ws:6000,t:1},
+      {id:'cargador_ev2',n:'Cargador EV Nivel 2',ic:'car',w:7400,ws:7400,t:1}
     ],
     obra: [
-      {id:'hormigonera',n:'Hormigonera',ic:'⚙️',w:1500,ws:4500,t:0},
-      {id:'amoladora',n:'Amoladora Grande',ic:'⚙️',w:2200,ws:4000,t:0},
-      {id:'taladro',n:'Rotomartillo',ic:'⚙️',w:1200,ws:2400,t:0},
-      {id:'sierra_obra',n:'Sierra Circular',ic:'⚙️',w:1800,ws:3600,t:0},
-      {id:'vibrador',n:'Vibrador Hormigón',ic:'⚙️',w:2000,ws:4000,t:0},
-      {id:'ilum_obra',n:'Torres Iluminación',ic:'💡',w:4000,ws:4000,t:0},
-      {id:'compresor_obra',n:'Compresor de Obra',ic:'⚙️',w:3000,ws:9000,t:0},
-      {id:'guinche',n:'Guinche Eléctrico',ic:'⚙️',w:2000,ws:6000,t:0}
+      {id:'hormigonera',n:'Hormigonera',ic:'hardhat',w:1500,ws:4500,t:0},
+      {id:'amoladora',n:'Amoladora Grande',ic:'hardhat',w:2200,ws:4000,t:0},
+      {id:'taladro',n:'Rotomartillo',ic:'hardhat',w:1200,ws:2400,t:0},
+      {id:'sierra_obra',n:'Sierra Circular',ic:'hardhat',w:1800,ws:3600,t:0},
+      {id:'vibrador',n:'Vibrador Hormig\u00f3n',ic:'hardhat',w:2000,ws:4000,t:0},
+      {id:'ilum_obra',n:'Torres Iluminaci\u00f3n',ic:'lightbulb',w:4000,ws:4000,t:0},
+      {id:'compresor_obra',n:'Compresor de Obra',ic:'gear',w:3000,ws:9000,t:0},
+      {id:'guinche',n:'Guinche El\u00e9ctrico',ic:'gear',w:2000,ws:6000,t:0},
+      {id:'bomba_riego',n:'Bomba Riego 3HP',ic:'droplet',w:2200,ws:6600,t:1},
+      {id:'ordenadora',n:'Orde\u00f1adora',ic:'gear',w:1500,ws:3000,t:0},
+      {id:'tanque_frio',n:'Tanque Fr\u00edo (leche)',ic:'freezer',w:3000,ws:8000,t:1},
+      {id:'ilum_galpon',n:'Iluminaci\u00f3n Galp\u00f3n',ic:'lightbulb',w:1500,ws:1500,t:0},
+      {id:'electrificador',n:'Electrificador Cercos',ic:'zap',w:50,ws:50,t:0},
+      {id:'molino',n:'Molino / Trituradora',ic:'gear',w:5000,ws:15000,t:1},
+      {id:'casa_campo',n:'Casa de Campo (b\u00e1sico)',ic:'house',w:2000,ws:3000,t:0},
+      {id:'bomba_sum',n:'Bomba Sumergible Pozo',ic:'droplet',w:1500,ws:4500,t:0},
+      {id:'bomba_com',n:'Bomba 2HP',ic:'droplet',w:1500,ws:4500,t:0}
     ]
   };
 
+  // ===== GENERATORS (UNCHANGED) =====
   var GENS = [
     {c:'10604',n:'GI1000 Silent',kva:1,f:'nafta',a:0,s:1,t:0,b:'Logus',p:347,r:'logus-gi1000-silent'},
     {c:'10600',n:'GI2000 Silent',kva:2,f:'nafta',a:0,s:1,t:0,b:'Logus',p:430,r:'logus-gi2000-silent'},
@@ -2914,339 +2552,412 @@ body { background: var(--kor-light-bg); margin: 0; padding: 0; font-family: -app
     {c:'101721',n:'CS650S',kva:650,f:'diesel',a:1,s:1,t:1,b:'Cummins',p:85000,r:'cs650s'}
   ];
 
-  // State
-  var sel = {};       // selected items {id: qty}
-  var curTab = 'hogar';
+  // ===== STATE =====
+  var sel = {};
+  var curTab = 'residencial';
   var curFuel = 'todos';
   var fs = 0.50;
+  var searchActive = false;
+  var lastKva = 0;
 
-  // DOM refs
-  var $tabs, $grid, $kva, $phase, $meter, $wStat, $wsStat;
-  var $fsTip, $fsVal, $fsRange, $selList, $results, $resNote, $recs;
+  // ===== DOM REFS =====
+  var $tabs,$grid,$kva,$phase,$meter,$wStat,$wsStat;
+  var $fsTip,$fsVal,$fsRange,$selList,$results,$resNote,$recs,$search;
 
-  function $(id) { return document.getElementById(id); }
+  function $(id){return document.getElementById(id);}
+  function fmt(n){return n.toLocaleString('es-AR');}
 
-  function fmt(n) {
-    return n.toLocaleString('es-AR');
-  }
-
-  function init() {
-    $tabs = $('kc-tabs');
-    $grid = $('kc-grid');
-    $kva = $('kc-kva');
-    $phase = $('kc-phase');
-    $meter = $('kc-meter');
-    $wStat = $('kc-w');
-    $wsStat = $('kc-ws');
-    $fsVal = $('kc-fs-val');
-    $fsRange = $('kc-fs-range');
-    $fsTip = $('kc-fs-tip');
-    $selList = $('kc-sel-list');
-    $results = $('kc-results');
-    $resNote = $('kc-res-note');
-    $recs = $('kc-recs');
-
-    if (!$tabs || !$grid) {
-      console.error('KOR Calc: DOM elements not found');
-      return;
-    }
-
+  // ===== INIT =====
+  function init(){
+    $tabs=$('kc-tabs');$grid=$('kc-grid');$kva=$('kc-kva');$phase=$('kc-phase');
+    $meter=$('kc-meter');$wStat=$('kc-w');$wsStat=$('kc-ws');
+    $fsVal=$('kc-fs-val');$fsRange=$('kc-fs-range');$fsTip=$('kc-fs-tip');
+    $selList=$('kc-sel-list');$results=$('kc-results');$resNote=$('kc-res-note');
+    $recs=$('kc-recs');$search=$('kc-search');
+    if(!$tabs||!$grid){console.error('KOR Calc v4: DOM not found');return;}
+    buildSteps();
+    buildQuickPresets();
     buildTabs();
     buildPresets();
     buildFilters();
-    $fsRange.addEventListener('input', onFsChange);
-    $('kc-go-btn').addEventListener('click', showResults);
+    $fsRange.addEventListener('input',onFsChange);
+    $('kc-go-btn').addEventListener('click',showResults);
+    $('kc-reset-btn').addEventListener('click',resetCalc);
+    $search.addEventListener('input',onSearch);
     renderGrid();
     updateSummary();
   }
 
-  function buildTabs() {
-    var h = '';
-    for (var i = 0; i < TABS.length; i++) {
-      var t = TABS[i];
-      var cls = t.id === curTab ? ' active' : '';
-      h += '<button class="kc-tab' + cls + '" data-tab="' + t.id + '">' + t.label + '</button>';
+  // ===== STEPS =====
+  function buildSteps(){
+    var s=$('kc-steps');
+    s.innerHTML='<div class="kc-step active" data-s="1"><div class="kc-step-num">1</div><div class="kc-step-text">Seleccion\u00e1 equipos</div></div>'+
+      '<div class="kc-step-div"></div>'+
+      '<div class="kc-step" data-s="2"><div class="kc-step-num">2</div><div class="kc-step-text">Ajust\u00e1 el factor</div></div>'+
+      '<div class="kc-step-div"></div>'+
+      '<div class="kc-step" data-s="3"><div class="kc-step-num">3</div><div class="kc-step-text">Ver recomendaciones</div></div>';
+  }
+
+  function updateSteps(){
+    var steps=document.querySelectorAll('#kc-steps .kc-step');
+    var divs=document.querySelectorAll('#kc-steps .kc-step-div');
+    var count=Object.keys(sel).length;
+    if(count>0){
+      steps[0].className='kc-step done';steps[1].className='kc-step active';
+      if(divs[0])divs[0].className='kc-step-div done';
+    }else{
+      steps[0].className='kc-step active';steps[1].className='kc-step';
+      if(divs[0])divs[0].className='kc-step-div';
     }
-    $tabs.innerHTML = h;
-    $tabs.addEventListener('click', function(e) {
-      var btn = e.target.closest('.kc-tab');
-      if (!btn) return;
-      curTab = btn.dataset.tab;
-      var all = $tabs.querySelectorAll('.kc-tab');
-      for (var i = 0; i < all.length; i++) all[i].classList.remove('active');
+  }
+
+  // ===== QUICK PRESETS =====
+  function buildQuickPresets(){
+    var wrap=$('kc-quick-grid');
+    var h='';
+    for(var i=0;i<QPRESETS.length;i++){
+      var q=QPRESETS[i];
+      h+='<div class="kc-qcard" data-qi="'+i+'">'+
+        '<div class="kc-qcard-tip">'+q.tip+'</div>'+
+        '<div class="kc-qcard-inner">'+
+        '<div class="kc-qcard-icon">'+icon(q.ic)+'</div>'+
+        '<div class="kc-qcard-name">'+q.label+'</div>'+
+        '<div class="kc-qcard-desc">'+q.desc+'</div>'+
+        '<div class="kc-qcard-kw">~'+q.kw+'</div>'+
+        '</div></div>';
+    }
+    wrap.innerHTML=h;
+    wrap.addEventListener('click',function(e){
+      var card=e.target.closest('.kc-qcard');
+      if(!card)return;
+      var qi=parseInt(card.dataset.qi);
+      var q=QPRESETS[qi];
+      sel={};
+      var keys=Object.keys(q.items);
+      for(var i=0;i<keys.length;i++)sel[keys[i]]=q.items[keys[i]];
+      fs=q.fs/100;
+      $fsRange.value=q.fs;
+      $fsVal.textContent=fs.toFixed(2);
+      updateFsTip();
+      renderGrid();
+      updateSummary();
+      updateTabBadges();
+    });
+  }
+
+  // ===== TABS =====
+  function buildTabs(){
+    var h='';
+    for(var i=0;i<TABS.length;i++){
+      var t=TABS[i];
+      var cls=t.id===curTab?' active':'';
+      h+='<button class="kc-tab'+cls+'" data-tab="'+t.id+'">'+icon(t.ic)+'<span class="kc-tab-label">'+t.label+'</span></button>';
+    }
+    $tabs.innerHTML=h;
+    $tabs.addEventListener('click',function(e){
+      var btn=e.target.closest('.kc-tab');
+      if(!btn)return;
+      if(searchActive){$search.value='';searchActive=false;}
+      curTab=btn.dataset.tab;
+      var all=$tabs.querySelectorAll('.kc-tab');
+      for(var i=0;i<all.length;i++)all[i].classList.remove('active');
       btn.classList.add('active');
       renderGrid();
     });
   }
 
-  function buildPresets() {
-    var wrap = $('kc-presets');
-    var h = '';
-    for (var i = 0; i < FS_PRESETS.length; i++) {
-      var p = FS_PRESETS[i];
-      var cls = p.val === 50 ? ' act' : '';
-      h += '<button class="kc-preset' + cls + '" data-val="' + p.val + '">' + p.label + '</button>';
+  function updateTabBadges(){
+    var btns=$tabs.querySelectorAll('.kc-tab');
+    for(var i=0;i<btns.length;i++){
+      var tid=btns[i].dataset.tab;
+      var items=APP[tid]||[];
+      var count=0;
+      for(var j=0;j<items.length;j++){if(sel[items[j].id])count+=sel[items[j].id];}
+      var badge=btns[i].querySelector('.kc-tab-badge');
+      if(count>0){
+        if(!badge){badge=document.createElement('span');badge.className='kc-tab-badge';btns[i].appendChild(badge);}
+        badge.textContent=count;
+      }else if(badge){badge.remove();}
     }
-    wrap.innerHTML = h;
-    wrap.addEventListener('click', function(e) {
-      var btn = e.target.closest('.kc-preset');
-      if (!btn) return;
-      var v = parseInt(btn.dataset.val);
-      $fsRange.value = v;
-      fs = v / 100;
-      $fsVal.textContent = fs.toFixed(2);
-      var all = wrap.querySelectorAll('.kc-preset');
-      for (var i = 0; i < all.length; i++) all[i].classList.remove('act');
-      btn.classList.add('act');
-      updateFsTip();
-      updateSummary();
+  }
+
+  // ===== FS PRESETS =====
+  function buildPresets(){
+    var wrap=$('kc-presets');var h='';
+    for(var i=0;i<FS_PRESETS.length;i++){
+      var p=FS_PRESETS[i];var cls=p.val===50?' act':'';
+      h+='<button class="kc-preset'+cls+'" data-val="'+p.val+'">'+p.label+'</button>';
+    }
+    wrap.innerHTML=h;
+    wrap.addEventListener('click',function(e){
+      var btn=e.target.closest('.kc-preset');if(!btn)return;
+      var v=parseInt(btn.dataset.val);
+      $fsRange.value=v;fs=v/100;$fsVal.textContent=fs.toFixed(2);
+      var all=wrap.querySelectorAll('.kc-preset');
+      for(var i=0;i<all.length;i++)all[i].classList.remove('act');
+      btn.classList.add('act');updateFsTip();updateSummary();
     });
   }
 
-  function buildFilters() {
-    var wrap = $('kc-filters');
-    var h = '';
-    for (var i = 0; i < FUEL_OPTS.length; i++) {
-      var f = FUEL_OPTS[i];
-      var cls = f.id === 'todos' ? ' act' : '';
-      h += '<button class="kc-fbtn' + cls + '" data-fuel="' + f.id + '">' + f.label + '</button>';
+  // ===== FUEL FILTERS =====
+  function buildFilters(){
+    var wrap=$('kc-filters');var h='';
+    for(var i=0;i<FUEL_OPTS.length;i++){
+      var f=FUEL_OPTS[i];var cls=f.id==='todos'?' act':'';
+      var icn=f.ic?icon(f.ic):'';
+      h+='<button class="kc-fbtn'+cls+'" data-fuel="'+f.id+'">'+icn+f.label+'</button>';
     }
-    wrap.innerHTML = h;
-    wrap.addEventListener('click', function(e) {
-      var btn = e.target.closest('.kc-fbtn');
-      if (!btn) return;
-      curFuel = btn.dataset.fuel;
-      var all = wrap.querySelectorAll('.kc-fbtn');
-      for (var i = 0; i < all.length; i++) all[i].classList.remove('act');
+    wrap.innerHTML=h;
+    wrap.addEventListener('click',function(e){
+      var btn=e.target.closest('.kc-fbtn');if(!btn)return;
+      curFuel=btn.dataset.fuel;
+      var all=wrap.querySelectorAll('.kc-fbtn');
+      for(var i=0;i<all.length;i++)all[i].classList.remove('act');
       btn.classList.add('act');
     });
   }
 
-  function onFsChange() {
-    fs = parseInt($fsRange.value) / 100;
-    $fsVal.textContent = fs.toFixed(2);
-    var all = $('kc-presets').querySelectorAll('.kc-preset');
-    for (var i = 0; i < all.length; i++) all[i].classList.remove('act');
-    updateFsTip();
-    updateSummary();
+  // ===== FS CHANGE =====
+  // ===== RESET =====
+  function resetCalc(){
+    sel={};fs=0.50;$fsRange.value=50;$fsVal.textContent='0.50';
+    curFuel='todos';searchActive=false;$search.value='';
+    var fbtns=$('kc-filters').querySelectorAll('.kc-fbtn');
+    for(var i=0;i<fbtns.length;i++){fbtns[i].classList.toggle('act',fbtns[i].dataset.fuel==='todos');}
+    var pbtns=$('kc-presets').querySelectorAll('.kc-preset');
+    for(var i=0;i<pbtns.length;i++){pbtns[i].classList.toggle('act',pbtns[i].dataset.val==='50');}
+    updateFsTip();renderGrid();updateSummary();updateTabBadges();
+    $results.classList.remove('show');
   }
 
-  function updateFsTip() {
-    var v = parseInt($fsRange.value);
-    var tips = {20:'Muy conservador',30:'Comercio grande',35:'Comercio',40:'Casa grande',45:'Country típico',50:'Casa media',55:'Casa media-chica',60:'Casa chica / Industria',65:'Depto mediano',70:'Depto chico',80:'Uso casi total',90:'Todo encendido'};
-    var best = 50, diff = 100;
-    var keys = Object.keys(tips);
-    for (var i = 0; i < keys.length; i++) {
-      var d = Math.abs(parseInt(keys[i]) - v);
-      if (d < diff) { diff = d; best = keys[i]; }
+  function onFsChange(){
+    fs=parseInt($fsRange.value)/100;$fsVal.textContent=fs.toFixed(2);
+    var all=$('kc-presets').querySelectorAll('.kc-preset');
+    for(var i=0;i<all.length;i++)all[i].classList.remove('act');
+    updateFsTip();updateSummary();
+  }
+
+  function updateFsTip(){
+    var v=parseInt($fsRange.value);
+    var tips={20:'Muy conservador',30:'Comercio grande',35:'Comercio',40:'Casa grande',45:'Country t\u00edpico',50:'Casa media',55:'Casa media-chica',60:'Casa chica / Industria',65:'Depto mediano',70:'Depto chico',80:'Uso casi total',90:'Todo encendido'};
+    var best=50,diff=100;var keys=Object.keys(tips);
+    for(var i=0;i<keys.length;i++){var d=Math.abs(parseInt(keys[i])-v);if(d<diff){diff=d;best=keys[i];}}
+    $fsTip.textContent=tips[best]+' \u2014 Factor: '+fs.toFixed(2);
+  }
+
+  // ===== SEARCH =====
+  var searchTimeout;
+  function onSearch(){
+    clearTimeout(searchTimeout);
+    searchTimeout=setTimeout(function(){
+      var q=$search.value.trim().toLowerCase();
+      if(q.length>=2){
+        searchActive=true;
+        renderSearchResults(q);
+      }else{
+        searchActive=false;
+        renderGrid();
+      }
+    },200);
+  }
+
+  function renderSearchResults(q){
+    var results=[];
+    var cats=Object.keys(APP);
+    for(var c=0;c<cats.length;c++){
+      var items=APP[cats[c]];
+      for(var i=0;i<items.length;i++){
+        if(items[i].n.toLowerCase().indexOf(q)>=0)results.push(items[i]);
+      }
     }
-    $fsTip.textContent = tips[best] + ' — Factor: ' + fs.toFixed(2);
-  }
-
-  function renderGrid() {
-    var items = APP[curTab] || [];
-    if (!items.length) {
-      $grid.innerHTML = '<div class="kc-empty"><div class="kc-empty-icon">🔌</div><div class="kc-empty-text">No hay equipos en esta categoría</div></div>';
+    if(!results.length){
+      $grid.innerHTML='<div class="kc-empty" style="grid-column:1/-1">'+icon('plug')+'<div class="kc-empty-text">No se encontraron equipos para "'+q+'"</div></div>';
       return;
     }
-    var h = '';
-    for (var i = 0; i < items.length; i++) {
-      var a = items[i];
-      var qty = sel[a.id] || 0;
-      var cls = qty > 0 ? ' sel' : '';
-      var ph = a.t ? '<span class="kc-phase tri">3Ø</span>' : '<span class="kc-phase mono">1Ø</span>';
-      h += '<div class="kc-item' + cls + '" data-id="' + a.id + '">' +
-        '<div class="kc-item-icon">' + a.ic + '</div>' +
-        '<div class="kc-item-info"><div class="kc-item-name">' + a.n + ' ' + ph + '</div>' +
-        '<div class="kc-item-watts">' + fmt(a.w) + ' W • arranque ' + fmt(a.ws) + ' W</div></div>' +
-        '<div class="kc-qty">' +
-        '<button class="kc-qty-btn" data-id="' + a.id + '" data-d="-1">−</button>' +
-        '<span class="kc-qty-val">' + qty + '</span>' +
-        '<button class="kc-qty-btn" data-id="' + a.id + '" data-d="1">+</button></div></div>';
-    }
-    $grid.innerHTML = h;
+    renderItems(results);
   }
 
-  // Event delegation for grid clicks
-  function onGridClick(e) {
-    var qtyBtn = e.target.closest('.kc-qty-btn');
-    if (qtyBtn) {
+  // ===== RENDER GRID =====
+  function renderGrid(){
+    var items=APP[curTab]||[];
+    if(!items.length){
+      $grid.innerHTML='<div class="kc-empty" style="grid-column:1/-1">'+icon('plug')+'<div class="kc-empty-text">No hay equipos en esta categor\u00eda</div></div>';
+      return;
+    }
+    renderItems(items);
+  }
+
+  function renderItems(items){
+    var h='';
+    for(var i=0;i<items.length;i++){
+      var a=items[i];
+      var qty=sel[a.id]||0;
+      var cls=qty>0?' sel':'';
+      var ph=a.t?'<span class="kc-phase tri">3\u00d8</span>':'<span class="kc-phase mono">1\u00d8</span>';
+      h+='<div class="kc-item'+cls+'" data-id="'+a.id+'" style="animation-delay:'+i*30+'ms">'+
+        '<div class="kc-item-icon">'+icon(a.ic)+'</div>'+
+        '<div class="kc-item-info"><div class="kc-item-name">'+a.n+' '+ph+'</div>'+
+        '<div class="kc-item-watts">'+fmt(a.w)+' W \u2022 arranque '+fmt(a.ws)+' W</div></div>'+
+        '<div class="kc-qty">'+
+        '<button class="kc-qty-btn" data-id="'+a.id+'" data-d="-1">\u2212</button>'+
+        '<span class="kc-qty-val">'+qty+'</span>'+
+        '<button class="kc-qty-btn" data-id="'+a.id+'" data-d="1">+</button></div></div>';
+    }
+    $grid.innerHTML=h;
+  }
+
+  // ===== GRID CLICK =====
+  function onGridClick(e){
+    var qtyBtn=e.target.closest('.kc-qty-btn');
+    if(qtyBtn){
       e.stopPropagation();
-      var id = qtyBtn.dataset.id;
-      var d = parseInt(qtyBtn.dataset.d);
-      var nv = Math.max(0, (sel[id] || 0) + d);
-      if (nv === 0) delete sel[id]; else sel[id] = nv;
-      renderGrid();
-      updateSummary();
-      return;
+      var id=qtyBtn.dataset.id;
+      var d=parseInt(qtyBtn.dataset.d);
+      var nv=Math.max(0,(sel[id]||0)+d);
+      if(nv===0)delete sel[id];else sel[id]=nv;
+      if(searchActive)renderSearchResults($search.value.trim().toLowerCase());
+      else renderGrid();
+      updateSummary();updateTabBadges();return;
     }
-    var item = e.target.closest('.kc-item');
-    if (item) {
-      var id = item.dataset.id;
-      if (sel[id]) delete sel[id]; else sel[id] = 1;
-      renderGrid();
-      updateSummary();
+    var item=e.target.closest('.kc-item');
+    if(item){
+      var id=item.dataset.id;
+      if(sel[id])delete sel[id];else sel[id]=1;
+      if(searchActive)renderSearchResults($search.value.trim().toLowerCase());
+      else renderGrid();
+      updateSummary();updateTabBadges();
     }
   }
 
-  function getSelected() {
-    var result = [];
-    var allItems = [];
-    var cats = Object.keys(APP);
-    for (var c = 0; c < cats.length; c++) {
-      var arr = APP[cats[c]];
-      for (var j = 0; j < arr.length; j++) allItems.push(arr[j]);
-    }
-    var ids = Object.keys(sel);
-    for (var i = 0; i < ids.length; i++) {
-      for (var j = 0; j < allItems.length; j++) {
-        if (allItems[j].id === ids[i]) {
-          result.push({app: allItems[j], qty: sel[ids[i]]});
-          break;
-        }
+  // ===== CALCULATION (UNCHANGED) =====
+  function getSelected(){
+    var result=[];var allItems=[];
+    var cats=Object.keys(APP);
+    for(var c=0;c<cats.length;c++){var arr=APP[cats[c]];for(var j=0;j<arr.length;j++)allItems.push(arr[j]);}
+    var ids=Object.keys(sel);
+    for(var i=0;i<ids.length;i++){
+      for(var j=0;j<allItems.length;j++){
+        if(allItems[j].id===ids[i]){result.push({app:allItems[j],qty:sel[ids[i]]});break;}
       }
     }
     return result;
   }
 
-  function calc() {
-    var items = getSelected();
-    var totalW = 0, maxSurge = 0, hasTri = false;
-    for (var i = 0; i < items.length; i++) {
-      var w = items[i].app.w * items[i].qty;
-      var ws = items[i].app.ws * items[i].qty;
-      totalW += w;
-      var surge = ws - w;
-      if (surge > maxSurge) maxSurge = surge;
-      if (items[i].app.t) hasTri = true;
+  function calc(){
+    var items=getSelected();
+    var totalW=0,maxSurge=0,hasTri=false;
+    for(var i=0;i<items.length;i++){
+      var w=items[i].app.w*items[i].qty;
+      var ws=items[i].app.ws*items[i].qty;
+      totalW+=w;
+      var surge=ws-w;
+      if(surge>maxSurge)maxSurge=surge;
+      if(items[i].app.t)hasTri=true;
     }
-    var simultW = totalW * fs;
-    var withSurge = simultW + maxSurge;
-    var margin = withSurge * 1.15;
-    var kva = margin / 800;
-    return {
-      kva: Math.round(kva * 10) / 10,
-      watts: totalW,
-      surge: maxSurge,
-      simultW: Math.round(simultW),
-      tri: hasTri
-    };
+    var simultW=totalW*fs;
+    var withSurge=simultW+maxSurge;
+    var margin=withSurge*1.15;
+    var kva=margin/800;
+    return{kva:Math.round(kva*10)/10,watts:totalW,surge:maxSurge,simultW:Math.round(simultW),tri:hasTri};
   }
 
-  function updateSummary() {
-    var c = calc();
-    $kva.textContent = c.kva.toFixed(1);
-    $wStat.textContent = (c.simultW / 1000).toFixed(1) + ' kW';
-    $wsStat.textContent = (c.surge / 1000).toFixed(1) + ' kW';
-    var pct = Math.min(100, (c.kva / 150) * 100);
-    $meter.style.width = pct + '%';
-    if (c.tri) {
-      $phase.textContent = 'Requiere TRIFÁSICO (3Ø)';
-      $phase.style.color = '#8e44ad';
-    } else if (c.kva > 0) {
-      $phase.textContent = 'Monofásico suficiente';
-      $phase.style.color = '';
-    } else {
-      $phase.textContent = 'Seleccioná equipos';
-      $phase.style.color = '';
+  // ===== UPDATE SUMMARY =====
+  function updateSummary(){
+    var c=calc();
+    var newKva=c.kva.toFixed(1);
+    $kva.textContent=newKva;
+    if(parseFloat(newKva)!==lastKva){
+      $kva.classList.remove('pulse');
+      void $kva.offsetWidth;
+      $kva.classList.add('pulse');
+      lastKva=parseFloat(newKva);
     }
-
-    var items = getSelected();
-    var h = '';
-    for (var i = 0; i < items.length; i++) {
-      var a = items[i];
-      h += '<div class="kc-sel-row"><span>' + a.app.ic + ' ' + a.app.n;
-      if (a.qty > 1) h += ' x' + a.qty;
-      h += '</span><span class="w">' + fmt(a.app.w * a.qty) + ' W</span></div>';
+    $wStat.textContent=(c.simultW/1000).toFixed(1)+' kW';
+    $wsStat.textContent=(c.surge/1000).toFixed(1)+' kW';
+    var pct=Math.min(100,(c.kva/150)*100);
+    $meter.style.width=pct+'%';
+    if(c.tri){$phase.textContent='Requiere TRIF\u00c1SICO (3\u00d8)';$phase.style.color='#8e44ad';}
+    else if(c.kva>0){$phase.textContent='Monof\u00e1sico suficiente';$phase.style.color='';}
+    else{$phase.textContent='Seleccion\u00e1 equipos';$phase.style.color='';}
+    updateSteps();
+    var items=getSelected();var h='';
+    for(var i=0;i<items.length;i++){
+      var a=items[i];
+      h+='<div class="kc-sel-row"><span>'+a.app.n;
+      if(a.qty>1)h+=' x'+a.qty;
+      h+='</span><span class="w">'+fmt(a.app.w*a.qty)+' W</span></div>';
     }
-    if (!items.length) {
-      h = '<div style="text-align:center;color:rgba(255,255,255,0.25);font-size:11px;padding:10px;">Seleccioná equipos de la lista</div>';
-    }
-    $selList.innerHTML = h;
+    if(!items.length)h='<div style="text-align:center;color:rgba(255,255,255,0.25);font-size:11px;padding:10px;">Seleccion\u00e1 equipos de la lista</div>';
+    $selList.innerHTML=h;
+    var rb=document.getElementById('kc-reset-btn');if(rb)rb.classList.toggle('vis',items.length>0);
   }
 
-  function showResults() {
-    var c = calc();
-    if (c.kva < 0.5) {
-      alert('Seleccioná al menos un equipo.');
-      return;
+  // ===== SHOW RESULTS (scoring UNCHANGED) =====
+  function showResults(){
+    var c=calc();
+    if(c.kva<0.5){alert('Seleccion\u00e1 al menos un equipo.');return;}
+    // Update step 3
+    var steps=document.querySelectorAll('#kc-steps .kc-step');
+    var divs=document.querySelectorAll('#kc-steps .kc-step-div');
+    steps[1].className='kc-step done';steps[2].className='kc-step active';
+    if(divs[1])divs[1].className='kc-step-div done';
+
+    var needed=c.kva;var gens=[];
+    for(var i=0;i<GENS.length;i++){
+      var g=GENS[i];
+      if(curFuel!=='todos'&&g.f!==curFuel)continue;
+      if(c.tri&&!g.t)continue;
+      if(g.kva<needed*0.6)continue;
+      if(g.kva>needed*6&&needed<30)continue;
+      var score=0;var ratio=g.kva/needed;
+      if(ratio>=1.0&&ratio<=1.3)score+=100;
+      else if(ratio>=0.85&&ratio<=1.5)score+=80;
+      else if(ratio>=0.7&&ratio<=2.0)score+=50;
+      else score+=20;
+      if(g.a)score+=15;if(g.s)score+=10;
+      if(g.b==='Pramac'||g.b==='Cummins')score+=8;
+      if(g.p>0)score+=5;
+      gens.push({gen:g,score:score,ratio:ratio});
     }
-    var needed = c.kva;
-    var gens = [];
-    for (var i = 0; i < GENS.length; i++) {
-      var g = GENS[i];
-      if (curFuel !== 'todos' && g.f !== curFuel) continue;
-      if (c.tri && !g.t) continue;
-      if (g.kva < needed * 0.6) continue;
-      if (g.kva > needed * 6 && needed < 30) continue;
+    gens.sort(function(a,b){if(b.score!==a.score)return b.score-a.score;return Math.abs(a.ratio-1.15)-Math.abs(b.ratio-1.15);});
+    var top=gens.slice(0,5);
 
-      var score = 0;
-      var ratio = g.kva / needed;
-      if (ratio >= 1.0 && ratio <= 1.3) score += 100;
-      else if (ratio >= 0.85 && ratio <= 1.5) score += 80;
-      else if (ratio >= 0.7 && ratio <= 2.0) score += 50;
-      else score += 20;
-      if (g.a) score += 15;
-      if (g.s) score += 10;
-      if (g.b === 'Pramac' || g.b === 'Cummins') score += 8;
-      if (g.p > 0) score += 5;
-      gens.push({gen: g, score: score, ratio: ratio});
-    }
-    gens.sort(function(a, b) {
-      if (b.score !== a.score) return b.score - a.score;
-      return Math.abs(a.ratio - 1.15) - Math.abs(b.ratio - 1.15);
-    });
-    var top = gens.slice(0, 5);
+    $resNote.innerHTML='<strong>Potencia necesaria: '+c.kva.toFixed(1)+' kVA</strong> \u2014 '+
+      'Consumo nominal: '+(c.watts/1000).toFixed(1)+' kW \u00d7 Fs '+fs.toFixed(2)+
+      ' = '+(c.simultW/1000).toFixed(1)+' kW simult\u00e1neo + '+
+      (c.surge/1000).toFixed(1)+' kW pico arranque + 15% margen.'+
+      (c.tri?' <strong style="color:#8e44ad;">Requiere generador TRIF\u00c1SICO.</strong>':'');
 
-    // Note
-    $resNote.innerHTML = '<strong>Potencia necesaria: ' + c.kva.toFixed(1) + ' kVA</strong> &mdash; ' +
-      'Consumo nominal: ' + (c.watts / 1000).toFixed(1) + ' kW &times; Fs ' + fs.toFixed(2) +
-      ' = ' + (c.simultW / 1000).toFixed(1) + ' kW simultáneo + ' +
-      (c.surge / 1000).toFixed(1) + ' kW pico arranque + 15% margen.' +
-      (c.tri ? ' <strong style="color:#8e44ad;">Requiere generador TRIFÁSICO.</strong>' : '');
-
-    // Recommendations
-    if (!top.length) {
-      $recs.innerHTML = '<div style="text-align:center;padding:30px;color:#888;">No hay generadores que coincidan. Probá otro combustible.</div>';
-    } else {
-      var h = '';
-      for (var j = 0; j < top.length; j++) {
-        var g = top[j].gen;
-        var best = j === 0 ? ' best' : '';
-        var tags = '<span class="kc-tag kva">' + g.kva + ' kVA</span>';
-        var fl = g.f === 'gas' ? 'Gas' : g.f === 'diesel' ? 'Diesel' : 'Nafta';
-        tags += '<span class="kc-tag fuel">' + fl + '</span>';
-        if (g.t) tags += '<span class="kc-tag tri">Trifásico</span>';
-        if (g.a) tags += '<span class="kc-tag">Auto</span>';
-        if (g.s) tags += '<span class="kc-tag">Silent</span>';
-        h += '<div class="kc-rec' + best + '"><div class="kc-rec-rank">' + (j + 1) + '</div>' +
-          '<div class="kc-rec-info"><h4>' + g.b + ' ' + g.n + '</h4><div class="kc-rec-tags">' + tags + '</div></div>' +
-          '<div class="kc-rec-right"><div class="kc-rec-price">' + (g.p > 0 ? 'USD ' + fmt(g.p) : 'Consultar') + '</div>' +
-          '<a href="/' + g.r + '" class="kc-rec-link">Ver ficha →</a></div></div>';
+    if(!top.length){
+      $recs.innerHTML='<div style="text-align:center;padding:30px;color:#888;">No hay generadores que coincidan. Prob\u00e1 otro combustible.</div>';
+    }else{
+      var h='';
+      for(var j=0;j<top.length;j++){
+        var g=top[j].gen;var best=j===0?' best':'';
+        var tags='<span class="kc-tag kva">'+g.kva+' kVA</span>';
+        var fl=g.f==='gas'?'Gas':g.f==='diesel'?'Diesel':'Nafta';
+        tags+='<span class="kc-tag fuel">'+fl+'</span>';
+        if(g.t)tags+='<span class="kc-tag tri">Trif\u00e1sico</span>';
+        if(g.a)tags+='<span class="kc-tag">Auto</span>';
+        if(g.s)tags+='<span class="kc-tag">Silent</span>';
+        h+='<div class="kc-rec'+best+'"><div class="kc-rec-rank">'+(j+1)+'</div>'+
+          '<div class="kc-rec-info"><h4>'+g.b+' '+g.n+'</h4><div class="kc-rec-tags">'+tags+'</div></div>'+
+          '<div class="kc-rec-right"><div class="kc-rec-price">'+(g.p>0?'USD '+fmt(g.p):'Consultar')+'</div>'+
+          '<a href="/'+g.r+'" class="kc-rec-link">Ver ficha \u2192</a></div></div>';
       }
-      $recs.innerHTML = h;
+      $recs.innerHTML=h;
     }
-
     $results.classList.add('show');
-    $results.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+    $results.scrollIntoView({behavior:'smooth',block:'nearest'});
   }
 
-  // Boot
-  function boot() {
-    try {
-      init();
-      // Use event delegation on grid (avoids re-attaching handlers)
-      $grid.addEventListener('click', onGridClick);
-    } catch (e) {
-      console.error('KOR Calc init error:', e);
-    }
+  // ===== BOOT =====
+  function boot(){
+    try{init();$grid.addEventListener('click',onGridClick);}
+    catch(e){console.error('KOR Calc v4 init error:',e);}
   }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', boot);
-  } else {
-    boot();
-  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);
+  else boot();
 })();
 
 </script>
