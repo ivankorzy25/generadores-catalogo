@@ -1069,13 +1069,15 @@ body { background: var(--kor-light-bg); }
     box-shadow: 2px 0 15px rgba(0,0,0,0.1);
   }
   .kor-sidebar.open { left: 0; }
-  .kor-sidebar-overlay.open { display: block; }
+  .kor-sidebar-overlay.open { display: block; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1001; }
   .kor-mobile-filter-btn { display: flex; }
   .kor-search { max-width: 300px; }
 }
 @media (max-width: 991px) {
+  /* CRITICAL: prevent horizontal overflow */
+  html, body { overflow-x: hidden; }
   .kor-header-top { display: none; }
-  .kor-mobile-toggle { display: block; }
+  .kor-mobile-toggle { display: block; min-width: 44px; min-height: 44px; font-size: 26px; display: flex; align-items: center; justify-content: center; }
   .kor-nav-links { display: none; }
   .kor-nav-links.open {
     display: flex;
@@ -1085,13 +1087,26 @@ body { background: var(--kor-light-bg); }
     left: 0;
     right: 0;
     background: var(--kor-primary);
-    padding: 10px 20px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-    z-index: 999;
+    padding: 12px 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    z-index: 1050;
+    gap: 0;
+  }
+  .kor-nav-links.open a {
+    padding: 14px 16px;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
   }
   .kor-search { max-width: 100%; flex: 1; }
+  .kor-search input { font-size: 16px; padding: 10px 44px 10px 16px; }
+  .kor-search-btn { min-width: 44px; min-height: 44px; width: 38px; height: 38px; }
   .kor-logo { font-size: 18px; }
+  /* Categories bar: contained scroll */
+  .kor-categories-bar { overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; }
+  .kor-categories-bar .container-xl { display: flex; flex-wrap: nowrap; padding: 0; min-width: min-content; }
+  .kor-cat-link { padding: 12px 16px; font-size: 14px; min-height: 44px; display: flex; align-items: center; flex-shrink: 0; }
 }
+/* ── Mobile ── */
 @media (max-width: 767px) {
   .kor-products-grid, .kor-products-grid.view-2,
   .kor-products-grid.view-3, .kor-products-grid.view-4 {
@@ -1099,17 +1114,31 @@ body { background: var(--kor-light-bg); }
     gap: 10px;
   }
   .kor-product-card { border-radius: 10px; }
-  .kor-product-price { font-size: 17px; font-weight: 800; }
-  .kor-product-name { font-size: 13px; font-weight: 700; line-height: 1.3; }
-  .kor-product-desc { -webkit-line-clamp: 1; font-size: 11px; margin-bottom: 6px; }
-  .kor-product-info { padding: 12px 10px; }
-  .kor-product-group { font-size: 10px; }
-  .kor-btn-detail { padding: 7px 12px; font-size: 12px; }
+  .kor-product-card:hover { transform: none; }
+  .kor-product-price { font-size: 16px; font-weight: 800; }
+  .kor-product-name { font-size: 14px; font-weight: 700; line-height: 1.3; }
+  .kor-product-desc { display: none; }
+  .kor-product-info { padding: 10px; }
+  .kor-product-group { font-size: 11px; }
+  .kor-btn-detail { padding: 10px 12px; font-size: 14px; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+  .kor-btn-whatsapp { width: 44px; height: 44px; border-radius: 8px; }
   .kor-shop-container { padding: 10px 8px; gap: 0; }
   .kor-toolbar { padding: 10px 14px; }
+  .kor-sort-select { font-size: 14px; padding: 10px 12px; min-height: 44px; }
+  .kor-mobile-filter-btn { font-size: 14px; padding: 10px 16px; min-height: 44px; }
   .view-list .kor-product-card { flex-direction: column; }
   .view-list .kor-product-image-wrapper { width: 100%; height: auto; padding-top: 75%; }
+  /* WhatsApp float: avoid overlap */
+  .kor-wa-float { bottom: 20px; right: 16px; width: 52px; height: 52px; }
+  /* Footer */
+  .kor-footer { font-size: 14px; }
+  .kor-footer a { font-size: 14px; }
+  .kor-footer h4 { font-size: 16px; }
+  /* Pagination */
+  .kor-pagination { gap: 4px; margin-top: 20px; padding-bottom: 20px; }
+  .kor-page-btn { padding: 10px 14px; font-size: 14px; min-height: 44px; border-radius: 6px; }
 }
+/* ── Phone ── */
 @media (max-width: 480px) {
   .kor-products-grid, .kor-products-grid.view-2,
   .kor-products-grid.view-3, .kor-products-grid.view-4 {
@@ -1120,23 +1149,13 @@ body { background: var(--kor-light-bg); }
     border-radius: 10px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.08);
   }
-  .kor-product-card:hover { transform: none; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
-  /* Image: square ratio, clean */
-  .kor-product-image-wrapper { padding-top: 90%; background: #fafafa; }
-  .kor-product-image { padding: 8px; }
-  .kor-product-badge { top: 5px; left: 5px; padding: 2px 7px; font-size: 8px; border-radius: 3px; }
-  /* Info: tight but readable */
+  .kor-product-card:hover { transform: none; }
+  .kor-product-image-wrapper { padding-top: 85%; background: #fafafa; }
+  .kor-product-image { padding: 6px; }
+  .kor-product-badge { top: 5px; left: 5px; padding: 3px 8px; font-size: 9px; border-radius: 4px; }
   .kor-product-info { padding: 10px 8px 8px; }
-  .kor-product-group { font-size: 9px; margin-bottom: 2px; letter-spacing: 0.3px; }
-  .kor-product-name {
-    font-size: 12px;
-    font-weight: 700;
-    margin-bottom: 6px;
-    -webkit-line-clamp: 2;
-    line-height: 1.3;
-  }
-  .kor-product-desc { display: none; }
-  /* Bottom: price prominent, actions below */
+  .kor-product-group { font-size: 10px; margin-bottom: 3px; }
+  .kor-product-name { font-size: 13px; font-weight: 700; margin-bottom: 6px; -webkit-line-clamp: 2; line-height: 1.3; }
   .kor-product-bottom {
     padding-top: 8px;
     flex-direction: column;
@@ -1144,46 +1163,29 @@ body { background: var(--kor-light-bg); }
     gap: 8px;
     border-top: 1px solid #f0f0f0;
   }
-  .kor-product-price {
-    font-size: 15px;
-    font-weight: 800;
-    line-height: 1.2;
-  }
-  .kor-product-price-usd { font-size: 10px; margin-top: 1px; }
-  .kor-product-stock { font-size: 9px; margin-top: 2px; }
-  .kor-stock-dot { width: 6px; height: 6px; }
-  /* Actions: full width button + small WA icon */
-  .kor-product-actions {
-    display: flex;
-    gap: 6px;
-    width: 100%;
-  }
-  .kor-btn-detail {
-    flex: 1;
-    padding: 8px 6px;
-    font-size: 11px;
-    font-weight: 700;
-    text-align: center;
-    border-radius: 6px;
-  }
-  .kor-btn-whatsapp {
-    width: 34px;
-    height: 34px;
-    border-radius: 6px;
-    flex-shrink: 0;
-  }
-  .kor-btn-whatsapp svg { width: 16px; height: 16px; }
-  /* Compare checkbox smaller */
-  .kor-compare-check { width: 24px; height: 24px; top: 4px; right: 4px; }
-  .kor-compare-check svg { width: 14px; height: 14px; }
-  /* Container & toolbar */
+  .kor-product-price { font-size: 15px; font-weight: 800; line-height: 1.2; }
+  .kor-product-price-usd { font-size: 11px; }
+  .kor-product-stock { font-size: 11px; }
+  .kor-product-actions { display: flex; gap: 6px; width: 100%; }
+  .kor-btn-detail { flex: 1; padding: 10px 6px; font-size: 13px; font-weight: 700; text-align: center; border-radius: 6px; min-height: 44px; }
+  .kor-btn-whatsapp { width: 44px; height: 44px; border-radius: 6px; flex-shrink: 0; }
+  .kor-compare-check { width: 28px; height: 28px; top: 4px; right: 4px; }
   .kor-shop-container { padding: 8px 6px; }
   .kor-toolbar { padding: 8px 10px; gap: 6px; border-radius: 8px; }
-  .kor-sort-select { font-size: 12px; padding: 6px 8px; }
-  .kor-mobile-filter-btn { font-size: 12px; padding: 8px 12px; border-radius: 6px; }
-  /* Pagination compact */
-  .kor-pagination { gap: 2px; margin-top: 20px; padding-bottom: 20px; }
-  .kor-page-btn { padding: 6px 10px; font-size: 12px; border-radius: 5px; }
+  .kor-sort-select { font-size: 14px; padding: 8px 10px; min-height: 44px; }
+  .kor-mobile-filter-btn { font-size: 14px; padding: 10px 14px; border-radius: 6px; min-height: 44px; }
+  .kor-page-btn { padding: 8px 12px; font-size: 13px; min-height: 44px; }
+}
+/* ── Small phones (320px) ── */
+@media (max-width: 359px) {
+  .kor-products-grid, .kor-products-grid.view-2,
+  .kor-products-grid.view-3, .kor-products-grid.view-4 {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .kor-product-name { font-size: 15px; }
+  .kor-product-price { font-size: 17px; }
+  .kor-btn-detail { font-size: 14px; }
 }
 
 
@@ -1869,23 +1871,35 @@ body { background: var(--kor-light-bg); }
   .kor-hero-cards-row { grid-template-columns: repeat(4, 1fr); }
 }
 @media (max-width: 768px) {
-  .kor-hero-bg { padding: 32px 0; }
-  .kor-hero-text h1 { font-size: 30px; }
-  .kor-hero-desc { font-size: 14px; }
-  .kor-hero-features { grid-template-columns: 1fr; text-align: left; }
-  .kor-hero-product-img { max-height: 220px; }
+  .kor-hero-bg { padding: 28px 0; }
+  .kor-hero-content { padding: 0 12px; }
+  .kor-hero-text h1 { font-size: 26px; }
+  .kor-hero-desc { font-size: 15px; line-height: 1.5; }
+  .kor-hero-badge { font-size: 10px; padding: 6px 14px; }
+  .kor-hero-features { grid-template-columns: 1fr 1fr; text-align: left; gap: 8px; }
+  .kor-hero-feat { font-size: 13px; padding: 8px 10px; min-height: 44px; display: flex; align-items: center; }
+  .kor-hero-product-img { max-height: 200px; display: block; margin: 0 auto; }
   .kor-hero-cards-row { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .kor-hero-card-sm { padding: 12px 10px; min-height: 44px; }
+  .kor-hero-card-model { font-size: 14px; }
+  .kor-hero-card-spec { font-size: 11px; }
+  .kor-hero-btn-primary, .kor-hero-btn-wa { padding: 14px 20px; font-size: 15px; min-height: 48px; }
 }
 @media (max-width: 480px) {
-  .kor-hero-bg { padding: 24px 0; }
-  .kor-hero-text h1 { font-size: 24px; }
-  .kor-hero-btns { flex-direction: column; width: 100%; }
-  .kor-hero-btn-primary, .kor-hero-btn-wa { width: 100%; text-align: center; justify-content: center; padding: 12px 20px; }
-  .kor-hero-product-img { max-height: 180px; }
+  .kor-hero-bg { padding: 20px 0; }
+  .kor-hero-content { padding: 0 8px; }
+  .kor-hero-text h1 { font-size: 22px; line-height: 1.2; }
+  .kor-hero-desc { font-size: 14px; }
+  .kor-hero-btns { flex-direction: column; width: 100%; gap: 10px; }
+  .kor-hero-btn-primary, .kor-hero-btn-wa { width: 100%; text-align: center; justify-content: center; padding: 14px 20px; font-size: 15px; min-height: 48px; }
+  .kor-hero-product-img { max-height: 160px; }
+  .kor-hero-features { grid-template-columns: 1fr; gap: 6px; }
+  .kor-hero-feat { font-size: 14px; }
   .kor-hero-cards-row { grid-template-columns: repeat(2, 1fr); gap: 6px; }
   .kor-hero-card-sm { padding: 10px 8px; }
-  .kor-hero-card-model { font-size: 12px; }
-  .kor-hero-card-spec { font-size: 9px; }
+  .kor-hero-card-model { font-size: 13px; }
+  .kor-hero-card-spec { font-size: 11px; }
+  .kor-hero-card-badge { font-size: 8px; }
 }
 
 
@@ -2058,143 +2072,146 @@ body { background: var(--kor-light-bg); }
 }
 /* Responsive - Mobile landscape / small tablet */
 @media(max-width:768px){
-  #kor-calc-section{padding:30px 0}
+  #kor-calc-section{padding:28px 0}
   #kor-calc-section .kc-wrap{padding:0 12px}
-  #kor-calc-section .kc-header{margin-bottom:20px}
+  #kor-calc-section .kc-header{margin-bottom:18px}
   #kor-calc-section .kc-header h2{font-size:22px}
-  #kor-calc-section .kc-header p{font-size:13px;padding:0 10px}
-  /* Steps compact */
-  #kor-calc-section .kc-steps{margin-bottom:16px;padding:0 8px}
+  #kor-calc-section .kc-header p{font-size:14px;padding:0 10px}
+  /* Steps */
+  #kor-calc-section .kc-steps{margin-bottom:14px;padding:0 8px}
   #kor-calc-section .kc-step{padding:6px 10px}
-  #kor-calc-section .kc-step-num{width:24px;height:24px;font-size:11px}
-  #kor-calc-section .kc-step-text{font-size:10px}
-  #kor-calc-section .kc-step-div{width:24px}
-  /* Quick presets: horizontal scroll on mobile */
-  #kor-calc-section .kc-quick{margin-bottom:18px}
+  #kor-calc-section .kc-step-num{width:26px;height:26px;font-size:12px}
+  #kor-calc-section .kc-step-text{font-size:12px}
+  #kor-calc-section .kc-step-div{width:20px}
+  /* Quick presets: horizontal scroll */
+  #kor-calc-section .kc-quick{margin-bottom:16px}
   #kor-calc-section .kc-quick-grid{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;justify-content:flex-start;padding:2px 4px 8px;gap:10px;scrollbar-width:none;-ms-overflow-style:none}
   #kor-calc-section .kc-quick-grid::-webkit-scrollbar{display:none}
   #kor-calc-section .kc-qcard{width:150px;min-width:150px;flex-shrink:0}
   #kor-calc-section .kc-qcard-inner{padding:12px 10px 10px}
   #kor-calc-section .kc-qcard-icon{width:30px;height:30px;border-radius:8px;margin-bottom:8px}
   #kor-calc-section .kc-qcard-icon svg{width:16px;height:16px}
-  #kor-calc-section .kc-qcard-name{font-size:11px;margin-bottom:2px}
-  #kor-calc-section .kc-qcard-desc{font-size:9px}
-  #kor-calc-section .kc-qcard-kw{font-size:9px;margin-top:6px;padding:2px 6px}
+  #kor-calc-section .kc-qcard-name{font-size:13px;margin-bottom:2px}
+  #kor-calc-section .kc-qcard-desc{font-size:11px}
+  #kor-calc-section .kc-qcard-kw{font-size:11px;margin-top:6px;padding:3px 8px}
   #kor-calc-section .kc-qcard-tip{display:none}
-  /* Grid items: 1 column, compact */
+  /* Grid items */
   #kor-calc-section .kc-grid{grid-template-columns:1fr;max-height:340px;padding:10px;gap:6px}
-  #kor-calc-section .kc-item{padding:8px 10px;gap:8px;border-radius:8px}
-  #kor-calc-section .kc-item-icon{width:30px;height:30px;border-radius:6px}
+  #kor-calc-section .kc-item{padding:10px 12px;gap:8px;border-radius:8px;min-height:44px}
+  #kor-calc-section .kc-item-icon{width:32px;height:32px;border-radius:6px}
   #kor-calc-section .kc-item-icon svg{width:16px;height:16px}
-  #kor-calc-section .kc-item-name{font-size:12px}
-  #kor-calc-section .kc-item-watts{font-size:9px}
-  #kor-calc-section .kc-qty-btn{width:26px;height:26px;font-size:14px}
-  #kor-calc-section .kc-qty-val{font-size:13px;min-width:18px}
+  #kor-calc-section .kc-item-name{font-size:14px}
+  #kor-calc-section .kc-item-watts{font-size:12px}
+  #kor-calc-section .kc-qty-btn{width:36px;height:36px;font-size:16px;min-width:44px;min-height:44px}
+  #kor-calc-section .kc-qty-val{font-size:15px;min-width:20px}
   /* Sidebar summary */
-  #kor-calc-section .kc-summary{padding:16px 12px;border-radius:12px}
+  #kor-calc-section .kc-summary{padding:16px 14px;border-radius:12px}
   #kor-calc-section .kc-total-num{font-size:36px}
   #kor-calc-section .kc-total-unit{font-size:14px}
-  #kor-calc-section .kc-stitle{font-size:10px;letter-spacing:1px;margin-bottom:10px}
-  #kor-calc-section .kc-stat-num{font-size:13px}
-  #kor-calc-section .kc-stat-label{font-size:8px}
-  #kor-calc-section .kc-go-btn{padding:12px;font-size:13px}
+  #kor-calc-section .kc-stitle{font-size:11px;letter-spacing:1px;margin-bottom:10px}
+  #kor-calc-section .kc-stat-num{font-size:14px}
+  #kor-calc-section .kc-stat-label{font-size:10px}
+  #kor-calc-section .kc-go-btn{padding:14px;font-size:15px;min-height:48px}
   /* Results */
-  #kor-calc-section .kc-rec{grid-template-columns:32px 1fr;gap:10px;padding:10px}
+  #kor-calc-section .kc-rec{grid-template-columns:32px 1fr;gap:10px;padding:12px}
   #kor-calc-section .kc-rec-right{grid-column:2}
-  #kor-calc-section .kc-rec-rank{width:32px;height:32px;font-size:12px}
-  #kor-calc-section .kc-rec-info h4{font-size:13px}
-  #kor-calc-section .kc-rec-price{font-size:13px}
+  #kor-calc-section .kc-rec-rank{width:32px;height:32px;font-size:13px}
+  #kor-calc-section .kc-rec-info h4{font-size:14px}
+  #kor-calc-section .kc-rec-price{font-size:14px}
   #kor-calc-section .kc-res-header{padding:12px 14px}
-  #kor-calc-section .kc-res-header h3{font-size:14px}
+  #kor-calc-section .kc-res-header h3{font-size:15px}
   #kor-calc-section .kc-recs{padding:10px}
+  #kor-calc-section .kc-tag{font-size:10px}
   /* Tabs scroll */
-  #kor-calc-section .kc-tab{padding:8px 10px;font-size:10px;gap:4px}
+  #kor-calc-section .kc-tab{padding:10px 12px;font-size:12px;gap:4px;min-height:44px}
   #kor-calc-section .kc-tab svg{width:14px;height:14px}
+  /* Inputs */
+  #kor-calc-section .kc-search-bar input{font-size:16px}
 }
 /* Responsive - Phone portrait */
 @media(max-width:480px){
   #kor-calc-section{padding:20px 0}
   #kor-calc-section .kc-wrap{padding:0 8px}
-  #kor-calc-section .kc-header h2{font-size:19px}
-  #kor-calc-section .kc-header p{font-size:12px;line-height:1.4}
-  #kor-calc-section .kc-badge{font-size:9px;padding:4px 10px;letter-spacing:1px}
+  #kor-calc-section .kc-header h2{font-size:20px}
+  #kor-calc-section .kc-header p{font-size:13px;line-height:1.4}
+  #kor-calc-section .kc-badge{font-size:10px;padding:5px 12px;letter-spacing:1px}
   /* Steps - icon only */
   #kor-calc-section .kc-steps{margin-bottom:12px;padding:0 4px}
   #kor-calc-section .kc-step-text{display:none}
   #kor-calc-section .kc-step{padding:4px 6px}
-  #kor-calc-section .kc-step-num{width:22px;height:22px;font-size:10px}
+  #kor-calc-section .kc-step-num{width:24px;height:24px;font-size:11px}
   #kor-calc-section .kc-step-div{width:16px}
-  /* Quick presets smaller */
+  /* Quick presets */
   #kor-calc-section .kc-quick{margin-bottom:14px}
-  #kor-calc-section .kc-quick-title{font-size:10px;margin-bottom:8px}
-  #kor-calc-section .kc-qcard{width:130px;min-width:130px}
+  #kor-calc-section .kc-quick-title{font-size:11px;margin-bottom:8px}
+  #kor-calc-section .kc-qcard{width:135px;min-width:135px}
   #kor-calc-section .kc-qcard-inner{padding:10px 8px 8px}
-  #kor-calc-section .kc-qcard-icon{width:26px;height:26px;border-radius:6px;margin-bottom:6px}
+  #kor-calc-section .kc-qcard-icon{width:28px;height:28px;border-radius:6px;margin-bottom:6px}
   #kor-calc-section .kc-qcard-icon svg{width:14px;height:14px}
-  #kor-calc-section .kc-qcard-name{font-size:10px}
+  #kor-calc-section .kc-qcard-name{font-size:12px}
   #kor-calc-section .kc-qcard-desc{display:none}
-  #kor-calc-section .kc-qcard-kw{font-size:8px;margin-top:4px;padding:1px 5px}
+  #kor-calc-section .kc-qcard-kw{font-size:10px;margin-top:4px;padding:2px 6px}
   /* Search */
   #kor-calc-section .kc-search-bar{padding:8px 10px}
-  #kor-calc-section .kc-search-bar input{font-size:12px}
-  /* Grid items - compact single column */
-  #kor-calc-section .kc-grid{grid-template-columns:1fr;padding:8px;max-height:260px;gap:4px}
-  #kor-calc-section .kc-item{padding:7px 8px;gap:6px;border-radius:7px;border-width:1px}
+  #kor-calc-section .kc-search-bar input{font-size:16px}
+  /* Grid items */
+  #kor-calc-section .kc-grid{grid-template-columns:1fr;padding:8px;max-height:280px;gap:5px}
+  #kor-calc-section .kc-item{padding:8px 10px;gap:8px;border-radius:8px;border-width:1px;min-height:44px}
   #kor-calc-section .kc-item-icon{width:28px;height:28px;border-radius:6px}
   #kor-calc-section .kc-item-icon svg{width:14px;height:14px}
-  #kor-calc-section .kc-item-name{font-size:11px}
-  #kor-calc-section .kc-item-watts{font-size:8px}
-  #kor-calc-section .kc-phase{font-size:8px;padding:1px 4px}
-  #kor-calc-section .kc-qty-btn{width:24px;height:24px;font-size:13px;border-radius:5px}
-  #kor-calc-section .kc-qty-val{font-size:12px;min-width:16px}
+  #kor-calc-section .kc-item-name{font-size:13px}
+  #kor-calc-section .kc-item-watts{font-size:11px}
+  #kor-calc-section .kc-phase{font-size:10px;padding:2px 5px}
+  #kor-calc-section .kc-qty-btn{width:36px;height:36px;font-size:15px;border-radius:6px;min-width:44px;min-height:44px}
+  #kor-calc-section .kc-qty-val{font-size:14px;min-width:18px}
   /* Tabs - only icons */
   #kor-calc-section .kc-tabs{gap:0}
-  #kor-calc-section .kc-tab{padding:8px 8px;font-size:9px;gap:3px}
+  #kor-calc-section .kc-tab{padding:10px 10px;font-size:10px;gap:3px;min-height:44px}
   #kor-calc-section .kc-tab-label{display:none}
-  #kor-calc-section .kc-tab svg{width:15px;height:15px}
-  #kor-calc-section .kc-tab-badge{font-size:8px;padding:1px 4px;min-width:14px}
-  /* Summary compact */
-  #kor-calc-section .kc-summary{padding:14px 10px;border-radius:10px}
-  #kor-calc-section .kc-total-num{font-size:30px}
-  #kor-calc-section .kc-total-unit{font-size:12px}
-  #kor-calc-section .kc-total-label{font-size:10px}
-  #kor-calc-section .kc-stitle{font-size:9px;margin-bottom:8px}
-  #kor-calc-section .kc-meter-labels{font-size:8px}
+  #kor-calc-section .kc-tab svg{width:16px;height:16px}
+  #kor-calc-section .kc-tab-badge{font-size:10px;padding:1px 5px;min-width:16px}
+  /* Summary */
+  #kor-calc-section .kc-summary{padding:14px 12px;border-radius:10px}
+  #kor-calc-section .kc-total-num{font-size:32px}
+  #kor-calc-section .kc-total-unit{font-size:13px}
+  #kor-calc-section .kc-total-label{font-size:12px}
+  #kor-calc-section .kc-stitle{font-size:10px;margin-bottom:8px}
+  #kor-calc-section .kc-meter-labels{font-size:10px}
   #kor-calc-section .kc-stats{gap:6px;margin-bottom:10px}
   #kor-calc-section .kc-stat{padding:8px 6px}
-  #kor-calc-section .kc-stat-num{font-size:12px}
-  #kor-calc-section .kc-stat-label{font-size:7px}
+  #kor-calc-section .kc-stat-num{font-size:13px}
+  #kor-calc-section .kc-stat-label{font-size:10px}
   #kor-calc-section .kc-simult{padding-top:10px;margin-bottom:10px}
-  #kor-calc-section .kc-simult-label{font-size:10px}
-  #kor-calc-section .kc-simult-val{font-size:12px}
-  #kor-calc-section .kc-presets{gap:3px}
-  #kor-calc-section .kc-preset{font-size:9px;padding:3px 7px}
-  #kor-calc-section .kc-fs-tip{font-size:9px}
-  #kor-calc-section .kc-sel-list{max-height:80px;margin-bottom:10px}
-  #kor-calc-section .kc-sel-row{font-size:10px}
-  #kor-calc-section .kc-filters{gap:4px;margin-bottom:10px}
-  #kor-calc-section .kc-fbtn{padding:5px 8px;font-size:9px}
-  #kor-calc-section .kc-go-btn{padding:11px;font-size:12px;border-radius:8px}
-  #kor-calc-section .kc-go-btn svg{width:15px;height:15px}
-  #kor-calc-section .kc-reset-btn{font-size:9px;padding:5px 10px}
-  #kor-calc-section .kc-reset-btn svg{width:12px;height:12px}
-  /* Results compact */
+  #kor-calc-section .kc-simult-label{font-size:12px}
+  #kor-calc-section .kc-simult-val{font-size:14px}
+  #kor-calc-section .kc-presets{gap:4px}
+  #kor-calc-section .kc-preset{font-size:11px;padding:4px 8px;min-height:32px}
+  #kor-calc-section .kc-fs-tip{font-size:11px}
+  #kor-calc-section .kc-sel-list{max-height:90px;margin-bottom:10px}
+  #kor-calc-section .kc-sel-row{font-size:12px}
+  #kor-calc-section .kc-filters{gap:5px;margin-bottom:10px}
+  #kor-calc-section .kc-fbtn{padding:8px 12px;font-size:11px;min-height:36px}
+  #kor-calc-section .kc-go-btn{padding:14px;font-size:14px;border-radius:8px;min-height:48px}
+  #kor-calc-section .kc-go-btn svg{width:16px;height:16px}
+  #kor-calc-section .kc-reset-btn{font-size:11px;padding:8px 12px;min-height:36px}
+  #kor-calc-section .kc-reset-btn svg{width:13px;height:13px}
+  /* Results */
   #kor-calc-section .kc-results{margin-top:16px;border-radius:10px}
-  #kor-calc-section .kc-res-header{padding:10px 12px}
-  #kor-calc-section .kc-res-header h3{font-size:13px;gap:6px}
-  #kor-calc-section .kc-res-header h3 svg{width:15px;height:15px}
-  #kor-calc-section .kc-res-header .ai-b{font-size:8px;padding:2px 7px}
-  #kor-calc-section .kc-res-note{padding:10px 12px;font-size:11px}
-  #kor-calc-section .kc-recs{padding:8px;gap:8px}
-  #kor-calc-section .kc-rec{grid-template-columns:28px 1fr;gap:8px;padding:8px;border-radius:8px}
-  #kor-calc-section .kc-rec-rank{width:28px;height:28px;font-size:11px;border-radius:6px}
-  #kor-calc-section .kc-rec.best::before{font-size:8px;padding:2px 8px;top:-8px;left:10px;letter-spacing:1px}
-  #kor-calc-section .kc-rec-info h4{font-size:12px}
+  #kor-calc-section .kc-res-header{padding:12px 14px}
+  #kor-calc-section .kc-res-header h3{font-size:14px;gap:6px}
+  #kor-calc-section .kc-res-header h3 svg{width:16px;height:16px}
+  #kor-calc-section .kc-res-header .ai-b{font-size:10px;padding:3px 8px}
+  #kor-calc-section .kc-res-note{padding:10px 14px;font-size:13px}
+  #kor-calc-section .kc-recs{padding:10px;gap:10px}
+  #kor-calc-section .kc-rec{grid-template-columns:30px 1fr;gap:10px;padding:10px;border-radius:8px}
+  #kor-calc-section .kc-rec-rank{width:30px;height:30px;font-size:12px;border-radius:6px}
+  #kor-calc-section .kc-rec.best::before{font-size:9px;padding:2px 8px;top:-8px;left:10px;letter-spacing:1px}
+  #kor-calc-section .kc-rec-info h4{font-size:13px}
   #kor-calc-section .kc-rec-tags{gap:3px}
-  #kor-calc-section .kc-tag{font-size:8px;padding:1px 5px}
+  #kor-calc-section .kc-tag{font-size:10px;padding:2px 6px}
   #kor-calc-section .kc-rec-right{grid-column:2}
-  #kor-calc-section .kc-rec-price{font-size:12px}
-  #kor-calc-section .kc-rec-link{font-size:10px}
+  #kor-calc-section .kc-rec-price{font-size:14px}
+  #kor-calc-section .kc-rec-link{font-size:12px}
 }
 
 /* ===== PROBLEMA 5: Footer 1 columna en mobile ===== */
@@ -2242,10 +2259,50 @@ body { background: var(--kor-light-bg); }
 }
 
 
+/* Product page mobile fixes */
+html, body { overflow-x: hidden; }
+@media (max-width: 991px) {
+  .kor-header-top { display: none; }
+  .kor-mobile-toggle { display: block; min-width: 44px; min-height: 44px; font-size: 26px; display: flex; align-items: center; justify-content: center; }
+  .kor-nav-links { display: none; }
+  .kor-nav-links.open {
+    display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0;
+    background: var(--kor-primary); padding: 12px 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.3); z-index: 1050;
+  }
+  .kor-nav-links.open a { padding: 14px 16px; font-size: 16px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .kor-search { max-width: 100%; flex: 1; }
+  .kor-logo { font-size: 18px; }
+}
 @media (max-width: 768px) {
-  .container-xl { padding-left: 12px; padding-right: 12px; }
-  div[style*="grid-template-columns: 1fr 1fr"] { display: flex !important; flex-direction: column !important; }
-  div[style*="font-size:48px"] { font-size: 36px !important; }
+  .container-xl { padding-left: 16px; padding-right: 16px; }
+  div[style*="grid-template-columns: 1fr 1fr"] { display: flex !important; flex-direction: column !important; gap: 20px !important; }
+  div[style*="font-size:48px"] { font-size: 32px !important; }
+  div[style*="font-size:28px"] { font-size: 22px !important; }
+  div[style*="font-size:32px"] { font-size: 24px !important; }
+  div[style*="padding:40px 0"] { padding: 24px 0 !important; }
+  div[style*="padding:60px 16px"] { padding: 30px 16px !important; }
+  div[style*="padding:32px"] { padding: 20px 16px !important; border-radius: 12px !important; }
+  a[style*="padding:16px 32px"] { padding: 14px 20px !important; font-size: 15px !important; min-height: 48px !important; }
+  a[style*="padding:14px 32px"] { padding: 14px 20px !important; font-size: 15px !important; min-height: 48px !important; }
+  img[style*="max-height:400px"] { max-height: 250px !important; width: 100% !important; }
+  /* KOR brochure content */
+  #kor-brochure-body { overflow-x: hidden; word-wrap: break-word; }
+  #kor-brochure-body img { max-width: 100% !important; height: auto !important; }
+  #kor-brochure-body table { width: 100% !important; font-size: 13px !important; table-layout: fixed; }
+  #kor-brochure-body td, #kor-brochure-body th { padding: 8px !important; word-break: break-word; }
+  /* Footer font sizes */
+  .kor-footer { font-size: 14px; }
+  .kor-footer-grid { gap: 24px; }
+}
+@media (max-width: 480px) {
+  div[style*="font-size:48px"] { font-size: 28px !important; }
+  div[style*="padding:32px"] { padding: 16px 12px !important; }
+  a[style*="padding:16px 32px"], a[style*="padding:14px 32px"] { padding: 12px 16px !important; font-size: 14px !important; border-radius: 8px !important; white-space: normal !important; }
+  div[style*="border-left:3px"] { padding: 12px !important; font-size: 13px !important; }
+  img[style*="max-height:400px"] { max-height: 200px !important; }
+  #kor-brochure-body table { font-size: 12px !important; }
+  #kor-brochure-body td, #kor-brochure-body th { padding: 6px !important; }
+  .kor-footer-grid { grid-template-columns: 1fr; text-align: center; }
 }
 </style>
 </head>
