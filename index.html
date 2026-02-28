@@ -3451,81 +3451,6 @@ const korShop = {
   loadPrices() {
     // Prices already embedded in product data
   },
-        body: JSON.stringify({
-          query_args: {
-            start: 0,
-            field_filters: {},
-            attribute_filters: {},
-            search: ''
-          }
-        })
-      });
-      const data = await res.json();
-      const priceItems = data.message?.items || [];
-
-      // Map prices to products
-      const priceMap = {};
-      priceItems.forEach(pi => {
-        priceMap[pi.web_item_name] = {
-          formatted_price: pi.formatted_price || '',
-          price: pi.price_info?.price?.price_list_rate || 0
-        };
-      });
-
-      this.allProducts.forEach(p => {
-        const priceData = priceMap[p.web_item_name];
-        if (priceData) {
-          p.formatted_price = priceData.formatted_price;
-          p.price = priceData.price;
-        } else {
-          p.formatted_price = '';
-          p.price = 0;
-        }
-      });
-
-      // Try to get all prices by paginating the webshop API
-      if (priceItems.length < this.allProducts.length) {
-        for (let i = 12; i < this.allProducts.length; i += 12) {
-          try {
-            const r2 = await fetch('/api/method/webshop.webshop.api.get_product_filter_data', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                'X-Frappe-CSRF-Token': 'static-no-csrf'
-              },
-              body: JSON.stringify({
-                query_args: {
-                  start: i,
-                  field_filters: {},
-                  attribute_filters: {},
-                  search: ''
-                }
-              })
-            });
-            const d2 = await r2.json();
-            const items2 = d2.message?.items || [];
-            if (items2.length === 0) break;
-            items2.forEach(pi => {
-              priceMap[pi.web_item_name] = {
-                formatted_price: pi.formatted_price || '',
-                price: pi.price_info?.price?.price_list_rate || 0
-              };
-            });
-          } catch(e) { break; }
-        }
-        // Re-map
-        this.allProducts.forEach(p => {
-          const priceData = priceMap[p.web_item_name];
-          if (priceData) {
-            p.formatted_price = priceData.formatted_price;
-            p.price = priceData.price;
-          }
-        });
-      }
-    } catch(e) {
-      console.error('Error loading prices:', e);
-    }
-  },
 
   renderCategoryBar() {
     const bar = document.getElementById('kor-cat-bar');
@@ -3957,6 +3882,7 @@ const korCompare = {
     table.innerHTML = h;
   }
 };
+
 // Close modal on backdrop click
 document.getElementById('kor-compare-modal').addEventListener('click', function(e) {
   if (e.target === this) korCompare.close();
