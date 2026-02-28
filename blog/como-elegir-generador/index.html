@@ -1800,7 +1800,10 @@ body { background: var(--kor-light-bg); }
   text-align: center;
   transition: all 0.25s;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+}
+.kor-hero-card-sm:has(.kor-hero-card-badge) {
+  margin-top: 6px;
 }
 .kor-hero-card-sm:hover {
   background: rgba(255,107,0,0.1);
@@ -1810,16 +1813,21 @@ body { background: var(--kor-light-bg); }
 }
 .kor-hero-card-badge {
   position: absolute;
-  top: 6px;
-  right: 6px;
-  background: #FF6B00;
+  top: -9px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  background: rgb(255, 107, 0);
   color: white;
   font-size: 7px;
   font-weight: 800;
-  padding: 2px 6px;
+  padding: 2px 8px;
   border-radius: 3px;
   letter-spacing: 1px;
   font-family: 'Montserrat', sans-serif;
+  white-space: nowrap;
+  z-index: 2;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 .kor-hero-card-model {
   font-family: 'Montserrat', sans-serif;
@@ -1880,7 +1888,7 @@ body { background: var(--kor-light-bg); }
   .kor-hero-card-sm { padding: 10px 8px; }
   .kor-hero-card-model { font-size: 13px; }
   .kor-hero-card-spec { font-size: 11px; }
-  .kor-hero-card-badge { font-size: 8px; }
+  .kor-hero-card-badge { font-size: 7px; padding: 2px 6px; top: -8px; }
 }
 
 
