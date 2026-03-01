@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #FF6B00; --primary-dark: #E55A00; --secondary: #1a1a2e; --dark: #0f0f1a; --gray: #f5f5f7; --text: #2d2d2d; --text-light: #5a5a5a; }
+        body { font-family: 'Roboto', sans-serif; background: #d0d0d0; color: var(--text); line-height: 1.5; }
+        .page { width: 210mm; height: 297mm; background: white; margin: 15px auto; position: relative; overflow: hidden; box-shadow: 0 5px 30px rgba(0,0,0,0.2); page-break-after: always; }
+        @media print { body { background: white; } .page { margin: 0; box-shadow: none; } }
+
+        .cover { background: linear-gradient(160deg, var(--secondary) 0%, #12122a 40%, var(--dark) 100%); color: white; display: flex; flex-direction: column; }
+        .cover-header { display: flex; justify-content: space-between; align-items: center; padding: 30px 40px 20px; }
+        .cover-logo span { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 3px; color: rgba(255,255,255,0.9); }
+        .cover-badge { background: var(--primary); color: white; padding: 6px 18px; font-size: 9px; font-weight: 700; letter-spacing: 1.5px; border-radius: 4px; }
+        .cover-hero { flex: 1; display: flex; align-items: center; justify-content: center; padding: 0 40px; gap: 40px; }
+        .cover-left { flex: 1; z-index: 2; }
+        .cover-brand { font-family: 'Montserrat'; font-size: 14px; font-weight: 600; letter-spacing: 4px; color: var(--primary); margin-bottom: 10px; }
+        .cover-model { font-family: 'Montserrat'; font-size: 48px; font-weight: 900; line-height: 1; margin-bottom: 15px; }
+        .cover-model span { color: var(--primary); }
+        .cover-tagline { font-size: 15px; color: rgba(255,255,255,0.7); max-width: 300px; }
+        .cover-right { flex: 1; display: flex; align-items: center; justify-content: center; }
+        .cover-right img { max-width: 100%; max-height: 350px; object-fit: contain; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4)); }
+        .cover-glow { position: absolute; width: 280px; height: 280px; border-radius: 50%; background: radial-gradient(circle, rgba(255,107,0,0.12) 0%, transparent 70%); top: 50%; left: 60%; transform: translate(-50%, -50%); }
+        .cover-footer { padding: 20px 40px 30px; display: flex; gap: 20px; }
+        .cover-stat { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 12px 20px; flex: 1; text-align: center; }
+        .cover-stat .val { font-family: 'Montserrat'; font-size: 22px; font-weight: 800; color: var(--primary); }
+        .cover-stat .lbl { font-size: 9px; color: rgba(255,255,255,0.5); letter-spacing: 1px; margin-top: 2px; }
+
+        .inner { padding: 40px; }
+        .page-hdr { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; border-bottom: 2px solid var(--gray); padding-bottom: 15px; }
+        .page-hdr h2 { font-family: 'Montserrat'; font-size: 24px; font-weight: 800; color: var(--secondary); }
+        .page-hdr h2 span { color: var(--primary); }
+        .page-hdr-badge { background: var(--primary); color: white; padding: 4px 14px; font-size: 8px; font-weight: 700; letter-spacing: 1.5px; border-radius: 3px; }
+        .intro { font-size: 14px; color: var(--text-light); line-height: 1.7; margin-bottom: 20px; }
+        .section-title { font-family: 'Montserrat'; font-size: 18px; font-weight: 700; color: var(--secondary); margin-bottom: 15px; }
+        .features { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 15px; }
+        .feat { background: var(--gray); border-radius: 12px; padding: 22px; }
+        .feat-icon { width: 42px; height: 42px; border-radius: 10px; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-size: 17px; margin-bottom: 10px; }
+        .feat h3 { font-family: 'Montserrat'; font-size: 12px; font-weight: 700; margin-bottom: 5px; }
+        .feat p { font-size: 11px; color: var(--text-light); line-height: 1.5; }
+        .spec-sec { margin-bottom: 18px; }
+        .spec-sec h4 { font-family: 'Montserrat'; font-size: 12px; font-weight: 700; color: var(--secondary); padding: 8px 0; border-bottom: 2px solid var(--primary); margin-bottom: 8px; }
+        .spec-sec h4 i { color: var(--primary); margin-right: 6px; }
+        .spec-row { display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid #eee; font-size: 11px; }
+        .spec-lbl { color: var(--text-light); }
+        .spec-val { font-weight: 600; text-align: right; }
+        .back { background: linear-gradient(160deg, var(--secondary) 0%, var(--dark) 100%); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+        .back h1 { font-family: 'Montserrat'; font-size: 36px; font-weight: 900; margin-bottom: 10px; }
+        .back h1 span { color: var(--primary); }
+        .back p { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 8px; }
+        .back .contact { margin-top: 30px; font-size: 12px; color: rgba(255,255,255,0.5); }
+        .back .contact a { color: var(--primary); text-decoration: none; }
+    
+      @media (max-width: 800px) {
+        .page { width: 100vw; height: auto; min-height: auto; box-shadow: none; margin: 0; border-radius: 0; }
+        .cover-hero { flex-direction: column; padding: 20px; }
+        .cover-specs-row { flex-wrap: wrap; gap: 12px; }
+        .page-content { padding: 20px; height: auto; }
+        .intro-grid { grid-template-columns: 1fr; }
+        .cover-model { font-size: 28px; }
+        .cover-image img { max-height: 250px; }
+      }
+
+
+</style>
+</head>
+<body>
+<div class="page cover">
+    <div class="cover-header">
+        <div class="cover-logo"><span>KOR GENERADORES</span></div>
+        <div class="cover-badge">TABLERO DE TRANSFERENCIA</div>
+    </div>
+    <div class="cover-hero">
+        <div class="cover-left">
+            <div class="cover-brand">GENÉRICO</div>
+            <h1 class="cover-model">TTA <span>95A</span></h1>
+            <p class="cover-tagline">Tablero de Transferencia Automática Trifásico para Generadores hasta 40 kVA</p>
+        </div>
+        <div class="cover-right">
+            <div class="cover-glow"></div>
+            <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/TTA_plc_generic.jpg"" alt="TTA GENERICA CON PLC">
+        </div>
+    </div>
+    <div class="cover-footer">
+        <div class="cover-stat"><div class="val">40 kVA</div><div class="lbl">POTENCIA</div></div>
+        <div class="cover-stat"><div class="val">95A</div><div class="lbl">CORRIENTE</div></div>
+        <div class="cover-stat"><div class="val">Trif</div><div class="lbl">FASE</div></div>
+        <div class="cover-stat"><div class="val">Auto</div><div class="lbl">TRANSFERENCIA</div></div>
+    </div>
+</div>
+
+<div class="page">
+    <div class="inner">
+        <div class="page-hdr">
+            <h2>TTA <span>GENERICA CON PLC</span></h2>
+            <div class="page-hdr-badge">TRANSFERENCIA AUTOMÁTICA</div>
+        </div>
+        <p class="intro">Tablero de Transferencia Automática diseñado para el generador Generadores hasta 40 kVA. Realiza la conmutación automática entre la red eléctrica y el generador ante un corte de energía, garantizando el suministro ininterrumpido. Capacidad de 40 kVA / 95A en configuración trifásico. Incluye controlador con indicadores LED, protecciones eléctricas completas y gabinete metálico IP54.</p>
+        <h3 class="section-title">Características Principales</h3>
+        <div class="features">
+            <div class="feat">
+                <div class="feat-icon"><i class="fas fa-exchange-alt"></i></div>
+                <h3>Transferencia Automática</h3>
+                <p>Conmutación automática Red/Generador en menos de 10 segundos ante corte de energía.</p>
+            </div>
+            <div class="feat">
+                <div class="feat-icon"><i class="fas fa-shield-halved"></i></div>
+                <h3>Protecciones Completas</h3>
+                <p>Protección contra sobrecarga, cortocircuito, sobretensión y subtensión en ambas fuentes.</p>
+            </div>
+            <div class="feat">
+                <div class="feat-icon"><i class="fas fa-microchip"></i></div>
+                <h3>Controlador Inteligente</h3>
+                <p>PLC programable con pantalla digital.</p>
+            </div>
+            <div class="feat">
+                <div class="feat-icon"><i class="fas fa-bolt"></i></div>
+                <h3>95A / 40 kVA</h3>
+                <p>Dimensionado para Generadores hasta 40 kVA. Contactores trifásicos de 95A con enclavamiento mecánico.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <div class="inner">
+        <div class="page-hdr">
+            <h2>Ficha <span>Técnica</span></h2>
+            <div class="page-hdr-badge">ESPECIFICACIONES</div>
+        </div>
+        <h3 class="section-title">Especificaciones Técnicas</h3>
+        <div class="spec-sec">
+            <h4><i class="fas fa-bolt"></i> Eléctrico</h4>
+            <div class="spec-row"><span class="spec-lbl">Potencia Nominal</span><span class="spec-val">40 kVA</span></div>
+            <div class="spec-row"><span class="spec-lbl">Corriente Nominal</span><span class="spec-val">95A</span></div>
+            <div class="spec-row"><span class="spec-lbl">Configuración</span><span class="spec-val">Trifásico</span></div>
+            <div class="spec-row"><span class="spec-lbl">Tensión Nominal</span><span class="spec-val">380/220VAC</span></div>
+            <div class="spec-row"><span class="spec-lbl">Frecuencia</span><span class="spec-val">50Hz</span></div>
+        </div>
+        <div class="spec-sec">
+            <h4><i class="fas fa-exchange-alt"></i> Transferencia</h4>
+            <div class="spec-row"><span class="spec-lbl">Tipo</span><span class="spec-val">Automática (ATS)</span></div>
+            <div class="spec-row"><span class="spec-lbl">Tiempo de Transferencia</span><span class="spec-val">&lt; 10 segundos</span></div>
+            <div class="spec-row"><span class="spec-lbl">Retorno a Red</span><span class="spec-val">Automático con retardo</span></div>
+            <div class="spec-row"><span class="spec-lbl">Contactores</span><span class="spec-val">Trifásico 95A con enclavamiento</span></div>
+        </div>
+        <div class="spec-sec">
+            <h4><i class="fas fa-shield-halved"></i> Protecciones</h4>
+            <div class="spec-row"><span class="spec-lbl">Sobrecarga</span><span class="spec-val">Sí</span></div>
+            <div class="spec-row"><span class="spec-lbl">Cortocircuito</span><span class="spec-val">Sí</span></div>
+            <div class="spec-row"><span class="spec-lbl">Sobretensión / Subtensión</span><span class="spec-val">Sí</span></div>
+            <div class="spec-row"><span class="spec-lbl">Falla de Fase</span><span class="spec-val">Sí</span></div>
+        </div>
+        <div class="spec-sec">
+            <h4><i class="fas fa-box"></i> Gabinete</h4>
+            <div class="spec-row"><span class="spec-lbl">Material</span><span class="spec-val">Acero con pintura epoxi</span></div>
+            <div class="spec-row"><span class="spec-lbl">Protección</span><span class="spec-val">IP54</span></div>
+            <div class="spec-row"><span class="spec-lbl">Montaje</span><span class="spec-val">Pared</span></div>
+            <div class="spec-row"><span class="spec-lbl">Generador Compatible</span><span class="spec-val">Generadores hasta 40 kVA</span></div>
+        </div>
+    </div>
+</div>
+
+<div class="page back">
+    <h1>KOR <span>GENERADORES</span></h1>
+    <p>Energía confiable para tu hogar, empresa e industria</p>
+    <div class="contact">
+        <p><a href="tel:+541139563099">+54 11 3956-3099</a> | <a href="mailto:info@generadores.ar">info@generadores.ar</a></p>
+        <p style="margin-top:5px;"><a href="https://generadores.ar">generadores.ar</a></p>
+    </div>
+</div></div>
+</body>
+</html>

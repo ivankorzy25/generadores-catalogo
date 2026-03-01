@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root  {
+            --primary: #FF6B00; --primary-dark: #E55A00; --primary-light: #FFF3E8;
+            --secondary: #1a1a2e; --dark: #0f0f1a; --light: #ffffff;
+            --gray: #f5f5f7; --gray-border: #e8e8ea;
+            --text: #2d2d2d; --text-light: #5a5a5a; --text-muted: #888;
+        }
+        body { font-family: 'Roboto', sans-serif; background: #d0d0d0; color: var(--text); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+        .page { width: 210mm; height: 297mm; background: white; margin: 15px auto; position: relative; overflow: hidden; box-shadow: 0 5px 30px rgba(0,0,0,0.2); page-break-after: always; }
+        @media print { body { background: white; } .page { margin: 0; box-shadow: none; } @page { size: A4 portrait; margin: 0; } }
+
+        /* Cover */
+        .cover { background: linear-gradient(160deg, var(--secondary) 0%, #12122a 40%, var(--dark) 100%); color: white; display: flex; flex-direction: column; padding: 0; }
+        .cover-header { display: flex; justify-content: space-between; align-items: center; padding: 30px 40px 20px; }
+        .cover-logo { display: flex; align-items: center; gap: 12px; }
+        .cover-logo img { height: 42px; }
+        .cover-logo span { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 3px; color: rgba(255,255,255,0.9); }
+        .cover-badge-top { background: var(--primary); color: white; padding: 6px 18px; font-size: 9px; font-weight: 700; letter-spacing: 1.5px; border-radius: 4px; text-transform: uppercase; }
+        .cover-hero { flex: 1; display: flex; align-items: center; padding: 0 40px; gap: 30px; }
+        .cover-info { flex: 1; }
+        .cover-brand { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: var(--primary); letter-spacing: 4px; margin-bottom: 8px; text-transform: uppercase; }
+        .cover-model { font-family: 'Montserrat', sans-serif; font-size: 42px; font-weight: 900; line-height: 1.0; margin-bottom: 12px; }
+        .cover-model span { color: var(--primary); }
+        .cover-tagline { font-size: 18px; color: rgba(255,255,255,0.7); font-weight: 300; margin-bottom: 35px; letter-spacing: 0.5px; }
+        .cover-specs-row { display: flex; gap: 30px; }
+        .cover-spec { text-align: left; border-left: 3px solid var(--primary); padding-left: 14px; }
+        .cover-spec .value { font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 900; color: var(--primary); display: block; line-height: 1; }
+        .cover-spec .unit { font-size: 14px; font-weight: 600; color: white; margin-left: 2px; }
+        .cover-spec .label { font-size: 11px; color: rgba(255,255,255,0.5); display: block; margin-top: 2px; text-transform: uppercase; letter-spacing: 1px; }
+        .cover-image { flex: 1; display: flex; align-items: center; justify-content: center; }
+        .cover-image img { max-width: 100%; max-height: 380px; object-fit: contain; filter: drop-shadow(0 20px 50px rgba(0,0,0,0.6)); }
+        .cover-bottom { background: rgba(0,0,0,0.35); padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; }
+        .cover-highlights-row { display: flex; gap: 35px; }
+        .highlight { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.9); font-size: 12px; font-weight: 500; }
+        .highlight i { color: var(--primary); font-size: 14px; }
+        .cover-web { font-size: 12px; color: rgba(255,255,255,0.5); font-weight: 400; }
+        .cover-web strong { color: var(--primary); }
+
+        /* Headers & Footers */
+        .page-header { background: linear-gradient(90deg, var(--secondary) 0%, var(--dark) 100%); padding: 18px 40px; display: flex; align-items: center; justify-content: space-between; }
+        .page-header.orange { background: linear-gradient(90deg, var(--primary) 0%, var(--primary-dark) 100%); }
+        .page-header-left { display: flex; align-items: center; gap: 15px; }
+        .page-header img { height: 28px; }
+        .page-header h2 { font-family: 'Montserrat', sans-serif; font-size: 20px; color: white; font-weight: 700; letter-spacing: 0.5px; }
+        .page-header h2 span { color: var(--primary); }
+        .page-header.orange h2 span { color: white; }
+        .page-header .page-num { font-family: 'Montserrat', sans-serif; font-size: 12px; color: rgba(255,255,255,0.4); font-weight: 600; }
+        .page-content { padding: 32px 42px 24px; height: calc(297mm - 62px); overflow: hidden; }
+        .page-footer { position: absolute; bottom: 0; left: 0; right: 0; padding: 8px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 8px; color: var(--text-muted); border-top: 1px solid var(--gray-border); }
+        .page-footer .brand { color: var(--primary); font-weight: 600; }
+
+        /* Intro / Presentation */
+        .intro-title { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 800; color: var(--secondary); margin-bottom: 8px; }
+        .intro-subtitle { font-size: 15px; color: var(--text-light); margin-bottom: 28px; line-height: 1.7; max-width: 90%; }
+        .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 28px; }
+        .intro-features { display: flex; flex-direction: column; gap: 16px; }
+        .intro-feat { display: flex; align-items: center; gap: 16px; background: var(--gray); padding: 16px 20px; border-radius: 10px; border-left: 4px solid var(--primary); }
+        .intro-feat-icon { width: 48px; height: 48px; background: var(--primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .intro-feat-icon i { color: white; font-size: 20px; }
+        .intro-feat-text strong { font-size: 14px; display: block; color: var(--secondary); margin-bottom: 3px; }
+        .intro-feat-text span { font-size: 12px; color: var(--text-light); line-height: 1.4; }
+        .intro-image-container { border-radius: 12px; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; background: var(--gray); }
+        .intro-image-container img { width: 85%; height: auto; object-fit: contain; padding: 15px; }
+        .intro-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+        .intro-stat { background: var(--secondary); color: white; padding: 22px 14px; border-radius: 10px; text-align: center; }
+        .intro-stat .value { font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 800; color: var(--primary); display: block; line-height: 1; margin-bottom: 6px; }
+        .intro-stat .label { font-size: 11px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* Technology */
+        .section-title { font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 800; color: var(--secondary); margin-bottom: 20px; }
+        .tech-intro { font-size: 14px; color: var(--text-light); margin-bottom: 22px; line-height: 1.7; }
+        .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 22px; }
+        .tech-item { background: var(--gray); padding: 16px; border-radius: 10px; }
+        .tech-item h5 { font-family: 'Montserrat', sans-serif; font-size: 13px; color: var(--secondary); margin-bottom: 5px; display: flex; align-items: center; gap: 8px; }
+        .tech-item h5 i { color: var(--primary); font-size: 14px; }
+        .tech-item p { font-size: 12px; color: var(--text-light); line-height: 1.5; }
+        .bms-card { background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%); color: white; padding: 22px; border-radius: 12px; margin-bottom: 18px; }
+        .bms-card h4 { font-family: 'Montserrat', sans-serif; font-size: 15px; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; font-weight: 700; }
+        .bms-card h4 i { color: var(--primary); }
+        .bms-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+        .bms-feat { text-align: center; padding: 14px 8px; background: rgba(255,255,255,0.06); border-radius: 8px; }
+        .bms-feat i { color: var(--primary); font-size: 22px; display: block; margin-bottom: 6px; }
+        .bms-feat span { font-size: 11px; color: rgba(255,255,255,0.8); }
+        .cycle-comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .cycle-bar { background: var(--gray); padding: 16px 20px; border-radius: 10px; }
+        .cycle-bar .bar-label { font-size: 12px; font-weight: 600; color: var(--secondary); margin-bottom: 8px; display: flex; justify-content: space-between; }
+        .cycle-bar .bar-track { height: 12px; background: #e0e0e0; border-radius: 6px; overflow: hidden; }
+        .cycle-bar .bar-fill { height: 100%; border-radius: 6px; }
+        .cycle-bar .bar-fill.lfp { background: var(--primary); width: 100%; }
+        .cycle-bar .bar-fill.agm { background: #666; width: 12%; }
+        .cycle-bar .bar-fill.gel { background: #999; width: 20%; }
+        .cycle-bar .bar-fill.lion { background: #4CAF50; width: 33%; }
+
+        /* Electrical Specs */
+        .elec-main { display: flex; align-items: center; gap: 40px; margin-bottom: 24px; }
+        .elec-circle { width: 160px; height: 160px; border-radius: 50%; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; flex-shrink: 0; }
+        .elec-circle .number { font-family: 'Montserrat', sans-serif; font-size: 42px; font-weight: 900; line-height: 1; }
+        .elec-circle .unit { font-size: 16px; font-weight: 600; margin-top: 2px; }
+        .elec-circle .label { font-size: 10px; opacity: 0.8; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+        .elec-secondary { display: flex; flex-direction: column; gap: 12px; flex: 1; }
+        .elec-sec-item { background: var(--gray); padding: 14px 20px; border-radius: 10px; display: flex; align-items: center; gap: 14px; }
+        .elec-sec-item i { color: var(--primary); font-size: 20px; width: 26px; }
+        .elec-sec-item .info { flex: 1; }
+        .elec-sec-item .info .label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .elec-sec-item .info .value { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 800; color: var(--secondary); }
+        .elec-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 22px; }
+        .elec-item { background: var(--secondary); color: white; padding: 18px 14px; border-radius: 10px; text-align: center; }
+        .elec-item i { color: var(--primary); font-size: 20px; display: block; margin-bottom: 8px; }
+        .elec-item .value { font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 800; display: block; margin-bottom: 4px; }
+        .elec-item .label { font-size: 10px; color: rgba(255,255,255,0.6); text-transform: uppercase; }
+        .comm-card { background: var(--gray); padding: 20px; border-radius: 12px; }
+        .comm-card h4 { font-family: 'Montserrat', sans-serif; font-size: 14px; color: var(--secondary); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; font-weight: 700; }
+        .comm-card h4 i { color: var(--primary); }
+        .comm-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        .comm-item { text-align: center; padding: 12px; background: white; border-radius: 8px; border: 1px solid var(--gray-border); }
+        .comm-item i { color: var(--primary); font-size: 22px; display: block; margin-bottom: 6px; }
+        .comm-item span { font-size: 12px; font-weight: 600; color: var(--secondary); }
+
+        /* Compatibility */
+        .compat-intro { font-size: 14px; color: var(--text-light); margin-bottom: 22px; line-height: 1.7; }
+        .brands-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 22px; }
+        .brand-card { background: var(--gray); padding: 20px 14px; border-radius: 10px; text-align: center; border: 2px solid transparent; }
+        .brand-card i { color: var(--primary); font-size: 28px; display: block; margin-bottom: 8px; }
+        .brand-card .brand-name { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; color: var(--secondary); display: block; margin-bottom: 3px; }
+        .brand-card .brand-type { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .install-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .install-card { background: var(--gray); padding: 22px; border-radius: 12px; }
+        .install-card h4 { font-family: 'Montserrat', sans-serif; font-size: 14px; color: var(--secondary); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; font-weight: 700; }
+        .install-card h4 i { color: var(--primary); }
+        .install-card p { font-size: 12px; color: var(--text-light); line-height: 1.6; }
+        .parallel-card { background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%); color: white; padding: 22px; border-radius: 12px; display: flex; align-items: center; gap: 20px; }
+        .parallel-card i { font-size: 38px; color: var(--primary); flex-shrink: 0; }
+        .parallel-info h5 { font-family: 'Montserrat', sans-serif; font-size: 15px; margin-bottom: 5px; font-weight: 700; }
+        .parallel-info .value { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 800; color: var(--primary); }
+        .parallel-info .value small { font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.7); }
+        .parallel-info p { font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 5px; }
+
+        /* Dimensions */
+        .dim-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; }
+        .dim-visual { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; }
+        .dim-box { background: var(--gray); padding: 30px; border-radius: 14px; text-align: center; width: 100%; }
+        .dim-box i { font-size: 50px; color: var(--primary); margin-bottom: 20px; display: block; }
+        .dim-measurements { display: flex; justify-content: space-around; gap: 10px; }
+        .dim-meas { text-align: center; }
+        .dim-meas .label { font-size: 10px; color: var(--text-muted); display: block; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .dim-meas .value { font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 800; color: var(--secondary); }
+        .dim-meas .value small { font-size: 12px; font-weight: 400; color: var(--text-light); }
+        .weight-box { background: var(--primary); color: white; padding: 22px 30px; border-radius: 12px; display: flex; align-items: center; gap: 20px; width: 100%; }
+        .weight-box i { font-size: 32px; }
+        .weight-box .value { font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 800; }
+        .weight-box .label { font-size: 13px; opacity: 0.85; }
+        .dim-right h4 { font-family: 'Montserrat', sans-serif; font-size: 16px; color: var(--secondary); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; font-weight: 700; }
+        .dim-right h4 i { color: var(--primary); }
+        .conditions-grid { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
+        .condition { background: var(--gray); padding: 18px 22px; border-radius: 10px; display: flex; align-items: center; gap: 18px; }
+        .condition i { color: var(--primary); font-size: 22px; width: 26px; text-align: center; }
+        .condition div { display: flex; flex-direction: column; }
+        .condition .label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .condition .value { font-size: 15px; font-weight: 600; color: var(--secondary); }
+        .ip-card { background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%); color: white; padding: 26px; border-radius: 12px; display: flex; align-items: center; gap: 20px; }
+        .ip-card i { font-size: 38px; color: var(--primary); }
+        .ip-info h5 { font-family: 'Montserrat', sans-serif; font-size: 14px; margin-bottom: 5px; font-weight: 700; }
+        .ip-info .rating { font-family: 'Montserrat', sans-serif; font-size: 30px; font-weight: 800; color: var(--primary); }
+        .ip-info p { font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 5px; }
+
+        /* Specs */
+        .specs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+        .spec-section { background: var(--gray); padding: 20px; border-radius: 12px; }
+        .spec-section h4 { font-family: 'Montserrat', sans-serif; font-size: 14px; color: var(--secondary); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); font-weight: 700; }
+        .spec-section h4 i { color: var(--primary); }
+        .spec-table { width: 100%; border-collapse: collapse; }
+        .spec-table tr { border-bottom: 1px solid rgba(0,0,0,0.06); }
+        .spec-table tr:last-child { border-bottom: none; }
+        .spec-table td { padding: 7px 0; font-size: 12px; }
+        .spec-table td:first-child { color: var(--text-light); }
+        .spec-table td:last-child { text-align: right; font-weight: 600; color: var(--secondary); }
+
+        /* Back Cover */
+        .back-cover { background: linear-gradient(160deg, var(--secondary) 0%, #12122a 40%, var(--dark) 100%); color: white; display: flex; align-items: center; justify-content: center; }
+        .back-content { text-align: center; padding: 50px; }
+        .back-content img { height: 75px; margin-bottom: 25px; }
+        .back-content h1 { font-family: 'Montserrat', sans-serif; font-size: 40px; font-weight: 900; margin-bottom: 8px; letter-spacing: 1px; }
+        .back-content h1 span { color: var(--primary); }
+        .back-tagline { font-size: 16px; color: rgba(255,255,255,0.6); margin-bottom: 45px; letter-spacing: 0.5px; }
+        .back-product { background: rgba(255,255,255,0.08); padding: 25px 50px; border-radius: 14px; display: inline-block; margin-bottom: 40px; border: 1px solid rgba(255,255,255,0.1); }
+        .back-product .model { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 800; color: var(--primary); display: block; margin-bottom: 6px; }
+        .back-product .desc { font-size: 14px; color: rgba(255,255,255,0.7); }
+        .back-contact { display: flex; justify-content: center; gap: 35px; margin-bottom: 30px; }
+        .back-contact a { color: white; text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 10px; font-weight: 500; }
+        .back-contact a i { color: var(--primary); font-size: 19px; }
+        .back-social { display: flex; justify-content: center; gap: 16px; margin-bottom: 30px; }
+        .back-social a { width: 44px; height: 44px; background: rgba(255,255,255,0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 18px; border: 1px solid rgba(255,255,255,0.1); }
+        .back-footer { font-size: 10px; color: rgba(255,255,255,0.35); line-height: 1.8; }
+    
+      @media (max-width: 800px) {
+        .page { width: 100vw; height: auto; min-height: auto; box-shadow: none; margin: 0; border-radius: 0; }
+        .cover-hero { flex-direction: column; padding: 20px; }
+        .cover-specs-row { flex-wrap: wrap; gap: 12px; }
+        .page-content { padding: 20px; height: auto; }
+        .intro-grid { grid-template-columns: 1fr; }
+        .cover-model { font-size: 28px; }
+        .cover-image img { max-height: 250px; }
+      }
+
+
+</style>
+</head>
+<body>
+<!-- PAGE 1: PORTADA -->
+    <div class="page cover">
+        <div class="cover-header">
+            <div class="cover-logo">
+                <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png"" alt="KOR">
+                <span>GENERADORES</span>
+            </div>
+            <div class="cover-badge-top">Almacenamiento de Energia</div>
+        </div>
+        <div class="cover-hero">
+            <div class="cover-info">
+                <div class="cover-brand">LI-SUN / SAKO</div>
+                <h1 class="cover-model">SK-<span>51.2V 200Ah</span></h1>
+                <p class="cover-tagline">Maxima Capacidad, Maxima Autonomia</p>
+                <div class="cover-specs-row">
+                    <div class="cover-spec">
+                        <span class="value">10.24 <span class="unit">kWh</span></span>
+                        <span class="label">Energia</span>
+                    </div>
+                    <div class="cover-spec">
+                        <span class="value">51.2 <span class="unit">V</span></span>
+                        <span class="label">Voltaje</span>
+                    </div>
+                    <div class="cover-spec">
+                        <span class="value">6000<span class="unit">+</span></span>
+                        <span class="label">Ciclos</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cover-image">
+                <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/sako-51.2-200AH-1_nobg.png"" alt="Bateria SK-51.2V 200Ah">
+            </div>
+        </div>
+        <div class="cover-bottom">
+            <div class="cover-highlights-row">
+                <div class="highlight"><i class="fas fa-shield-halved"></i><span>LiFePO4 BYD Blade</span></div>
+                <div class="highlight"><i class="fas fa-rotate"></i><span>6000+ Ciclos</span></div>
+                <div class="highlight"><i class="fas fa-wifi"></i><span>WiFi / Bluetooth</span></div>
+                <div class="highlight"><i class="fas fa-layer-group"></i><span>Hasta 15 en Paralelo</span></div>
+            </div>
+            <div class="cover-web"><strong>www.generadores.ar</strong></div>
+        </div>
+    </div>
+
+    <!-- PAGE 2: PRESENTACION -->
+    <div class="page">
+        <div class="page-header">
+            <div class="page-header-left">
+                <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png"" alt="KOR">
+                <h2>SK-51.2V 200Ah <span>LiFePO4</span></h2>
+            </div>
+            <span class="page-num">02 / 08</span>
+        </div>
+        <div class="page-content">
+            <h2 class="intro-title">Energia Solar, Almacenada</h2>
+            <p class="intro-subtitle">La bateria SK-51.2V 200Ah ofrece 10.24 kWh de almacenamiento con celdas BYD Blade LiFePO4. Monitoreo WiFi/Bluetooth integrado, BMS inteligente, mas de 6000 ciclos y compatibilidad con los principales inversores hibridos del mercado.</p>
+            <div class="intro-grid">
+                <div class="intro-features">
+                    <div class="intro-feat">
+                        <div class="intro-feat-icon"><i class="fas fa-shield-halved"></i></div>
+                        <div class="intro-feat-text">
+                            <strong>Celdas BYD Blade</strong>
+                            <span>Tecnologia LiFePO4 de BYD, lider mundial en baterias de litio. Maxima seguridad y densidad energetica</span>
+                        </div>
+                    </div>
+                    <div class="intro-feat">
+                        <div class="intro-feat-icon"><i class="fas fa-microchip"></i></div>
+                        <div class="intro-feat-text">
+                            <strong>BMS Inteligente</strong>
+                            <span>Proteccion integral: sobrecarga, sobredescarga, sobrecorriente, cortocircuito y temperatura</span>
+                        </div>
+                    </div>
+                    <div class="intro-feat">
+                        <div class="intro-feat-icon"><i class="fas fa-wifi"></i></div>
+                        <div class="intro-feat-text">
+                            <strong>Monitoreo WiFi/Bluetooth</strong>
+                            <span>Control y monitoreo remoto del estado de la bateria desde tu celular o computadora</span>
+                        </div>
+                    </div>
+                    <div class="intro-feat">
+                        <div class="intro-feat-icon"><i class="fas fa-screwdriver-wrench"></i></div>
+                        <div class="intro-feat-text">
+                            <strong>Facil Instalacion</strong>
+                            <span>Montaje en piso, plug &amp; play con conectores estandar. Escalable en paralelo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="intro-image-container">
+                    <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/sako-51.2-200AH-1.jpg"" alt="Bateria SK-51.2V 200Ah">
+                </div>
+            </div>
+            <div class="intro-stats">
+                <div class="intro-stat"><span class="value">10.24</span><span class="label">kWh Energia</span></div>
+                <div class="intro-stat"><span class="value">6000+</span><span class="label">Ciclos de Vida</span></div>
+                <div class="intro-stat"><span class="value">5</span><span class="label">Anos Garantia</span></div>
+                <div class="intro-stat"><span class="value">15</span><span class="label">Unid. Paralelo</span></div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span><span class="brand">KOR Generadores</span> — Soluciones en Almacenamiento de Energia</span>
+            <span>www.generadores.ar</span>
+        </div>
+    </div>
+
+    <!-- PAGE 3: TECNOLOGIA -->
+    <div class="page">
+        <div class="page-header orange">
+            <div class="page-header-left">
+                <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png"" alt="KOR">
+                <h2>Tecnologia <span>LiFePO4 BYD Blade</span></h2>
+            </div>
+            <span class="page-num">03 / 08</span>
+        </div>
+        <div class="page-content">
+            <h3 class="section-title">Celdas BYD Blade - La Referencia Mundial</h3>
+            <p class="tech-intro">Equipada con celdas BYD Blade, la tecnologia mas avanzada en LiFePO4. Estas celdas de formato laminar ofrecen una densidad energetica superior, maxima estabilidad termica y una vida util que supera los 6.000 ciclos de carga y descarga.</p>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <h5><i class="fas fa-fire-extinguisher"></i> Seguridad Superior</h5>
+                    <p>Las celdas Blade pasan la prueba del clavo sin fuga termica. La quimica LiFePO4 es intrinsecamente la mas segura del mercado.</p>
+                </div>
+                <div class="tech-item">
+                    <h5><i class="fas fa-expand"></i> Alta Densidad</h5>
+                    <p>10.24 kWh en un unico modulo. Formato compacto que maximiza la energia almacenada por unidad de volumen.</p>
+                </div>
+                <div class="tech-item">
+                    <h5><i class="fas fa-chart-line"></i> Eficiencia &gt;95%</h5>
+                    <p>Eficiencia de ida y vuelta superior al 95%. Maxima aprovechamiento de cada kWh generado por paneles solares.</p>
+                </div>
+                <div class="tech-item">
+                    <h5><i class="fas fa-wifi"></i> Monitoreo Remoto</h5>
+                    <p>WiFi y Bluetooth integrados para monitoreo en tiempo real. Visualiza voltaje, corriente, temperatura y estado de carga.</p>
+                </div>
+            </div>
+            <div class="bms-card">
+                <h4><i class="fas fa-microchip"></i> Sistema BMS Inteligente</h4>
+                <div class="bms-features">
+                    <div class="bms-feat"><i class="fas fa-bolt"></i><span>Proteccion Sobrecarga</span></div>
+                    <div class="bms-feat"><i class="fas fa-battery-empty"></i><span>Proteccion Sobredescarga</span></div>
+                    <div class="bms-feat"><i class="fas fa-gauge-high"></i><span>Proteccion Sobrecorriente</span></div>
+                    <div class="bms-feat"><i class="fas fa-circle-exclamation"></i><span>Proteccion Cortocircuito</span></div>
+                    <div class="bms-feat"><i class="fas fa-temperature-high"></i><span>Proteccion Temperatura</span></div>
+                    <div class="bms-feat"><i class="fas fa-scale-balanced"></i><span>Balanceo de Celdas</span></div>
+                </div>
+            </div>
+            <h4 style="font-family:'Montserrat',sans-serif; font-size:14px; font-weight:700; color:var(--secondary); margin-bottom:12px;">Comparativa de Vida Util</h4>
+            <div class="cycle-comparison">
+                <div class="cycle-bar">
+                    <div class="bar-label"><span>LiFePO4 BYD Blade</span><span style="color:var(--primary); font-weight:700;">6.000+ ciclos</span></div>
+                    <div class="bar-track"><div class="bar-fill lfp"></div></div>
+                </div>
+                <div class="cycle-bar">
+                    <div class="bar-label"><span>Li-ion NMC</span><span>2.000 ciclos</span></div>
+                    <div class="bar-track"><div class="bar-fill lion"></div></div>
+                </div>
+                <div class="cycle-bar">
+                    <div class="bar-label"><span>Gel</span><span>1.200 ciclos</span></div>
+                    <div class="bar-track"><div class="bar-fill gel"></div></div>
+                </div>
+                <div class="cycle-bar">
+                    <div class="bar-label"><span>AGM / Plomo-acido</span><span>700 ciclos</span></div>
+                    <div class="bar-track"><div class="bar-fill agm"></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span><span class="brand">KOR Generadores</span> — Soluciones en Almacenamiento de Energia</span>
+            <span>www.generadores.ar</span>
+        </div>
+    </div>
+
+    <!-- PAGE 4: ESPECIFICACIONES ELECTRICAS -->
+    <div class="page">
+        <div class="page-header">
+            <div class="page-header-left">
+                <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png"" alt="KOR">
+                <h2>Especificaciones <span>Electricas</span></h2>
+            </div>
+            <span class="page-num">04 / 08</span>
+        </div>
+        <div class="page-content">
+            <div class="elec-main">
+                <div class="elec-circle">
+                    <span class="number">10.24</span>
+                    <span class="unit">kWh</span>
+                    <span class="label">Energia</span>
+                </div>
+                <div class="elec-secondary">
+                    <div class="elec-sec-item">
+                        <i class="fas fa-bolt"></i>
+                        <div class="info"><span class="label">Voltaje Nominal</span><span class="value">51.2V</span></div>
+                    </div>
+                    <div class="elec-sec-item">
+                        <i class="fas fa-battery-full"></i>
+                        <div class="info"><span class="label">Capacidad</span><span class="value">200 Ah</span></div>
+                    </div>
+                    <div class="elec-sec-item">
+                        <i class="fas fa-arrows-left-right"></i>
+                        <div class="info"><span class="label">Corriente Max Descarga</span><span class="value">150A Continuo</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="elec-grid">
+                <div class="elec-item"><i class="fas fa-plug-circle-bolt"></i><span class="value">48~58.4V</span><span class="label">Rango Voltaje</span></div>
+                <div class="elec-item"><i class="fas fa-arrow-up"></i><span class="value">100A</span><span class="label">Carga Max</span></div>
+                <div class="elec-item"><i class="fas fa-arrow-down"></i><span class="value">150A</span><span class="label">Descarga Max</span></div>
+                <div class="elec-item"><i class="fas fa-percent"></i><span class="value">&gt;95%</span><span class="label">Eficiencia</span></div>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px;">
+                <div style="background:var(--gray); padding:20px; border-radius:12px;">
+                    <h4 style="font-family:'Montserrat',sans-serif; font-size:14px; color:var(--secondary); margin-bottom:12px; display:flex; align-items:center; gap:8px; font-weight:700;"><i style="color:var(--primary);" class="fas fa-arrow-up"></i> Carga</h4>
+                    <table class="spec-table">
+                        <tr><td>Voltaje de Carga</td><td>56.0 ~ 58.4V</td></tr>
+                        <tr><td>Corriente de Carga</td><td>100A max</td></tr>
+                        <tr><td>Temperatura Carga</td><td>0C a +50C</td></tr>
+                        <tr><td>Corte Sobrecarga</td><td>59.2V</td></tr>
+                    </table>
+                </div>
+                <div style="background:var(--gray); padding:20px; border-radius:12px;">
+                    <h4 style="font-family:'Montserrat',sans-serif; font-size:14px; color:var(--secondary); margin-bottom:12px; display:flex; align-items:center; gap:8px; font-weight:700;"><i style="color:var(--primary);" class="fas fa-arrow-down"></i> Descarga</h4>
+                    <table class="spec-table">
+                        <tr><td>Corriente Continua</td><td>150A max</td></tr>
+                        <tr><td>Temperatura Descarga</td><td>-10C a +50C</td></tr>
+                        <tr><td>Corte Sobredescarga</td><td>40.0V</td></tr>
+                        <tr><td>DOD Recomendado</td><td>80%</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="comm-card">
+                <h4><i class="fas fa-network-wired"></i> Protocolos de Comunicacion</h4>
+                <div class="comm-grid">
+                    <div class="comm-item"><i class="fas fa-plug"></i><span>CAN Bus</span></div>
+                    <div class="comm-item"><i class="fas fa-code"></i><span>RS485</span></div>
+                    <div class="comm-item"><i class="fas fa-wifi"></i><span>WiFi</span></div>
+                    <div class="comm-item"><i class="fab fa-bluetooth-b"></i><span>Bluetooth</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span><span class="brand">KOR Generadores</span> — Soluciones en Almacenamiento de Energia</span>
+            <span>www.generadores.ar</span>
+        </div>
+    </div>
+
+    <!-- PAGE 5: COMPATIBILIDAD -->
+    <div class="page">
+        <div class="page-header orange">
+            <div class="page-header-left">
+                <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png"" alt="KOR">
+                <h2>Compatibilidad <span>e Instalacion</span></h2>
+            </div>
+            <span class="page-num">05 / 08</span>
+        </div>
+        <div class="page-content">
+            <h3 class="section-title">Inversores Compatibles</h3>
+            <p class="compat-intro">Compatible con las principales marcas de inversores hibridos del mercado. Comunicacion via CAN y RS485 para integracion total. Monitoreo inalambrico WiFi/Bluetooth integrado.</p>
+            <div class="brands-grid">
+                <div class="brand-card"><i class="fas fa-solar-panel"></i><span class="brand-name">Deye</span><span class="brand-type">Inversor Hibrido</span></div>
+                <div class="brand-card"><i class="fas fa-solar-panel"></i><span class="brand-name">Growatt</span><span class="brand-type">Inversor Hibrido</span></div>
+                <div class="brand-card"><i class="fas fa-solar-panel"></i><span class="brand-name">Voltronic</span><span class="brand-type">Inversor Hibrido</span></div>
+                <div class="brand-card"><i class="fas fa-solar-panel"></i><span class="brand-name">GoodWe</span><span class="brand-type">Inversor Hibrido</span></div>
+                <div class="brand-card"><i class="fas fa-solar-panel"></i><span class="brand-name">SMA</span><span class="brand-type">Inversor Hibrido</span></div>
+                <div class="brand-card"><i class="fas fa-solar-panel"></i><span class="brand-name">SOFAR</span><span class="brand-type">Inversor Hibrido</span></div>
+                <div class="brand-card"><i class="fas fa-solar-panel"></i><span class="brand-name">Victron</span><span class="brand-type">Inversor / Cargador</span></div>
+                <div class="brand-card"><i class="fas fa-solar-panel"></i><span class="brand-name">SRNE</span><span class="brand-type">Inversor Hibrido</span></div>
+            </div>
+            <div class="install-grid">
+                <div class="install-card">
+                    <h4><i class="fas fa-cube"></i> Montaje en Piso</h4>
+                    <p>Base reforzada para instalacion en piso. Diseño robusto de 95 kg con ventilacion optimizada. Ideal para cuartos tecnicos y sistemas de gran capacidad.</p>
+                </div>
+                <div class="install-card">
+                    <h4><i class="fas fa-wifi"></i> Monitoreo Remoto</h4>
+                    <p>WiFi y Bluetooth integrados. Monitorea en tiempo real: voltaje, corriente, SOC, temperatura y estado del BMS desde cualquier dispositivo.</p>
+                </div>
+            </div>
+            <div class="parallel-card">
+                <i class="fas fa-layer-group"></i>
+                <div class="parallel-info">
+                    <h5>Conexion en Paralelo</h5>
+                    <span class="value">15 <small>unidades maximo</small></span>
+                    <p>Escalable hasta 153.6 kWh conectando hasta 15 baterias en paralelo. Expansion modular segun necesidad energetica.</p>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span><span class="brand">KOR Generadores</span> — Soluciones en Almacenamiento de Energia</span>
+            <span>www.generadores.ar</span>
+        </div>
+    </div>
+
+    <!-- PAGE 6: DIMENSIONES -->
+    <div class="page">
+        <div class="page-header">
+            <div class="page-header-left">
+                <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png"" alt="KOR">
+                <h2>Dimensiones <span>y Peso</span></h2>
+            </div>
+            <span class="page-num">06 / 08</span>
+        </div>
+        <div class="page-content">
+            <div class="dim-grid">
+                <div class="dim-visual">
+                    <div class="dim-box">
+                        <i class="fas fa-battery-full"></i>
+                        <div class="dim-measurements">
+                            <div class="dim-meas"><span class="label">Largo</span><span class="value">850 <small>mm</small></span></div>
+                            <div class="dim-meas"><span class="label">Alto</span><span class="value">560 <small>mm</small></span></div>
+                            <div class="dim-meas"><span class="label">Prof.</span><span class="value">178 <small>mm</small></span></div>
+                        </div>
+                    </div>
+                    <div class="weight-box">
+                        <i class="fas fa-weight-hanging"></i>
+                        <div><span class="value">~95 kg</span><span class="label">Peso neto</span></div>
+                    </div>
+                </div>
+                <div class="dim-right">
+                    <h4><i class="fas fa-thermometer-half"></i> Condiciones de Operacion</h4>
+                    <div class="conditions-grid">
+                        <div class="condition"><i class="fas fa-temperature-half"></i><div><span class="label">Temp. Descarga</span><span class="value">-10C a +50C</span></div></div>
+                        <div class="condition"><i class="fas fa-temperature-arrow-up"></i><div><span class="label">Temp. Carga</span><span class="value">0C a +50C</span></div></div>
+                        <div class="condition"><i class="fas fa-droplet"></i><div><span class="label">Humedad</span><span class="value">5~95% sin condensacion</span></div></div>
+                        <div class="condition"><i class="fas fa-mountain"></i><div><span class="label">Altitud Maxima</span><span class="value">4.000 m.s.n.m.</span></div></div>
+                    </div>
+                    <div class="ip-card">
+                        <i class="fas fa-shield-halved"></i>
+                        <div class="ip-info">
+                            <h5>Grado de Proteccion</h5>
+                            <span class="rating">IP20</span>
+                            <p>Proteccion contra objetos solidos mayores a 12.5 mm. Uso interior recomendado.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span><span class="brand">KOR Generadores</span> — Soluciones en Almacenamiento de Energia</span>
+            <span>www.generadores.ar</span>
+        </div>
+    </div>
+
+    <!-- PAGE 7: FICHA TECNICA COMPLETA -->
+    <div class="page">
+        <div class="page-header orange">
+            <div class="page-header-left">
+                <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png"" alt="KOR">
+                <h2>Ficha <span>Tecnica</span></h2>
+            </div>
+            <span class="page-num">07 / 08</span>
+        </div>
+        <div class="page-content">
+            <div class="specs-grid">
+                <div class="spec-section">
+                    <h4><i class="fas fa-bolt"></i> Electricas</h4>
+                    <table class="spec-table">
+                        <tr><td>Voltaje Nominal</td><td>51.2V</td></tr>
+                        <tr><td>Capacidad</td><td>200 Ah</td></tr>
+                        <tr><td>Energia</td><td>10.24 kWh</td></tr>
+                        <tr><td>Rango de Voltaje</td><td>48.0 ~ 58.4V</td></tr>
+                        <tr><td>Corriente Carga Max</td><td>100A</td></tr>
+                        <tr><td>Corriente Descarga Max</td><td>150A</td></tr>
+                        <tr><td>Eficiencia</td><td>&gt;95%</td></tr>
+                    </table>
+                </div>
+                <div class="spec-section">
+                    <h4><i class="fas fa-car-battery"></i> Bateria</h4>
+                    <table class="spec-table">
+                        <tr><td>Quimica</td><td>LiFePO4 (BYD Blade)</td></tr>
+                        <tr><td>Config. Celdas</td><td>16S (serie)</td></tr>
+                        <tr><td>Ciclos de Vida</td><td>&gt;6.000 (80% DOD)</td></tr>
+                        <tr><td>Autodescarga</td><td>&lt;3% / mes</td></tr>
+                        <tr><td>Paralelo Max</td><td>15 unidades</td></tr>
+                    </table>
+                </div>
+                <div class="spec-section">
+                    <h4><i class="fas fa-microchip"></i> BMS</h4>
+                    <table class="spec-table">
+                        <tr><td>Sobrecarga</td><td>59.2V corte</td></tr>
+                        <tr><td>Sobredescarga</td><td>40.0V corte</td></tr>
+                        <tr><td>Sobrecorriente</td><td>Proteccion activa</td></tr>
+                        <tr><td>Cortocircuito</td><td>Proteccion activa</td></tr>
+                        <tr><td>Sobretemperatura</td><td>Proteccion activa</td></tr>
+                        <tr><td>Balanceo</td><td>Automatico</td></tr>
+                    </table>
+                </div>
+                <div class="spec-section">
+                    <h4><i class="fas fa-ruler"></i> Fisicas</h4>
+                    <table class="spec-table">
+                        <tr><td>Dimensiones</td><td>850 x 560 x 178 mm</td></tr>
+                        <tr><td>Peso</td><td>~95 kg</td></tr>
+                        <tr><td>Proteccion IP</td><td>IP20</td></tr>
+                        <tr><td>Temp. Descarga</td><td>-10C a +50C</td></tr>
+                        <tr><td>Temp. Carga</td><td>0C a +50C</td></tr>
+                        <tr><td>Montaje</td><td>Piso</td></tr>
+                    </table>
+                </div>
+                <div class="spec-section">
+                    <h4><i class="fas fa-network-wired"></i> Comunicacion</h4>
+                    <table class="spec-table">
+                        <tr><td>CAN Bus</td><td>Si</td></tr>
+                        <tr><td>RS485</td><td>Si</td></tr>
+                        <tr><td>WiFi</td><td>Si (monitoreo)</td></tr>
+                        <tr><td>Bluetooth</td><td>Si (monitoreo)</td></tr>
+                        <tr><td>Compatibilidad</td><td>Deye, Growatt, Voltronic, GoodWe, SMA, SOFAR, Victron, SRNE</td></tr>
+                    </table>
+                </div>
+                <div class="spec-section">
+                    <h4><i class="fas fa-certificate"></i> Comercial</h4>
+                    <table class="spec-table">
+                        <tr><td>Marca</td><td>LI-SUN / SAKO</td></tr>
+                        <tr><td>Modelo</td><td>SK-51.2V 200Ah</td></tr>
+                        <tr><td>Certificaciones</td><td>UN38.3, IEC, CE</td></tr>
+                        <tr><td>Garantia</td><td>5 anos</td></tr>
+                        <tr><td>Codigo KOR</td><td>10044</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span><span class="brand">KOR Generadores</span> — Soluciones en Almacenamiento de Energia</span>
+            <span>www.generadores.ar</span>
+        </div>
+    </div>
+
+    <!-- PAGE 8: CONTRAPORTADA -->
+    <div class="page back-cover">
+        <div class="back-content">
+            <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png"" alt="KOR">
+            <h1>KOR <span>GENERADORES</span></h1>
+            <p class="back-tagline">Soluciones en Almacenamiento de Energia</p>
+            <div class="back-product">
+                <span class="model">SK-51.2V 200Ah LiFePO4</span>
+                <span class="desc">Bateria de Litio BYD Blade — 10.24 kWh</span>
+            </div>
+            <div class="back-contact">
+                <a href="https://wa.me/5491139563099"><i class="fab fa-whatsapp"></i> +54 9 11 3956-3099</a>
+                <a href="https://generadores.ar"><i class="fas fa-globe"></i> www.generadores.ar</a>
+                <a href="mailto:info@generadores.ar"><i class="fas fa-envelope"></i> info@generadores.ar</a>
+            </div>
+            <div class="back-social">
+                <a href="https://instagram.com/kor.generadores"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com/korgeneradores"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://youtube.com/@korgeneradores"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.mercadolibre.com.ar/perfil/KOR+GENERADORES"><i class="fas fa-store"></i></a>
+            </div>
+            <p class="back-footer">Las especificaciones pueden variar sin previo aviso.<br>Las imagenes son a modo ilustrativo.<br>&copy; 2026 KOR Generadores — Todos los derechos reservados.</p>
+        </div>
+    </div></div>
+</body>
+</html>
