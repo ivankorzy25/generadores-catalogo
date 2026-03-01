@@ -48,12 +48,632 @@
   </div>
 </div>
 
-<div class="container-xl" style="padding:60px 16px;text-align:center;">
-  <img src='../img/BRANIK_85GF9.png' alt='BRANIK 8.5GF-9 — Standard 8.5 KVA' style='max-height:400px;border-radius:16px;margin-bottom:24px;'>
-  <h1 style="font-size:32px;font-weight:800;color:#2c3e50;margin-bottom:8px;">BRANIK 8.5GF-9 — Standard 8.5 KVA</h1>
-  <div style="font-size:14px;color:#e67e22;font-weight:600;text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;">Generadores Nafta</div>
-  <p style="color:#5a5a5a;max-width:600px;margin:0 auto;">Para más información sobre este producto, contactanos por WhatsApp.</p>
-</div>
+<style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root  {
+            --primary: #FF6B00; --primary-dark: #E55A00; --primary-light: #FFF3E8;
+            --secondary: #1a1a2e; --dark: #0f0f1a; --light: #ffffff;
+            --gray: #f5f5f7; --gray-border: #e8e8ea;
+            --text: #2d2d2d; --text-light: #5a5a5a; --text-muted: #888;
+        }
+        body { font-family: 'Roboto', sans-serif; background: #d0d0d0; color: var(--text); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+        .page { width: 210mm; height: 297mm; background: white; margin: 15px auto; position: relative; overflow: hidden; box-shadow: 0 5px 30px rgba(0,0,0,0.2); page-break-after: always; }
+        @media print { body { background: white; } .page { margin: 0; box-shadow: none; } @page { size: A4 portrait; margin: 0; } }
+
+        /* Cover */
+        .cover { background: linear-gradient(160deg, var(--secondary) 0%, #12122a 40%, var(--dark) 100%); color: white; display: flex; flex-direction: column; padding: 0; }
+        .cover-header { display: flex; justify-content: space-between; align-items: center; padding: 30px 40px 20px; }
+        .cover-logo { display: flex; align-items: center; gap: 12px; }
+        .cover-logo img { height: 42px; }
+        .cover-logo span { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 3px; color: rgba(255,255,255,0.9); }
+        .cover-badge-top { background: var(--primary); color: white; padding: 6px 18px; font-size: 9px; font-weight: 700; letter-spacing: 1.5px; border-radius: 4px; text-transform: uppercase; }
+        .cover-hero { flex: 1; display: flex; align-items: center; padding: 0 40px; gap: 30px; }
+        .cover-info { flex: 1; }
+        .cover-brand { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: var(--primary); letter-spacing: 4px; margin-bottom: 8px; text-transform: uppercase; }
+        .cover-model { font-family: 'Montserrat', sans-serif; font-size: 56px; font-weight: 900; line-height: 0.95; margin-bottom: 12px; }
+        .cover-model span { color: var(--primary); }
+        .cover-tagline { font-size: 18px; color: rgba(255,255,255,0.7); font-weight: 300; margin-bottom: 35px; letter-spacing: 0.5px; }
+        .cover-specs-row { display: flex; gap: 30px; }
+        .cover-spec { text-align: left; border-left: 3px solid var(--primary); padding-left: 14px; }
+        .cover-spec .value { font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 900; color: var(--primary); display: block; line-height: 1; }
+        .cover-spec .unit { font-size: 14px; font-weight: 600; color: white; margin-left: 2px; }
+        .cover-spec .label { font-size: 11px; color: rgba(255,255,255,0.5); display: block; margin-top: 2px; text-transform: uppercase; letter-spacing: 1px; }
+        .cover-image { flex: 1; display: flex; align-items: center; justify-content: center; }
+        .cover-image img { max-width: 100%; max-height: 380px; object-fit: contain; filter: drop-shadow(0 20px 50px rgba(0,0,0,0.6)); }
+        .cover-bottom { background: rgba(0,0,0,0.35); padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; }
+        .cover-highlights-row { display: flex; gap: 35px; }
+        .highlight { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.9); font-size: 12px; font-weight: 500; }
+        .highlight i { color: var(--primary); font-size: 14px; }
+        .cover-web { font-size: 12px; color: rgba(255,255,255,0.5); font-weight: 400; }
+        .cover-web strong { color: var(--primary); }
+
+        /* Headers & Footers */
+        .page-header { background: linear-gradient(90deg, var(--secondary) 0%, var(--dark) 100%); padding: 18px 40px; display: flex; align-items: center; justify-content: space-between; }
+        .page-header.orange { background: linear-gradient(90deg, var(--primary) 0%, var(--primary-dark) 100%); }
+        .page-header-left { display: flex; align-items: center; gap: 15px; }
+        .page-header img { height: 28px; }
+        .page-header h2 { font-family: 'Montserrat', sans-serif; font-size: 20px; color: white; font-weight: 700; letter-spacing: 0.5px; }
+        .page-header h2 span { color: var(--primary); }
+        .page-header.orange h2 span { color: white; }
+        .page-header .page-num { font-family: 'Montserrat', sans-serif; font-size: 12px; color: rgba(255,255,255,0.4); font-weight: 600; }
+        .page-content { padding: 32px 42px 24px; height: calc(297mm - 62px); overflow: hidden; }
+        .page-footer { position: absolute; bottom: 0; left: 0; right: 0; padding: 8px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 8px; color: var(--text-muted); border-top: 1px solid var(--gray-border); }
+        .page-footer .brand { color: var(--primary); font-weight: 600; }
+
+        /* Intro */
+        .intro-title { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 800; color: var(--secondary); margin-bottom: 8px; }
+        .intro-subtitle { font-size: 15px; color: var(--text-light); margin-bottom: 28px; line-height: 1.7; max-width: 90%; }
+        .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 28px; }
+        .intro-features { display: flex; flex-direction: column; gap: 16px; }
+        .intro-feat { display: flex; align-items: center; gap: 16px; background: var(--gray); padding: 16px 20px; border-radius: 10px; border-left: 4px solid var(--primary); }
+        .intro-feat-icon { width: 48px; height: 48px; background: var(--primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .intro-feat-icon i { color: white; font-size: 20px; }
+        .intro-feat-text strong { font-size: 14px; display: block; color: var(--secondary); margin-bottom: 3px; }
+        .intro-feat-text span { font-size: 12px; color: var(--text-light); line-height: 1.4; }
+        .intro-image-container { border-radius: 12px; overflow: hidden; position: relative; }
+        .intro-image-container img { width: 100%; height: 100%; object-fit: cover; }
+        .intro-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+        .intro-stat { background: var(--secondary); color: white; padding: 22px 14px; border-radius: 10px; text-align: center; }
+        .intro-stat .value { font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 800; color: var(--primary); display: block; line-height: 1; margin-bottom: 6px; }
+        .intro-stat .label { font-size: 11px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* Engine */
+        .engine-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 30px; height: 100%; }
+        .engine-left img { width: 100%; height: 270px; object-fit: contain; border-radius: 12px; margin-bottom: 20px; background: var(--gray); padding: 10px; }
+        .engine-card { background: var(--gray); padding: 22px; border-radius: 12px; }
+        .engine-card h4 { font-family: 'Montserrat', sans-serif; font-size: 14px; color: var(--secondary); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+        .engine-card h4 i { color: var(--primary); }
+        .engine-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .engine-spec { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--text); }
+        .engine-spec i { color: var(--primary); width: 16px; font-size: 12px; }
+        .engine-right h3 { font-family: 'Montserrat', sans-serif; font-size: 22px; color: var(--secondary); margin-bottom: 6px; font-weight: 800; }
+        .engine-right .subtitle { font-size: 13px; color: var(--text-light); margin-bottom: 20px; line-height: 1.6; }
+        .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 22px; }
+        .tech-item { background: var(--gray); padding: 16px; border-radius: 10px; }
+        .tech-item h5 { font-family: 'Montserrat', sans-serif; font-size: 13px; color: var(--secondary); margin-bottom: 5px; display: flex; align-items: center; gap: 8px; }
+        .tech-item h5 i { color: var(--primary); font-size: 14px; }
+        .tech-item p { font-size: 12px; color: var(--text-light); line-height: 1.5; }
+        .alt-card { background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%); color: white; padding: 20px; border-radius: 12px; }
+        .alt-card h4 { font-family: 'Montserrat', sans-serif; font-size: 14px; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; font-weight: 700; }
+        .alt-card h4 i { color: var(--primary); }
+        .alt-specs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+        .alt-spec { text-align: center; }
+        .alt-spec .value { font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 800; color: var(--primary); display: block; }
+        .alt-spec .label { font-size: 10px; color: rgba(255,255,255,0.6); text-transform: uppercase; }
+
+        /* Power */
+        .section-title { font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 800; color: var(--secondary); margin-bottom: 28px; }
+        .power-main { display: flex; align-items: center; gap: 40px; margin-bottom: 30px; }
+        .power-circle { width: 180px; height: 180px; border-radius: 50%; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; flex-shrink: 0; }
+        .power-circle .number { font-family: 'Montserrat', sans-serif; font-size: 58px; font-weight: 900; line-height: 1; }
+        .power-circle .unit { font-size: 18px; font-weight: 600; margin-top: 2px; }
+        .power-circle .label { font-size: 11px; opacity: 0.8; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+        .power-secondary { display: flex; flex-direction: column; gap: 14px; flex: 1; }
+        .power-sec-item { background: var(--gray); padding: 16px 22px; border-radius: 10px; display: flex; align-items: center; gap: 14px; }
+        .power-sec-item i { color: var(--primary); font-size: 22px; width: 28px; }
+        .power-sec-item .info { flex: 1; }
+        .power-sec-item .info .label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .power-sec-item .info .value { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 800; color: var(--secondary); }
+        .elec-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 28px; }
+        .elec-item { background: var(--secondary); color: white; padding: 18px 14px; border-radius: 10px; text-align: center; }
+        .elec-item i { color: var(--primary); font-size: 20px; display: block; margin-bottom: 8px; }
+        .elec-item .value { font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 800; display: block; margin-bottom: 4px; }
+        .elec-item .label { font-size: 10px; color: rgba(255,255,255,0.6); text-transform: uppercase; }
+        .power-examples { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        .power-example { background: var(--gray); padding: 16px 12px; border-radius: 10px; text-align: center; }
+        .power-example i { color: var(--primary); font-size: 26px; display: block; margin-bottom: 8px; }
+        .power-example .name { font-size: 12px; font-weight: 600; color: var(--secondary); display: block; margin-bottom: 3px; }
+        .power-example .watts { font-size: 10px; color: var(--text-muted); }
+
+        /* Fuel */
+        .fuel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 28px; }
+        .fuel-card { background: var(--gray); padding: 26px; border-radius: 14px; }
+        .fuel-card.primary { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; }
+        .fuel-card h4 { font-family: 'Montserrat', sans-serif; font-size: 16px; margin-bottom: 6px; display: flex; align-items: center; gap: 10px; font-weight: 700; }
+        .fuel-card h4 i { font-size: 20px; }
+        .fuel-card.primary h4 i { color: white; }
+        .fuel-card h4 i { color: var(--primary); }
+        .fuel-card > p { font-size: 13px; margin-bottom: 18px; line-height: 1.55; }
+        .fuel-card.primary > p { color: rgba(255,255,255,0.85); }
+        .fuel-specs { display: flex; flex-direction: column; gap: 12px; }
+        .fuel-spec { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+        .fuel-card.primary .fuel-spec { border-bottom-color: rgba(255,255,255,0.15); }
+        .fuel-spec:last-child { border-bottom: none; }
+        .fuel-spec .label { font-size: 13px; }
+        .fuel-spec .value { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14px; }
+        .maint-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .maint-card { background: var(--secondary); color: white; padding: 22px 18px; border-radius: 12px; text-align: center; }
+        .maint-card i { font-size: 28px; color: var(--primary); margin-bottom: 10px; display: block; }
+        .maint-card h5 { font-family: 'Montserrat', sans-serif; font-size: 13px; margin-bottom: 6px; font-weight: 700; }
+        .maint-card p { font-size: 11px; color: rgba(255,255,255,0.7); line-height: 1.5; }
+
+        /* Dimensions */
+        .dim-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; }
+        .dim-visual { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; }
+        .dim-box { background: var(--gray); padding: 30px; border-radius: 14px; text-align: center; width: 100%; }
+        .dim-box i { font-size: 50px; color: var(--primary); margin-bottom: 20px; display: block; }
+        .dim-measurements { display: flex; justify-content: space-around; gap: 10px; }
+        .dim-meas { text-align: center; }
+        .dim-meas .label { font-size: 10px; color: var(--text-muted); display: block; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .dim-meas .value { font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 800; color: var(--secondary); }
+        .dim-meas .value small { font-size: 12px; font-weight: 400; color: var(--text-light); }
+        .weight-box { background: var(--primary); color: white; padding: 22px 30px; border-radius: 12px; display: flex; align-items: center; gap: 20px; width: 100%; }
+        .weight-box i { font-size: 32px; }
+        .weight-box .value { font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 800; }
+        .weight-box .label { font-size: 13px; opacity: 0.85; }
+        .dim-right h4 { font-family: 'Montserrat', sans-serif; font-size: 16px; color: var(--secondary); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; font-weight: 700; }
+        .dim-right h4 i { color: var(--primary); }
+        .conditions-grid { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
+        .condition { background: var(--gray); padding: 18px 22px; border-radius: 10px; display: flex; align-items: center; gap: 18px; }
+        .condition i { color: var(--primary); font-size: 22px; width: 26px; text-align: center; }
+        .condition div { display: flex; flex-direction: column; }
+        .condition .label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .condition .value { font-size: 15px; font-weight: 600; color: var(--secondary); }
+        .sound-card { background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%); color: white; padding: 26px; border-radius: 12px; display: flex; align-items: center; gap: 20px; }
+        .sound-card i { font-size: 38px; color: var(--primary); }
+        .sound-info h5 { font-family: 'Montserrat', sans-serif; font-size: 14px; margin-bottom: 5px; font-weight: 700; }
+        .sound-info .db { font-family: 'Montserrat', sans-serif; font-size: 30px; font-weight: 800; color: var(--primary); }
+        .sound-info .db small { font-size: 15px; font-weight: 400; }
+        .sound-info p { font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 5px; }
+
+        /* Specs */
+        .specs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+        .spec-section { background: var(--gray); padding: 20px; border-radius: 12px; }
+        .spec-section h4 { font-family: 'Montserrat', sans-serif; font-size: 14px; color: var(--secondary); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); font-weight: 700; }
+        .spec-section h4 i { color: var(--primary); }
+        .spec-table { width: 100%; border-collapse: collapse; }
+        .spec-table tr { border-bottom: 1px solid rgba(0,0,0,0.06); }
+        .spec-table tr:last-child { border-bottom: none; }
+        .spec-table td { padding: 8px 0; font-size: 13px; }
+        .spec-table td:first-child { color: var(--text-light); }
+        .spec-table td:last-child { text-align: right; font-weight: 600; color: var(--secondary); }
+
+        /* Back Cover */
+        .back-cover { background: linear-gradient(160deg, var(--secondary) 0%, #12122a 40%, var(--dark) 100%); color: white; display: flex; align-items: center; justify-content: center; }
+        .back-content { text-align: center; padding: 50px; }
+        .back-content img { height: 75px; margin-bottom: 25px; }
+        .back-content h1 { font-family: 'Montserrat', sans-serif; font-size: 40px; font-weight: 900; margin-bottom: 8px; letter-spacing: 1px; }
+        .back-content h1 span { color: var(--primary); }
+        .back-tagline { font-size: 16px; color: rgba(255,255,255,0.6); margin-bottom: 45px; letter-spacing: 0.5px; }
+        .back-product { background: rgba(255,255,255,0.08); padding: 25px 50px; border-radius: 14px; display: inline-block; margin-bottom: 40px; border: 1px solid rgba(255,255,255,0.1); }
+        .back-product .model { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 800; color: var(--primary); display: block; margin-bottom: 6px; }
+        .back-product .desc { font-size: 14px; color: rgba(255,255,255,0.7); }
+        .back-contact { display: flex; justify-content: center; gap: 35px; margin-bottom: 30px; }
+        .back-contact a { color: white; text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 10px; font-weight: 500; }
+        .back-contact a i { color: var(--primary); font-size: 19px; }
+        .back-social { display: flex; justify-content: center; gap: 16px; margin-bottom: 30px; }
+        .back-social a { width: 44px; height: 44px; background: rgba(255,255,255,0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 18px; border: 1px solid rgba(255,255,255,0.1); }
+        .back-footer { font-size: 10px; color: rgba(255,255,255,0.35); line-height: 1.8; }
+    
+      @media (max-width: 800px) {
+        #kor-brochure-body .page { width: 100vw; height: auto; min-height: auto; box-shadow: none; margin: 0; border-radius: 0; }
+        #kor-brochure-body .cover-hero { flex-direction: column; padding: 20px; }
+        #kor-brochure-body .cover-specs-row { flex-wrap: wrap; gap: 12px; }
+        #kor-brochure-body .page-content { padding: 20px; height: auto; }
+        #kor-brochure-body .intro-grid { grid-template-columns: 1fr; }
+        #kor-brochure-body .cover-model { font-size: 28px; }
+        #kor-brochure-body .cover-image img { max-height: 250px; }
+      }
+</style>
+
+<div id="kor-brochure-body"><!-- PORTADA -->
+    <div class="page cover">
+        <div class="cover-header">
+            <div class="cover-logo">
+                <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png"" alt="KOR">
+                <span>GENERADORES</span>
+            </div>
+            <div class="cover-badge-top">Generador Portátil Naftero</div>
+        </div>
+        <div class="cover-hero">
+            <div class="cover-info">
+                <div class="cover-brand">BRANIK</div>
+                <h1 class="cover-model">8.<span>5GF-9 Standard 8.5 KVA</span></h1>
+                <p class="cover-tagline">Energía Confiable y Portátil</p>
+                <div class="cover-specs-row">
+                    <div class="cover-spec">
+                        <span class="value">8.5 <span class="unit">kVA</span></span>
+                        <span class="label">Potencia</span>
+                    </div>
+                    <div class="cover-spec">
+                        <span class="value">220 <span class="unit">V</span></span>
+                        <span class="label">Monofásico</span>
+                    </div>
+                    <div class="cover-spec">
+                        <span class="value">479 <span class="unit">cc</span></span>
+                        <span class="label">Motor LIFAN</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cover-image">
+                <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/BRANIK_85GF9_nobg.png"" alt="BRANIK 8.5GF-9 Standard 8.5 KVA">
+            </div>
+        </div>
+        <div class="cover-bottom">
+            <div class="cover-highlights-row">
+                <div class="highlight"><i class="fas fa-bolt"></i><span>Arranque Eléctrico</span></div>
+                <div class="highlight"><i class="fas fa-gas-pump"></i><span>Tanque 25 L</span></div>
+                <div class="highlight"><i class="fas fa-shield-halved"></i><span>Regulación AVR</span></div>
+                <div class="highlight"><i class="fas fa-battery-full"></i><span>Batería Incluida</span></div>
+            </div>
+            <div class="cover-web"><strong>www.generadores.ar</strong></div>
+        </div>
+    </div>
+
+    <!-- PRESENTACIÓN -->
+    <div class="page">
+        <div class="page-header">
+            <div class="page-header-left">
+                <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png"" alt="KOR">
+                <h2>BRANIK <span>8.5GF-9 Standard 8.5 KVA</span></h2>
+            </div>
+            <span class="page-num">02 / 08</span>
+        </div>
+        <div class="page-content">
+            <h2 class="intro-title">Potencia Para Todo</h2>
+            <p class="intro-subtitle">BRANIK 8.5GF-9 — Grupo electrógeno naftero 8.5 KVA. Motor LIFAN KP480 479cc. AVR. Arranque eléctrico. Tanque 25L. 85 kg.</p>
+            <div class="intro-grid">
+                <div class="intro-features">
+                    <div class="intro-feat">
+                        <div class="intro-feat-icon"><i class="fas fa-bolt"></i></div>
+                        <div class="intro-feat-text">
+                            <strong>Manual / Eléctrico</strong>
+                            <span>Batería incluida para arranque instantáneo</span>
+                        </div>
+                    </div>
+                    <div class="intro-feat">
+                        <div class="intro-feat-icon"><i class="fas fa-wave-square"></i></div>
+                        <div class="intro-feat-text">
+                            <strong>Regulación AVR</strong>
+                            <span>Tensión estable, THD &lt;6% — Apto electrodomésticos y electrónica, apto para electrónica sensible</span>
+                        </div>
+                    </div>
+                    <div class="intro-feat">
+                        <div class="intro-feat-icon"><i class="fas fa-gas-pump"></i></div>
+                        <div class="intro-feat-text">
+                            <strong>Tanque 25 litros</strong>
+                            <span>Hasta ~10 horas (tanque lleno, media carga) de autonomía a media carga</span>
+                        </div>
+                    </div>
+                    <div class="intro-feat">
+                        <div class="intro-feat-icon"><i class="fas fa-cog"></i></div>
+                        <div class="intro-feat-text">
+                            <strong>Motor LIFAN KP480</strong>
+                            <span>479 cm³, camisa hierro fundido</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="intro-image-container">
+                    <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/BRANIK_85GF9.png"" alt="BRANIK 8.5GF-9 Standard 8.5 KVA">
+                </div>
+            </div>
+            <div class="intro-stats">
+                <div class="intro-stat"><span class="value">8.5</span><span class="label">kVA Potencia</span></div>
+                <div class="intro-stat"><span class="value">~10 horas (tanque lleno, media carga)</span><span class="label">Autonomía</span></div>
+                <div class="intro-stat"><span class="value">479cc</span><span class="label">Cilindrada</span></div>
+                <div class="intro-stat"><span class="value">1 año</span><span class="label">Garantía</span></div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span><span class="brand">KOR Generadores</span> — Soluciones en Generación de Energía</span>
+            <span>www.generadores.ar</span>
+        </div>
+    </div>
+
+    <!-- MOTOR -->
+    <div class="page">
+        <div class="page-header orange">
+            <div class="page-header-left">
+                <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png"" alt="KOR">
+                <h2>Motor <span>LIFAN KP480</span></h2>
+            </div>
+            <span class="page-num">03 / 08</span>
+        </div>
+        <div class="page-content">
+            <div class="engine-grid">
+                <div class="engine-left">
+                    <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/BRANIK_85GF9.png"" alt="Motor LIFAN KP480">
+                    <div class="engine-card">
+                        <h4><i class="fas fa-gear"></i> Especificaciones del Motor</h4>
+                        <div class="engine-specs">
+                            <div class="engine-spec"><i class="fas fa-check"></i> OHV 4 Tiempos</div>
+                            <div class="engine-spec"><i class="fas fa-check"></i> 1 Cilindro</div>
+                            <div class="engine-spec"><i class="fas fa-check"></i> 479 cm³</div>
+                            <div class="engine-spec"><i class="fas fa-check"></i> 3000 RPM</div>
+                            <div class="engine-spec"><i class="fas fa-check"></i> Refrigeración Aire</div>
+                            <div class="engine-spec"><i class="fas fa-check"></i> Nafta</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="engine-right">
+                    <h3>LIFAN KP480</h3>
+                    <p class="subtitle">Motor industrial monocilíndrico OHV con sistema de lubricación por salpicadura. Diseñado para operación continua en condiciones exigentes.</p>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <h5><i class="fas fa-ring"></i> Alta Durabilidad</h5>
+                            <p>Block de aluminio con camisa de hierro fundido para máxima vida útil</p>
+                        </div>
+                        <div class="tech-item">
+                            <h5><i class="fas fa-fire"></i> Encendido Electrónico</h5>
+                            <p>Sistema de ignición libre de mantenimiento con mayor precisión de chispa</p>
+                        </div>
+                        <div class="tech-item">
+                            <h5><i class="fas fa-oil-can"></i> Alerta de Aceite</h5>
+                            <p>Apagado automático por bajo nivel de aceite para proteger el motor</p>
+                        </div>
+                        <div class="tech-item">
+                            <h5><i class="fas fa-wind"></i> OHV / Aire Forzado</h5>
+                            <p>Válvulas en cabeza para menor temperatura y refrigeración eficiente</p>
+                        </div>
+                    </div>
+                    <div class="alt-card">
+                        <h4><i class="fas fa-bolt"></i> Alternador</h4>
+                        <div class="alt-specs">
+                            <div class="alt-spec"><span class="value">&lt;6% — Apto electrodomésticos y electrónica</span><span class="label">THD</span></div>
+                            <div class="alt-spec"><span class="value">AVR</span><span class="label">Regulación</span></div>
+                            <div class="alt-spec"><span class="value">1.0</span><span class="label">Factor Pot.</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span><span class="brand">KOR Generadores</span> — Soluciones en Generación de Energía</span>
+            <span>www.generadores.ar</span>
+        </div>
+    </div>
+
+    <!-- POTENCIA -->
+    <div class="page">
+        <div class="page-header">
+            <div class="page-header-left">
+                <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png"" alt="KOR">
+                <h2>Potencia <span>Disponible</span></h2>
+            </div>
+            <span class="page-num">04 / 08</span>
+        </div>
+        <div class="page-content">
+            <div class="power-main">
+                <div class="power-circle">
+                    <span class="number">8.5</span>
+                    <span class="unit">kVA</span>
+                    <span class="label">Máxima</span>
+                </div>
+                <div class="power-secondary">
+                    <div class="power-sec-item">
+                        <i class="fas fa-bolt"></i>
+                        <div class="info"><span class="label">Potencia Activa</span><span class="value">8.500 W</span></div>
+                    </div>
+                    <div class="power-sec-item">
+                        <i class="fas fa-plug"></i>
+                        <div class="info"><span class="label">Tensión</span><span class="value">220V Monofásico</span></div>
+                    </div>
+                    <div class="power-sec-item">
+                        <i class="fas fa-gauge-high"></i>
+                        <div class="info"><span class="label">Frecuencia</span><span class="value">50 Hz</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="elec-grid">
+                <div class="elec-item"><i class="fas fa-plug-circle-bolt"></i><span class="value">220V</span><span class="label">Monofásico</span></div>
+                <div class="elec-item"><i class="fas fa-wave-square"></i><span class="value">50 Hz</span><span class="label">Frecuencia</span></div>
+                <div class="elec-item"><i class="fas fa-shield-halved"></i><span class="value">AVR</span><span class="label">Regulación</span></div>
+                <div class="elec-item"><i class="fas fa-battery-full"></i><span class="value">12V DC</span><span class="label">Salida CC</span></div>
+            </div>
+            <h3 class="section-title" style="font-size:18px; margin-bottom:16px;">¿Qué Puedo Alimentar?</h3>
+            <div class="power-examples">
+                <div class="power-example"><i class="fas fa-lightbulb"></i><span class="name">Iluminación</span><span class="watts">Toda la casa</span></div>
+                <div class="power-example"><i class="fas fa-tv"></i><span class="name">TV / Audio</span><span class="watts">200-400W</span></div>
+                <div class="power-example"><i class="fas fa-snowflake"></i><span class="name">Heladera</span><span class="watts">150-300W</span></div>
+                <div class="power-example"><i class="fas fa-computer"></i><span class="name">Computadoras</span><span class="watts">200-500W</span></div>
+                <div class="power-example"><i class="fas fa-fan"></i><span class="name">Ventiladores</span><span class="watts">60-150W</span></div>
+                <div class="power-example"><i class="fas fa-blender"></i><span class="name">Electrodom.</span><span class="watts">500-1500W</span></div>
+                <div class="power-example"><i class="fas fa-hammer"></i><span class="name">Herramientas</span><span class="watts">500-2000W</span></div>
+                <div class="power-example"><i class="fas fa-water"></i><span class="name">Bomba Agua</span><span class="watts">500-1500W</span></div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span><span class="brand">KOR Generadores</span> — Soluciones en Generación de Energía</span>
+            <span>www.generadores.ar</span>
+        </div>
+    </div>
+
+    <!-- COMBUSTIBLE -->
+    <div class="page">
+        <div class="page-header orange">
+            <div class="page-header-left">
+                <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png"" alt="KOR">
+                <h2>Combustible <span>y Mantenimiento</span></h2>
+            </div>
+            <span class="page-num">05 / 08</span>
+        </div>
+        <div class="page-content">
+            <div class="fuel-grid">
+                <div class="fuel-card primary">
+                    <h4><i class="fas fa-gas-pump"></i> Sistema de Combustible</h4>
+                    <p>Motor naftero con tanque de 25 litros para máxima autonomía</p>
+                    <div class="fuel-specs">
+                        <div class="fuel-spec"><span class="label">Combustible</span><span class="value">Nafta</span></div>
+                        <div class="fuel-spec"><span class="label">Tanque</span><span class="value">25 litros</span></div>
+                        <div class="fuel-spec"><span class="label">Consumo 50%</span><span class="value">2.5 L/hora</span></div>
+                        <div class="fuel-spec"><span class="label">Autonomía</span><span class="value">~10 horas (tanque lleno, media carga)</span></div>
+                    </div>
+                </div>
+                <div class="fuel-card">
+                    <h4><i class="fas fa-oil-can"></i> Lubricación</h4>
+                    <p>Sistema de lubricación por salpicadura con protección automática</p>
+                    <div class="fuel-specs">
+                        <div class="fuel-spec"><span class="label">Capacidad Aceite</span><span class="value">N/D</span></div>
+                        <div class="fuel-spec"><span class="label">Tipo</span><span class="value">SAE 10W-30</span></div>
+                        <div class="fuel-spec"><span class="label">Clasificación</span><span class="value">API SJ+</span></div>
+                        <div class="fuel-spec"><span class="label">Oil Alert</span><span class="value">Sí (auto-stop)</span></div>
+                    </div>
+                </div>
+            </div>
+            <h3 class="section-title" style="font-size:18px; margin-bottom:16px;">Plan de Mantenimiento</h3>
+            <div class="maint-grid">
+                <div class="maint-card"><i class="fas fa-droplet"></i><h5>25 Horas</h5><p>Primer cambio de aceite después del rodaje</p></div>
+                <div class="maint-card"><i class="fas fa-wrench"></i><h5>Cada 100 Horas</h5><p>Cambio aceite, revisión bujía y filtro aire</p></div>
+                <div class="maint-card"><i class="fas fa-tools"></i><h5>Cada 200 Horas</h5><p>Cambio filtro aire, limpieza carburador</p></div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span><span class="brand">KOR Generadores</span> — Soluciones en Generación de Energía</span>
+            <span>www.generadores.ar</span>
+        </div>
+    </div>
+
+    <!-- DIMENSIONES -->
+    <div class="page">
+        <div class="page-header">
+            <div class="page-header-left">
+                <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png"" alt="KOR">
+                <h2>Dimensiones <span>y Peso</span></h2>
+            </div>
+            <span class="page-num">06 / 08</span>
+        </div>
+        <div class="page-content">
+            <div class="dim-grid">
+                <div class="dim-visual">
+                    <div class="dim-box">
+                        <i class="fas fa-ruler-combined"></i>
+                        <div class="dim-measurements">
+                            <div class="dim-meas"><span class="label">Largo</span><span class="value">73 <small>cm</small></span></div>
+<div class="dim-meas"><span class="label">Alto</span><span class="value">59 <small>cm</small></span></div>
+<div class="dim-meas"><span class="label">Ancho</span><span class="value">56 <small>cm</small></span></div>
+
+                        </div>
+                    </div>
+                    <div class="weight-box">
+                        <i class="fas fa-weight-hanging"></i>
+                        <div><span class="value">85 kg</span><span class="label">Peso neto</span></div>
+                    </div>
+                </div>
+                <div class="dim-right">
+                    <h4><i class="fas fa-thermometer-half"></i> Condiciones de Operación</h4>
+                    <div class="conditions-grid">
+                        <div class="condition"><i class="fas fa-temperature-half"></i><div><span class="label">Temperatura</span><span class="value">-10°C a +40°C</span></div></div>
+                        <div class="condition"><i class="fas fa-mountain"></i><div><span class="label">Altitud Máxima</span><span class="value">1.000 m.s.n.m.</span></div></div>
+                        <div class="condition"><i class="fas fa-droplet"></i><div><span class="label">Humedad</span><span class="value">0-95% sin condensación</span></div></div>
+                    </div>
+                    <div class="sound-card">
+                        <i class="fas fa-volume-high"></i>
+                        <div class="sound-info">
+                            <h5>Nivel Sonoro</h5>
+                            <span class="db">74 <small>dB @ 7m</small></span>
+                            <p>Nivel moderado — se recomienda ubicar a distancia del área de trabajo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span><span class="brand">KOR Generadores</span> — Soluciones en Generación de Energía</span>
+            <span>www.generadores.ar</span>
+        </div>
+    </div>
+
+    <!-- FICHA TÉCNICA -->
+    <div class="page">
+        <div class="page-header orange">
+            <div class="page-header-left">
+                <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png"" alt="KOR">
+                <h2>Ficha <span>Técnica</span></h2>
+            </div>
+            <span class="page-num">07 / 08</span>
+        </div>
+        <div class="page-content">
+            <div class="specs-grid">
+                <div class="spec-section">
+                    <h4><i class="fas fa-bolt"></i> Potencia y Electricidad</h4>
+                    <table class="spec-table">
+                        <tr><td>Potencia Máxima</td><td>8.5 KVA / 8.500 W</td></tr>
+                        <tr><td>Tensión</td><td>220V Monofásico</td></tr>
+                        <tr><td>Frecuencia</td><td>50 Hz</td></tr>
+                        <tr><td>Regulación</td><td>AVR</td></tr>
+                        <tr><td>THD</td><td>&lt;6% — Apto electrodomésticos y electrónica</td></tr>
+                    </table>
+                </div>
+                <div class="spec-section">
+                    <h4><i class="fas fa-gear"></i> Motor</h4>
+                    <table class="spec-table">
+                        <tr><td>Modelo</td><td>LIFAN KP480</td></tr>
+                        <tr><td>Tipo</td><td>OHV 4T, 1 cil.</td></tr>
+                        <tr><td>Cilindrada</td><td>479 cm³</td></tr>
+                        <tr><td>RPM</td><td>3000 @ 50 Hz</td></tr>
+                        <tr><td>Refrigeración</td><td>Por aire forzado</td></tr>
+                    </table>
+                </div>
+                <div class="spec-section">
+                    <h4><i class="fas fa-gas-pump"></i> Combustible</h4>
+                    <table class="spec-table">
+                        <tr><td>Tipo</td><td>Nafta</td></tr>
+                        <tr><td>Tanque</td><td>25 litros</td></tr>
+                        <tr><td>Consumo 50%</td><td>2.5 L/hora</td></tr>
+                        <tr><td>Autonomía</td><td>~10 horas (tanque lleno, media carga)</td></tr>
+                        <tr><td>Aceite</td><td>N/D</td></tr>
+                    </table>
+                </div>
+                <div class="spec-section">
+                    <h4><i class="fas fa-wrench"></i> Arranque y Panel</h4>
+                    <table class="spec-table">
+                        <tr><td>Arranque</td><td>Manual / Eléctrico</td></tr>
+                        <tr><td>Batería</td><td>Incluida</td></tr>
+                        <tr><td>Tomacorrientes</td><td>220V + breaker</td></tr>
+                        <tr><td>Circuit Breaker</td><td>Sí</td></tr>
+                    </table>
+                </div>
+                <div class="spec-section">
+                    <h4><i class="fas fa-ruler"></i> Dimensiones</h4>
+                    <table class="spec-table">
+                        <tr><td>Dimensiones</td><td>73 × 59 × 56 cm</td></tr>
+                        <tr><td>Peso</td><td>85 kg</td></tr>
+                        <tr><td>Nivel Sonoro</td><td>74 dB @ 7m</td></tr>
+                    </table>
+                </div>
+                <div class="spec-section">
+                    <h4><i class="fas fa-certificate"></i> Comercial</h4>
+                    <table class="spec-table">
+                        <tr><td>Marca</td><td>BRANIK</td></tr>
+                        <tr><td>Proveedor</td><td>Casa Fenk S.A.C.I.F.I.</td></tr>
+                        <tr><td>Origen</td><td>China</td></tr>
+                        <tr><td>Garantía</td><td>12 meses</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span><span class="brand">KOR Generadores</span> — Soluciones en Generación de Energía</span>
+            <span>www.generadores.ar</span>
+        </div>
+    </div>
+
+    <!-- CONTRAPORTADA -->
+    <div class="page back-cover">
+        <div class="back-content">
+            <img src="https://raw.githubusercontent.com/ivankorzy25/kor-generadores-folletos/main/assets/images/logo-kor.png"" alt="KOR">
+            <h1>KOR <span>GENERADORES</span></h1>
+            <p class="back-tagline">Soluciones en Generación de Energía</p>
+            <div class="back-product">
+                <span class="model">BRANIK 8.5GF-9 Standard 8.5 KVA</span>
+                <span class="desc">Generador Portátil Naftero — 8.5 kVA</span>
+            </div>
+            <div class="back-contact">
+                <a href="https://wa.me/5491139563099"><i class="fab fa-whatsapp"></i> +54 9 11 3956-3099</a>
+                <a href="https://generadores.ar"><i class="fas fa-globe"></i> www.generadores.ar</a>
+                <a href="mailto:info@generadores.ar"><i class="fas fa-envelope"></i> info@generadores.ar</a>
+            </div>
+            <div class="back-social">
+                <a href="https://instagram.com/kor.generadores"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com/korgeneradores"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://youtube.com/@korgeneradores"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.mercadolibre.com.ar/perfil/KOR+GENERADORES"><i class="fas fa-store"></i></a>
+            </div>
+            <p class="back-footer">Las especificaciones pueden variar sin previo aviso.<br>Las imágenes son a modo ilustrativo.<br>© 2026 KOR Generadores — Todos los derechos reservados.</p>
+        </div>
+    </div></div>
 
 <div style="background:white;border-top:4px solid #e67e22;padding:40px 0;margin:0;">
   <div class="container-xl" style="text-align:center;">
