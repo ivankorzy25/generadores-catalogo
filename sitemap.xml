@@ -88,6 +88,22 @@
   <url><loc>https://generadores.ar/logus-gi2500dc</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/logus-gi2000-silent</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/logus-gi1000-silent</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/caja-de-control-de-alta-tensi-n</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/rack-de-9-niveles</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/alpha-i-ess-3k-25-6v-200ah</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/alpha-i-ess-1000w</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/m-dulo-de-bater-a-5-12-kwh-alto-voltaje</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/bater-a-sk-51-2v-200ah-li-sun</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/bater-a-sk-51-2v-100ah-li-sun</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/inversor-h-brido-trif-sico-30-kw</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/inversor-h-brido-trif-sico-20-kw</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/inversor-h-brido-trif-sico-15-kw</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/inversor-solar-sunin-12km2-l1p3-eu</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/inversor-solar-sunin-8km2-l1p1-eu</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/inversor-solar-sunpolo-11kva</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/panel-solar-psl-630w</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/panel-solar-psl-550w</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/panel-solar-psl-340w</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/lttat63</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/lttam63</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/logus-165-kva</loc><priority>0.8</priority></url>
@@ -118,19 +134,6 @@
   <url><loc>https://generadores.ar/cummins-yns-42-kva</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/v7-row</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/v5-neo-row</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/caja-de-control-de-alta-tensi-n</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/rack-de-9-niveles</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/alpha-i-ess-3k-25-6v-200ah</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/alpha-i-ess-1000w</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/inversor-h-brido-trif-sico-30-kw</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/inversor-h-brido-trif-sico-20-kw</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/inversor-h-brido-trif-sico-15-kw</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/inversor-solar-sunin-12km2-l1p3-eu</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/inversor-solar-sunin-8km2-l1p1-eu</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/inversor-solar-sunpolo-11kva</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/panel-solar-psl-630w</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/panel-solar-psl-550w</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/panel-solar-psl-340w</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/km376ag-daihatsu</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/km2v80</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/km186fe</loc><priority>0.8</priority></url>
@@ -185,9 +188,6 @@
   <url><loc>https://generadores.ar/cabezal-manguera-45mm</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/cabezal-manguera-38mm</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/chipeadora-dr-g65s</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/m-dulo-de-bater-a-5-12-kwh-alto-voltaje</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/bater-a-sk-51-2v-200ah-li-sun</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/bater-a-sk-51-2v-100ah-li-sun</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/generac-guardian-10</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/generac-guardian-13</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/generac-guardian-17</loc><priority>0.8</priority></url>
