@@ -5,22 +5,25 @@
   <url><loc>https://generadores.ar/pramac-ga10000</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/pramac-ga13000</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/pramac-ga20000</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/generac-guardian-8</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/generac-guardian-10</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/generac-guardian-13</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/generac-guardian-17</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/glt9500e</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/glg8000em</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/glg13000em</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/glg20000em</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/glg20000et</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/glg13000em</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/glg8000em</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/pramac-ggw100g</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/pramac-ggw080</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/pramac-ggw070</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/pramac-ggw050</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/pramac-ggw035</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/pramac-gl027</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/generac-guardian-8</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/logus-125br-gas</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/logus-69br-gas</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/logus-41br-gas</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/tta-9500</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/pramac-gl027</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/pramac-ggw035</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/pramac-ggw050</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/pramac-ggw070</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/pramac-ggw080</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/pramac-ggw100g</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/logus-41br-gas</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/logus-69br-gas</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/logus-125br-gas</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/logus-gl8500e-premium-gas</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/logus-gl6500e-premium-gas</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/logus-gl8500e3-premium</loc><priority>0.8</priority></url>
@@ -188,9 +191,6 @@
   <url><loc>https://generadores.ar/cabezal-manguera-45mm</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/cabezal-manguera-38mm</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/chipeadora-dr-g65s</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/generac-guardian-10</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/generac-guardian-13</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/generac-guardian-17</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/branik-15000e</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/branik-12000e</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/branik-85gf9</loc><priority>0.8</priority></url>
