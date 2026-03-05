@@ -91,6 +91,31 @@
   <url><loc>https://generadores.ar/logus-gi2500dc</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/logus-gi2000-silent</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/logus-gi1000-silent</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/cabezal-manguera-45mm</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/cabezal-manguera-38mm</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/vibrador-de-concreto-vcml</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/rodillo-compactador-rcl642</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/rodillo-compactador-rcl641</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/plancha-vibradora-c95th</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/fratachadora-s100h</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/cortadora-de-concreto-q400</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/vibroapisonador-rm80h</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/chipeadora-dr-g65s</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/chipeadora-dr-g65h</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/lt500</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/df15klm</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/rastra-de-disco</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/arado</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/df15l</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/ghl180</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/3wf-3</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/168-f-r</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/168f-l</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/177-f</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/152-f</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/188-f</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/168-fd</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/168-f</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/panel-solar-psl-550w</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/caja-de-control-de-alta-tensi-n</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/rack-de-9-niveles</loc><priority>0.8</priority></url>
@@ -145,7 +170,6 @@
   <url><loc>https://generadores.ar/190fd</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/188fd</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/168f-lt</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/168f-l</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/gtp80</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/gpd80</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/gp80</loc><priority>0.8</priority></url>
@@ -154,7 +178,6 @@
   <url><loc>https://generadores.ar/gp100</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/ghp50</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/ghl250</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/ghl180</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/ghl150</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/tanque-vertical-300l-para-clto</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/sv-50</loc><priority>0.8</priority></url>
@@ -168,34 +191,11 @@
   <url><loc>https://generadores.ar/se-10td-4-en-1</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/zanjadora-dr-tr15</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/cortadora-troncos-dr-gl-34t</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/chipeadora-dr-g65h</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/188-f</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/177-f</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/168-fd</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/168-f-r</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/168-f</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/152-f</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/lt500</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/df15l</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/df15klm</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/rastra-de-disco</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/arado</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/3wf-3</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/vibroapisonador-rm80h</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/vibrador-de-concreto-vcml</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/rodillo-compactador-rcl642</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/rodillo-compactador-rcl641</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/plancha-vibradora-c95th</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/fratachadora-s100h</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/cortadora-de-concreto-q400</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/cabezal-manguera-45mm</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/cabezal-manguera-38mm</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/chipeadora-dr-g65s</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/branik-15000e</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/branik-12000e</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/branik-85gf9</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/branik-6gf4</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/branik-6800ie</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/branik-4800ie</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/branik-3800i</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/branik-85gf9</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/branik-6gf4</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/branik-15000e</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/branik-12000e</loc><priority>0.8</priority></url>
 </urlset>
