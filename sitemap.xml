@@ -91,6 +91,13 @@
   <url><loc>https://generadores.ar/logus-gi2500dc</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/logus-gi2000-silent</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/logus-gi1000-silent</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/generica-con-plc-160A TRIFASICA</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/generica-con-plc-95A TRIFASICA</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/generica-con-plc-65A TRIFASICA</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/generica-con-plc</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/generica-con-plc-32A MONOFASICA</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/v7-row</loc><priority>0.8</priority></url>
+  <url><loc>https://generadores.ar/v5-neo-row</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/cabezal-manguera-45mm</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/cabezal-manguera-38mm</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/vibrador-de-concreto-vcml</loc><priority>0.8</priority></url>
@@ -147,11 +154,6 @@
   <url><loc>https://generadores.ar/kde12-monofasico</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/kde-6500-trifasico</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/kde-6500-monofasico</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/generica-con-plc-160A TRIFASICA</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/generica-con-plc-95A TRIFASICA</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/generica-con-plc-65A TRIFASICA</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/generica-con-plc</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/generica-con-plc-32A MONOFASICA</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/cummins-yns-350-kva</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/cummins-yns-275-kva</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/cummins-yns-200-kva</loc><priority>0.8</priority></url>
@@ -160,8 +162,6 @@
   <url><loc>https://generadores.ar/cummins-yns-88-kva</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/cummins-yns-65-kva</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/cummins-yns-42-kva</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/v7-row</loc><priority>0.8</priority></url>
-  <url><loc>https://generadores.ar/v5-neo-row</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/km376ag-daihatsu</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/km2v80</loc><priority>0.8</priority></url>
   <url><loc>https://generadores.ar/km186fe</loc><priority>0.8</priority></url>
